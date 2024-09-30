@@ -1,0 +1,24 @@
+2024-09-23 22:07:51,332 - INFO - subClassification: 6282, ids: 43
+2024-09-23 22:07:52,067 - INFO - subClassification: 6283, ids: 86
+2024-09-23 22:07:52,219 - INFO - subClassification: 6284, ids: 0
+2024-09-23 22:07:52,615 - INFO - subClassification: 6285, ids: 35
+2024-09-23 22:07:52,905 - INFO - subClassification: 6286, ids: 20
+2024-09-23 22:07:54,016 - INFO - subClassification: 6287, ids: 126
+2024-09-23 22:07:54,345 - INFO - subClassification: 6288, ids: 11
+2024-09-23 22:07:54,861 - INFO - subClassification: 6289, ids: 42
+2024-09-23 22:07:55,960 - INFO - subClassification: 6290, ids: 151
+2024-09-23 22:07:56,799 - INFO - subClassification: 6291, ids: 103
+2024-09-23 22:07:57,350 - INFO - subClassification: 6292, ids: 60
+2024-09-23 22:07:58,019 - INFO - subClassification: 6293, ids: 76
+2024-09-23 22:07:58,488 - INFO - subClassification: 6294, ids: 29
+2024-09-23 22:07:59,042 - INFO - subClassification: 6295, ids: 51
+2024-09-23 22:07:59,322 - INFO - subClassification: 6296, ids: 15
+2024-09-23 22:07:59,768 - INFO - subClassification: 6297, ids: 40
+2024-09-23 22:08:00,058 - INFO - subClassification: 6298, ids: 17
+2024-09-23 22:08:00,348 - INFO - subClassification: 6299, ids: 1
+2024-09-23 22:08:00,640 - INFO - subClassification: 6300, ids: 6
+2024-09-23 22:08:01,061 - INFO - subClassification: 6301, ids: 34
+2024-09-23 22:08:01,302 - INFO - subClassification: 6302, ids: 4
+2024-09-23 22:08:01,746 - INFO - subClassification: 6303, ids: 38
+2024-09-23 22:08:01,746 - INFO - total jobIds: 988
+2024-09-23 22:08:01,746 - INFO - total jobIds after removing duplicates: 901

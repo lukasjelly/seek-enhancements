@@ -1,0 +1,1003 @@
+[
+    {
+        "jobDetails": {
+            "job": {
+                "sourceZone": "anz-2",
+                "tracking": {
+                    "adProductType": "Branded",
+                    "classificationInfo": {
+                        "classificationId": "6281",
+                        "classification": "Information & Communication Technology",
+                        "subClassificationId": "6290",
+                        "subClassification": "Engineering - Software",
+                        "__typename": "JobTrackingClassificationInfo"
+                    },
+                    "hasRoleRequirements": true,
+                    "isPrivateAdvertiser": false,
+                    "locationInfo": {
+                        "area": "Wellington Central",
+                        "location": "Wellington",
+                        "locationIds": [
+                            "32683"
+                        ],
+                        "__typename": "JobTrackingLocationInfo"
+                    },
+                    "workTypeIds": "242",
+                    "postedTime": "1h ago",
+                    "__typename": "JobTracking"
+                },
+                "id": "79026786",
+                "title": "Software Engineering Intern",
+                "phoneNumber": null,
+                "isExpired": false,
+                "expiresAt": {
+                    "dateTimeUtc": "2024-10-23T12:59:59.999Z",
+                    "__typename": "SeekDateTime"
+                },
+                "isLinkOut": false,
+                "contactMatches": [],
+                "isVerified": true,
+                "abstract": "Join us to create universal access to stroke imaging.",
+                "content": "<p><strong>WELLUMIO</strong></p><p>Wellumio is a medical technology company redefining the boundaries of clinical imaging. Our mission is to make magnetic resonance imaging portable, enabling rapid, life-saving diagnoses for conditions where timely treatment is paramount. </p><p> </p><p>Our first target application is acute stroke, a medical emergency where every minute counts. Stroke is devastating, and the window of opportunity for effective treatment is painfully narrow. By making MRI portable, Wellumio aims to increase the rate of stroke therapy within the first golden hour of symptom onset.<br /> </p><p>At Wellumio, we're not just creating a product; we are challenging dominant modes of design that hinder people's access to diagnostic imaging. We're fusing technology, design innovation, medical expertise, and systems-level thinking to create imaging solutions that put patients first.</p><p> </p><p><strong>Positions Available:</strong></p><p>Two positions are available. One focused on mechanical prototyping and testing, and the other on signal and image processing.</p><p> </p><p><strong>Position Overview and Responsibilities </strong></p><p>During your internship, you will be based at our central city HQ in Wellington, working closely with the R&amp;D team on UX, UI, and API development, including:</p><ul><li>Assisting with design, implementation and testing, </li><li>Completing research and analysing usability data,</li><li>Drafting user manuals and software documentation,</li><li>Drafting quality management documentation,</li><li>Reporting on progress and milestones.</li></ul><p> </p><p><strong>What you’ll bring:</strong></p><ul><li>Studying towards a Bachelor of Software Engineering or related discipline</li><li>Familiarity with React, JavaScript, Python, Django, WebSockets.</li></ul><p> </p><p><strong>Qualifications</strong>:</p><ul><li>Have studied or be studying at a New Zealand tertiary education institution (<i>note: students who have completed study overseas are not eligible</i>),</li><li>be studying at NZQA level 6-10 or if study has been completed the closing date of the last semester must be less than 12 months ago. <i>For example, if a Bachelor of Business student's final year of enrolment was 2023, they are eligible until the end of November 2024 because their last semester finished in November 2023.</i></li><li>be studying engineering or technology </li><li>be legally permitted to work in New Zealand,</li><li>have excellent communication and interpersonal skills, with the ability to build and maintain relationships with key stakeholders,</li><li>have strong analytical and problem-solving skills, with the ability to make data-driven decisions, and</li><li>be committed to ethical and socially responsible business practices.</li></ul><p> </p><p>This paid position presents an incredible opportunity for a motivated, inquisitive, and ambitious student to join our team full-time ($27.80/hour for 400 hours of work). The successful applicant can start as soon as they're able to over the summer break and must complete 400 hours of work.</p><p> </p><p><strong>How to Apply:</strong></p><p>Do you have what it takes to redefine stroke imaging with us? If you're excited about our mission and see yourself contributing to our dynamic team, we'd love to hear from you!</p><p> </p><p><strong>Application Requirements:</strong></p><ol><li><strong>CV: </strong>Create a CV that showcases your experience, skills, and passion for innovation in medical imaging. Highlight how your background aligns with Wellumio's mission. <br /><br /> </li><li><strong>Cover Letter: </strong>Craft a thoughtful cover letter that explains why you're drawn to Wellumio and how you envision contributing to our mission.</li></ol><p><br />We'll review your CV and cover letter for shortlisting, so make them stand out. </p><p> </p><p><strong>Diversity and Equal Opportunities:</strong></p><p>At Wellumio, we embrace diversity and inclusion. We encourage applications from all backgrounds. Sometimes, people hesitate to apply if they don't meet all the requirements. If you think you can excel at Wellumio, even if you don't meet every requirement, please apply. We welcome your application.</p><p> </p><p><strong>Application Timeline:</strong></p><p>We will start shortlisting and interviewing candidates in early October. For more information about Wellumio, see our website, www.wellumio.com.</p><p><br /><br /> </p>",
+                "status": "Active",
+                "listedAt": {
+                    "label": "1h ago",
+                    "dateTimeUtc": "2024-09-23T08:37:50.731Z",
+                    "__typename": "SeekDateTime"
+                },
+                "salary": null,
+                "shareLink": "https://www.seek.co.nz/job/79026786?tracking=SHR-WEB-SharedJob-anz-2",
+                "workTypes": {
+                    "label": "Full time",
+                    "__typename": "JobWorkTypes"
+                },
+                "advertiser": {
+                    "id": "61990244",
+                    "name": "Wellumio Limited",
+                    "isVerified": true,
+                    "registrationDate": {
+                        "dateTimeUtc": "2023-09-04T04:37:38.880Z",
+                        "__typename": "SeekDateTime"
+                    },
+                    "__typename": "Advertiser"
+                },
+                "location": {
+                    "label": "Wellington Central, Wellington",
+                    "__typename": "LocationInfo"
+                },
+                "classifications": [
+                    {
+                        "label": "Engineering - Software (Information & Communication Technology)",
+                        "__typename": "ClassificationInfo"
+                    }
+                ],
+                "products": {
+                    "branding": {
+                        "id": "fccdb348-7e3a-40ea-b56f-a2505f161881.1",
+                        "cover": {
+                            "url": "https://image-service-cdn.seek.com.au/3dedca164f5197938a4d26ddd0274fec5394ba32/9363afa9e0d8eea00ab4be65e52e5924da7219bb",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "thumbnailCover": {
+                            "url": "https://image-service-cdn.seek.com.au/3dedca164f5197938a4d26ddd0274fec5394ba32/42278032d152a7049b16861cfb0b0df1fa2bbb15",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "logo": {
+                            "url": "https://image-service-cdn.seek.com.au/118f5b13f777abda6d9d30fd7438574907a17acc/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "__typename": "JobProductBranding"
+                    },
+                    "bullets": [
+                        "Gain valuable work experience in an innovative startup environment",
+                        "Close mentorship and networking opportunities",
+                        "Opportunity to develop new skills"
+                    ],
+                    "questionnaire": {
+                        "questions": [
+                            "Which of the following statements best describes your right to work in New Zealand?"
+                        ],
+                        "__typename": "JobQuestionnaire"
+                    },
+                    "video": null,
+                    "__typename": "JobProducts"
+                },
+                "__typename": "Job"
+            },
+            "companyProfile": null,
+            "companySearchUrl": "https://www.seek.co.nz/jobs?advertiserid=61990244",
+            "learningInsights": {
+                "analytics": {
+                    "title": "Career Advice homepage",
+                    "landingPage": "CA Home",
+                    "resultType": "DefaultSearchToCA",
+                    "bannerName": "DefaultSearchToCA",
+                    "encoded": "title:Career Advice homepage;landingPage:CA Home;resultType:DefaultSearchToCA;bannerName:DefaultSearchToCA"
+                },
+                "content": "<style>\n  /* capsize font, don't change */\n  .capsize-largeText {\n    font-size: 18px;\n    line-height: 27.094px;\n    display: block;\n  }\n\n  .capsize-largeText::before {\n    content: '';\n    margin-bottom: -0.3611em;\n    display: table;\n  }\n\n  .capsize-largeText::after {\n    content: '';\n    margin-top: -0.3611em;\n    display: table;\n  }\n\n  .capsize-standardText {\n    font-size: 16px;\n    line-height: 24.528px;\n    display: block;\n  }\n\n  .capsize-standardText::before {\n    content: '';\n    margin-bottom: -0.375em;\n    display: table;\n  }\n\n  .capsize-standardText::after {\n    content: '';\n    margin-top: -0.375em;\n    display: table;\n  }\n  /* end of capsize */\n\n  /* LMIS css start here*/\n  .lmis-root {\n    font-family: SeekSans, 'SeekSans Fallback', Arial, sans-serif;\n    color: #2e3849;\n  }\n\n  .lmis-title {\n    font-weight: 500;\n  }\n\n  .lmis-description {\n    margin-top: 24px;\n    margin-bottom: 16px;\n  }\n\n  .lmis-list {\n    padding-left: 0;\n    margin: 0;\n  }\n\n  .lmis-list li {\n    display: flex;\n    align-items: center;\n    color: #414c63;\n    margin-top: 12px;\n  }\n\n  .lmis-list li:first-child {\n    margin-top: 0;\n  }\n\n  .lmis-list li:before {\n    content: '\\2022 \\0020';\n    font-weight: 500;\n    font-size: 16px;\n    margin-right: 8px;\n  }\n\n  .lmis-cta {\n    font-weight: 500;\n    text-decoration: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #2e3849;\n    border: 2px solid #2e3849;\n    border-radius: 8px;\n    min-height: 48px;\n    margin-top: 24px;\n  }\n\n  .lmis-cta img {\n    margin-left: 4px;\n  }\n\n  .lmis-cta:hover {\n    background-color: #f4f6fe;\n  }\n\n  @media only screen and (min-width: 740px) {\n    .lmis-cta {\n      max-width: 260px;\n    }\n  }\n\n  @media only screen and (min-width: 992px) {\n    .lmis-root {\n      margin: -16px;\n    }\n  }\n</style>\n\n<div class=\"lmis-root\">\n  <div class=\"capsize-largeText lmis-title\">Career Advice</div>\n  <div class=\"capsize-standardText lmis-description\">Researching careers? Find all the information and tips you need on career advice.</div>\n  <ul class=\"lmis-list\">\n    <li><span class=\"capsize-standardText\">Role descriptions</span></li>\n    <li><span class=\"capsize-standardText\">Salary insights</span></li>\n    <li><span class=\"capsize-standardText\">Tools to help you prepare for jobs</span></li>\n  </ul>\n  <a class=\"lmis-cta\" target=\"_blank\" href=\"https://www.seek.co.nz/career-advice/?utm_campaign=LMIS_Web&amp;utm_source=SEEK&amp;utm_medium=LMIS&amp;utm_content=job-details\">\n    <span class=\"capsize-standardText\">Explore Career Advice</span>\n    <img\n      src=\"https://cdn.seeklearning.com.au/media/images/lmis/arrow_right.svg\"\n      alt=\"arrow-right\"\n    />\n  </a>\n</div>\n",
+                "__typename": "LearningInsights"
+            },
+            "companyTags": [],
+            "restrictedApplication": {
+                "label": null,
+                "__typename": "JobDetailsRestrictedApplication"
+            },
+            "sourcr": null,
+            "gfjInfo": {
+                "location": {
+                    "countryCode": "NZ",
+                    "country": "New Zealand",
+                    "suburb": "Wellington Central",
+                    "region": null,
+                    "state": null,
+                    "postcode": null,
+                    "__typename": "GFJLocation"
+                },
+                "workTypes": {
+                    "label": [
+                        "FULL_TIME"
+                    ],
+                    "__typename": "GFJWorkTypes"
+                },
+                "__typename": "GFJInfo"
+            },
+            "__typename": "JobDetails"
+        }
+    },
+    {
+        "jobDetails": {
+            "job": {
+                "sourceZone": "anz-2",
+                "tracking": {
+                    "adProductType": "Branded",
+                    "classificationInfo": {
+                        "classificationId": "6281",
+                        "classification": "Information & Communication Technology",
+                        "subClassificationId": "6295",
+                        "subClassification": "Programme & Project Management",
+                        "__typename": "JobTrackingClassificationInfo"
+                    },
+                    "hasRoleRequirements": true,
+                    "isPrivateAdvertiser": false,
+                    "locationInfo": {
+                        "area": "Auckland Central",
+                        "location": "Auckland",
+                        "locationIds": [
+                            "30010"
+                        ],
+                        "__typename": "JobTrackingLocationInfo"
+                    },
+                    "workTypeIds": "242",
+                    "postedTime": "1h ago",
+                    "__typename": "JobTracking"
+                },
+                "id": "79026957",
+                "title": "Project Services Delivery Lead - Auckland",
+                "phoneNumber": null,
+                "isExpired": false,
+                "expiresAt": {
+                    "dateTimeUtc": "2024-10-23T12:59:59.999Z",
+                    "__typename": "SeekDateTime"
+                },
+                "isLinkOut": false,
+                "contactMatches": [
+                    {
+                        "type": "Email",
+                        "value": "alice@inovo.nz",
+                        "__typename": "ContactMatches"
+                    }
+                ],
+                "isVerified": true,
+                "abstract": "Work alongside an agile, dynamic, senior management team and talented group of professionals to deliver quality solutions.",
+                "content": "<p>Join a team of innovative, talented individuals creating and working in some of New Zealand’s largest projects. Inovo has developed a reputation for a professional, collaborative approach, drawing on our invaluable knowledge and extensive experience across our wider team.</p><p>We are respected in the project management, project planning and land development services sectors for providing a comprehensive range of professional project services.</p><p>With an exciting growth plan in place, we are seeking a talented professional to assist in building and leading a team of professionals working across project controls and project planning in the Auckland region.</p><p>You may be an experienced Project Manager, Project Planner or Project Controls Consultant looking for an exciting opportunity to take the next step into a role with potential for growth, and rewards to match.</p><p> </p><p><strong>The Opportunity</strong></p><p>This role will see you utilising and expanding your client relationship networks to support the growth and delivery of Inovo Specialist Project Services capabilities in the Auckland region.</p><p>As a key leadership position within the National Project Services team, you will be working alongside our senior leadership and be supported by our highly experienced team of Project Planners, Project Controls Professionals, and Project Managers.</p><p>The role involves business development, client-facing activities, strategic planning, growing a team and expanding the work pipeline. As such, you should possess strong inter-personal and leadership skills.</p><p>Along with business development, it is expected you will be working in a leadership position advising and working on projects across the Auckland region from inception through to delivery, utilising your local knowledge, strong technical, and leadership capabilities to develop customised solutions for our clients with our highly skilled team of professionals.</p><p> </p><p><strong>You will have:</strong></p><ul><li>A minimum of 10 years’ relevant consulting experience in New Zealand</li><li>Proven track record of developing new business opportunities and cultivating relationships with potential clients</li><li>A strong understanding of the Auckland market and the ability to identify and pursue new business opportunities</li><li>An established network of connections in local government and the private sector</li><li>Solid commercial, project management and business development experience</li><li>Proven management and leadership skills and a collegial, team-player attitude</li><li>Creative thinking to develop innovative solutions and provide high quality advice for our clients.</li><li>Drive and energy to succeed! </li></ul><p> </p><p><strong>Working at Inovo</strong></p><p>We are professional, hardworking people. </p><p>Our team is composed of genuine, diverse and caring individuals who take the time to understand our clients' needs and offer support throughout the project lifecycle. </p><p>The people who choose to work with us know that we welcome robust discussion and original ideas, while leveraging the extensive experience within the company and our strong relationships with collaborators.  But that’s not all – we are personable people who really enjoy working together. </p><p>Our business directors and senior leaders are approachable members of the team who promote a culture based on care, teamwork and support for our out-of-work lives and endeavours. We invest in our people and our resources to maintain a dynamic, modern workplace and a culture of innovation. </p><p>If you are ready to join a forward-focussed, high-achieving team that will give you the opportunity to thrive, grow and develop, get in touch by email at alice@inovo.nz. Please include the job title and your name in the subject heading for email correspondence. </p><p>Take a look at our website to learn more about Inovo and the projects we are involved in www.inovo.nz</p><p> </p>",
+                "status": "Active",
+                "listedAt": {
+                    "label": "1h ago",
+                    "dateTimeUtc": "2024-09-23T08:47:35.605Z",
+                    "__typename": "SeekDateTime"
+                },
+                "salary": null,
+                "shareLink": "https://www.seek.co.nz/job/79026957?tracking=SHR-WEB-SharedJob-anz-2",
+                "workTypes": {
+                    "label": "Full time",
+                    "__typename": "JobWorkTypes"
+                },
+                "advertiser": {
+                    "id": "26071831",
+                    "name": "Inovo Projects Limited",
+                    "isVerified": true,
+                    "registrationDate": {
+                        "dateTimeUtc": "2014-05-05T03:38:49.387Z",
+                        "__typename": "SeekDateTime"
+                    },
+                    "__typename": "Advertiser"
+                },
+                "location": {
+                    "label": "Auckland CBD, Auckland",
+                    "__typename": "LocationInfo"
+                },
+                "classifications": [
+                    {
+                        "label": "Programme & Project Management (Information & Communication Technology)",
+                        "__typename": "ClassificationInfo"
+                    }
+                ],
+                "products": {
+                    "branding": {
+                        "id": "e86c1654-5af7-4ab6-819e-1d631d1ec3e9.1",
+                        "cover": {
+                            "url": "https://image-service-cdn.seek.com.au/9db61e949e164c3e47bb228d391a1ddcbbcd2255/0994ade1f78dddf63499a5ba62944cdaa8537081",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "thumbnailCover": {
+                            "url": "https://image-service-cdn.seek.com.au/9db61e949e164c3e47bb228d391a1ddcbbcd2255/a91133c008ffac60081c4d6c10304b1a58d96bd8",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "logo": {
+                            "url": "https://image-service-cdn.seek.com.au/c084a0352efe3ee3d5991ffbb744229303ddc6a5/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "__typename": "JobProductBranding"
+                    },
+                    "bullets": [
+                        "Rare opportunity for a driven, talented, and passionate professional.",
+                        "Establish yourself in a pivotal leadership position within a growing team.",
+                        "Lead innovation of professional services within the construction sector."
+                    ],
+                    "questionnaire": {
+                        "questions": [
+                            "Which of the following statements best describes your right to work in New Zealand?"
+                        ],
+                        "__typename": "JobQuestionnaire"
+                    },
+                    "video": null,
+                    "__typename": "JobProducts"
+                },
+                "__typename": "Job"
+            },
+            "companyProfile": null,
+            "companySearchUrl": "https://www.seek.co.nz/Inovo-Projects-jobs/at-this-company",
+            "learningInsights": {
+                "analytics": {
+                    "title": "Career Advice homepage",
+                    "landingPage": "CA Home",
+                    "resultType": "DefaultSearchToCA",
+                    "bannerName": "DefaultSearchToCA",
+                    "encoded": "title:Career Advice homepage;landingPage:CA Home;resultType:DefaultSearchToCA;bannerName:DefaultSearchToCA"
+                },
+                "content": "<style>\n  /* capsize font, don't change */\n  .capsize-largeText {\n    font-size: 18px;\n    line-height: 27.094px;\n    display: block;\n  }\n\n  .capsize-largeText::before {\n    content: '';\n    margin-bottom: -0.3611em;\n    display: table;\n  }\n\n  .capsize-largeText::after {\n    content: '';\n    margin-top: -0.3611em;\n    display: table;\n  }\n\n  .capsize-standardText {\n    font-size: 16px;\n    line-height: 24.528px;\n    display: block;\n  }\n\n  .capsize-standardText::before {\n    content: '';\n    margin-bottom: -0.375em;\n    display: table;\n  }\n\n  .capsize-standardText::after {\n    content: '';\n    margin-top: -0.375em;\n    display: table;\n  }\n  /* end of capsize */\n\n  /* LMIS css start here*/\n  .lmis-root {\n    font-family: SeekSans, 'SeekSans Fallback', Arial, sans-serif;\n    color: #2e3849;\n  }\n\n  .lmis-title {\n    font-weight: 500;\n  }\n\n  .lmis-description {\n    margin-top: 24px;\n    margin-bottom: 16px;\n  }\n\n  .lmis-list {\n    padding-left: 0;\n    margin: 0;\n  }\n\n  .lmis-list li {\n    display: flex;\n    align-items: center;\n    color: #414c63;\n    margin-top: 12px;\n  }\n\n  .lmis-list li:first-child {\n    margin-top: 0;\n  }\n\n  .lmis-list li:before {\n    content: '\\2022 \\0020';\n    font-weight: 500;\n    font-size: 16px;\n    margin-right: 8px;\n  }\n\n  .lmis-cta {\n    font-weight: 500;\n    text-decoration: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #2e3849;\n    border: 2px solid #2e3849;\n    border-radius: 8px;\n    min-height: 48px;\n    margin-top: 24px;\n  }\n\n  .lmis-cta img {\n    margin-left: 4px;\n  }\n\n  .lmis-cta:hover {\n    background-color: #f4f6fe;\n  }\n\n  @media only screen and (min-width: 740px) {\n    .lmis-cta {\n      max-width: 260px;\n    }\n  }\n\n  @media only screen and (min-width: 992px) {\n    .lmis-root {\n      margin: -16px;\n    }\n  }\n</style>\n\n<div class=\"lmis-root\">\n  <div class=\"capsize-largeText lmis-title\">Career Advice</div>\n  <div class=\"capsize-standardText lmis-description\">Researching careers? Find all the information and tips you need on career advice.</div>\n  <ul class=\"lmis-list\">\n    <li><span class=\"capsize-standardText\">Role descriptions</span></li>\n    <li><span class=\"capsize-standardText\">Salary insights</span></li>\n    <li><span class=\"capsize-standardText\">Tools to help you prepare for jobs</span></li>\n  </ul>\n  <a class=\"lmis-cta\" target=\"_blank\" href=\"https://www.seek.co.nz/career-advice/?utm_campaign=LMIS_Web&amp;utm_source=SEEK&amp;utm_medium=LMIS&amp;utm_content=job-details\">\n    <span class=\"capsize-standardText\">Explore Career Advice</span>\n    <img\n      src=\"https://cdn.seeklearning.com.au/media/images/lmis/arrow_right.svg\"\n      alt=\"arrow-right\"\n    />\n  </a>\n</div>\n",
+                "__typename": "LearningInsights"
+            },
+            "companyTags": [],
+            "restrictedApplication": {
+                "label": null,
+                "__typename": "JobDetailsRestrictedApplication"
+            },
+            "sourcr": null,
+            "gfjInfo": {
+                "location": {
+                    "countryCode": "NZ",
+                    "country": "New Zealand",
+                    "suburb": "Auckland CBD",
+                    "region": null,
+                    "state": null,
+                    "postcode": "1010",
+                    "__typename": "GFJLocation"
+                },
+                "workTypes": {
+                    "label": [
+                        "FULL_TIME"
+                    ],
+                    "__typename": "GFJWorkTypes"
+                },
+                "__typename": "GFJInfo"
+            },
+            "__typename": "JobDetails"
+        }
+    },
+    {
+        "jobDetails": {
+            "job": {
+                "sourceZone": "anz-2",
+                "tracking": {
+                    "adProductType": "Branded",
+                    "classificationInfo": {
+                        "classificationId": "6281",
+                        "classification": "Information & Communication Technology",
+                        "subClassificationId": "6293",
+                        "subClassification": "Networks & Systems Administration",
+                        "__typename": "JobTrackingClassificationInfo"
+                    },
+                    "hasRoleRequirements": false,
+                    "isPrivateAdvertiser": false,
+                    "locationInfo": {
+                        "area": "Auckland Central",
+                        "location": "Auckland",
+                        "locationIds": [
+                            "30010"
+                        ],
+                        "__typename": "JobTrackingLocationInfo"
+                    },
+                    "workTypeIds": "242",
+                    "postedTime": "1h ago",
+                    "__typename": "JobTracking"
+                },
+                "id": "79027517",
+                "title": "Senior Systems Administrator",
+                "phoneNumber": null,
+                "isExpired": false,
+                "expiresAt": {
+                    "dateTimeUtc": "2024-10-07T08:02:00.000Z",
+                    "__typename": "SeekDateTime"
+                },
+                "isLinkOut": true,
+                "contactMatches": [
+                    {
+                        "type": "Phone",
+                        "value": "09 916 8365",
+                        "__typename": "ContactMatches"
+                    }
+                ],
+                "isVerified": true,
+                "abstract": "We are looking for an experienced Systems Administrator that's a collaborative problem solver.",
+                "content": "Bell Gully is independently recognised as New Zealand&rsquo;s leading commercial law firm. With a team of over 200 lawyers combining market-leading corporate, commercial, financial services, tax, projects &amp; real estate and dispute resolution capability with a wide array of specialist skills, we consistently deliver practical solutions to everyday and unique problems. Our IT department is looking for an enthusiastic and talented Senior Systems Administrator to join our Auckland team. We are interested in speaking with candidates who are organised and can build relationships easily with their team.&nbsp; Prior professional services firm experience is strongly preferred.<br /> <br /> &nbsp;<br /> <strong>Purpose of the position:</strong><br /> Reporting to the Service Delivery Manager, this role is responsible for IT systems and network services within Bell Gully. This role is a hands-on, technical position, requiring a high level of technical expertise. The role&rsquo;s overarching responsibilities include adherence and contributing to the firm&rsquo;s information security management system (ISMS), management and support of firewall configuration, server and database support.<br /> &nbsp;<br /> <strong>Main responsibilities</strong>&nbsp;(non-exhaustive):<br /> <ul> <li>Maintain and improve core infrastructure and systems with a strong focus on information security.</li> <li>Maintain and improve security and risk management practices.</li> <li>Maintain and improve high availability and disaster recovery processes</li> <li>Contribute to, and support the incident response process.</li> <li>On-call outside of our standard office hours, with additional allowances for work during these times.</li> </ul> &nbsp;<br /> <strong>To be successful in this role you must have:</strong><br /> <ul> <li>Experience in systems and network administration/management, experience in a LAN/WAN environment.</li> <li>Experience with Windows server, Active Directory, DNS, Office 365, Microsoft SCCM, PowerShell.</li> <li>Previous exposure to implementing and managing data, routers, WAN/LAN, TCP/IP, wireless and mobile technologies.</li> <li>Previous experience with server and network design, architecture, implementation, and support.</li> <li>Proficient with building / configuring networked Microsoft Windows client devices.&nbsp; Desktop application packaging and scripting.</li> <li>Worked with VMware, vSphere and with a SAN environment.</li> <li>Experience with firewall configuration (preferably Palo Alto).</li> <li>Experience with Cisco/Juniper switches and routers.</li> <li>Experience supporting a large-scale enterprise document management system.</li> <li>Knowledge and experience of network security, intrusion detection, design knowledge of internet architecture.</li> <li>Experience with security solutions and Endpoint Detection and Response (EDR), preferably Cortex XDR.</li> </ul> <strong>&nbsp;&nbsp;</strong>&nbsp;<br /> <strong>Culture and benefits:&nbsp;</strong>&nbsp;<br /> We provide a generous remuneration package, which ranges between $100,000 - $120,000 per annum, based on the successful applicant&rsquo;s relevant skills and experience. In addition, this role is required to be on call and will receive an on call allowance for these hours.<br /> &nbsp;&nbsp;<br /> Our standard office hours are 8.30am &ndash; 5.30pm, Monday &ndash; Friday and this role will work guaranteed minimum hours of 37.5 hours per week plus on call shifts.<br /> &nbsp;&nbsp;<br /> In addition to a strong team culture, we offer a range of benefits and initiatives to help our people maintain a healthy and enjoyable lifestyle. This includes:<br /> <ul> <li>Community support programmes,</li> <li>A comprehensive health and wellbeing programme,</li> <li>An annual subsidy for health insurance and a range of wellbeing activities;</li> <li>Sports teams, an annual ball, regular social events</li> </ul> &nbsp;<br /> Please apply directly or contact Ricky Autagavaia on 09 916 8365 for a confidential discussion. &nbsp;<br /> &nbsp;<br /> <em>We continuously work hard to ensure our workplace is inclusive, and trust that different experiences, perspectives, and values work together to achieve a better outcome.</em> <em>As such, this position is open to anyone with the qualifying skill set.</em><br /> &nbsp;&nbsp;",
+                "status": "Active",
+                "listedAt": {
+                    "label": "1h ago",
+                    "dateTimeUtc": "2024-09-23T09:02:47.359Z",
+                    "__typename": "SeekDateTime"
+                },
+                "salary": {
+                    "currencyLabel": null,
+                    "label": "$100,000 - $120,000",
+                    "__typename": "JobSalary"
+                },
+                "shareLink": "https://www.seek.co.nz/job/79027517?tracking=SHR-WEB-SharedJob-anz-2",
+                "workTypes": {
+                    "label": "Full time",
+                    "__typename": "JobWorkTypes"
+                },
+                "advertiser": {
+                    "id": "22627977",
+                    "name": "Bell Gully",
+                    "isVerified": true,
+                    "registrationDate": {
+                        "dateTimeUtc": "2015-05-27T07:06:40.293Z",
+                        "__typename": "SeekDateTime"
+                    },
+                    "__typename": "Advertiser"
+                },
+                "location": {
+                    "label": "Auckland CBD, Auckland",
+                    "__typename": "LocationInfo"
+                },
+                "classifications": [
+                    {
+                        "label": "Networks & Systems Administration (Information & Communication Technology)",
+                        "__typename": "ClassificationInfo"
+                    }
+                ],
+                "products": {
+                    "branding": {
+                        "id": "07df9add-37a5-d06b-7ad9-4645263c5e38.1",
+                        "cover": {
+                            "url": "https://image-service-cdn.seek.com.au/1e5392c3220a940676a06315169bd219be75bb17/0b496e779bb2df5af19980a18b8dc93a9ae2a6a4",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "thumbnailCover": {
+                            "url": "https://image-service-cdn.seek.com.au/1e5392c3220a940676a06315169bd219be75bb17/bcc6ff4ea68261a39d45cd606a78fd284c3ed7c5",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "logo": {
+                            "url": "https://image-service-cdn.seek.com.au/3eb9e4b828198abb93449d8b7b341ec57c6a9e6b/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "__typename": "JobProductBranding"
+                    },
+                    "bullets": [
+                        "Join one of New Zealand's leading law firms",
+                        "Brand new office in Commercial Bay",
+                        "Salary range $100,000 - 120,000 + benefits"
+                    ],
+                    "questionnaire": null,
+                    "video": null,
+                    "__typename": "JobProducts"
+                },
+                "__typename": "Job"
+            },
+            "companyProfile": null,
+            "companySearchUrl": "https://www.seek.co.nz/Bell-Gully-jobs/at-this-company",
+            "learningInsights": {
+                "analytics": {
+                    "title": "Senior Systems Administrator",
+                    "landingPage": "CA Role Salary",
+                    "resultType": "CareerAdviceSalaryTeaserSearch:systems-administrator",
+                    "entity": "career",
+                    "encoded": "title:Senior Systems Administrator;landingPage:CA Role Salary;resultType:CareerAdviceSalaryTeaserSearch:systems-administrator;entity:career"
+                },
+                "content": "<style>\n  /* capsize font, don't change */\n  .capsize-heading4 {\n    font-size: 20px;\n    line-height: 24.66px;\n    display: block;\n    font-weight: 500;\n  }\n\n  .capsize-heading4::before {\n    content: '';\n    margin-bottom: -0.225em;\n    display: table;\n  }\n\n  .capsize-heading4::after {\n    content: '';\n    margin-top: -0.225em;\n    display: table;\n  }\n\n  .capsize-standardText {\n    font-size: 16px;\n    line-height: 24.528px;\n    display: block;\n  }\n\n  .capsize-standardText::before {\n    content: '';\n    margin-bottom: -0.375em;\n    display: table;\n  }\n\n  .capsize-standardText::after {\n    content: '';\n    margin-top: -0.375em;\n    display: table;\n  }\n\n  @media only screen and (min-width: 740px) {\n    .capsize-heading3 {\n      font-size: 24px;\n      line-height: 29.792px;\n    }\n\n    .capsize-heading3::before {\n      content: '';\n      margin-bottom: -0.2292em;\n      display: table;\n    }\n\n    .capsize-heading3::after {\n      content: '';\n      margin-top: -0.2292em;\n      display: table;\n    }\n  }\n  /* end of capsize */\n\n  /* LMIS css start here*/\n  .lmis-root {\n    margin: -32px;\n    padding: 32px;\n    font-family: SeekSans, 'SeekSans Fallback', Arial, sans-serif;\n    background: #beeff3;\n    border-radius: 16px;\n    color: #2e3849;\n  }\n\n  .lmis-title {\n    margin-bottom: 8px;\n  }\n\n  .lmis-cta {\n    min-height: 48px;\n    display: flex;\n    align-items: center;\n    color: #2e3849;\n    text-decoration: none;\n  }\n\n  .lmis-cta-text {\n    margin-right: 4px;\n    font-weight: 500;\n  }\n\n  .lmis-teaser-image {\n    max-width: 96px;\n  }\n\n  @media only screen and (min-width: 992px) {\n    .lmis-root {\n      margin: -48px;\n    }\n\n    .lmis-wrapper {\n      display: flex;\n      flex-direction: row-reverse;\n      justify-content: space-between;\n      align-items: center;\n    }\n  }\n</style>\n\n<div class=\"lmis-root\">\n  <div class=\"lmis-wrapper\">\n    <div class=\"lmis-teaser-image\">\n      <img\n        src=\"https://cdn.seeklearning.com.au/media/images/lmis/girl_comparing_salaries.svg\"\n        alt=\"salary teaser image\"\n      />\n    </div>\n    <div class=\"lmis-content\">\n      <div class=\"capsize-heading4 lmis-title\">What can I earn as a Systems Administrator</div>\n      <a\n        class=\"lmis-cta\"\n        href=\"https://www.seek.co.nz/career-advice/role/systems-administrator/salary?campaigncode=lrn:skj:sklm:cg:jbd:alpha\"\n        target=\"_blank\"\n      >\n        <span class=\"capsize-standardText lmis-cta-text\">See more detailed salary information</span>\n        <img\n          src=\"https://cdn.seeklearning.com.au/media/images/lmis/arrow_right.svg\"\n          alt=\"salary teaser link arrow\"\n        />\n      </a>\n    </div>\n  </div>\n</div>\n",
+                "__typename": "LearningInsights"
+            },
+            "companyTags": [],
+            "restrictedApplication": {
+                "label": null,
+                "__typename": "JobDetailsRestrictedApplication"
+            },
+            "sourcr": null,
+            "gfjInfo": {
+                "location": {
+                    "countryCode": "NZ",
+                    "country": "New Zealand",
+                    "suburb": "Auckland CBD",
+                    "region": null,
+                    "state": null,
+                    "postcode": "1010",
+                    "__typename": "GFJLocation"
+                },
+                "workTypes": {
+                    "label": [
+                        "FULL_TIME"
+                    ],
+                    "__typename": "GFJWorkTypes"
+                },
+                "__typename": "GFJInfo"
+            },
+            "__typename": "JobDetails"
+        }
+    },
+    {
+        "jobDetails": {
+            "job": {
+                "sourceZone": "anz-2",
+                "tracking": {
+                    "adProductType": "Branded",
+                    "classificationInfo": {
+                        "classificationId": "6281",
+                        "classification": "Information & Communication Technology",
+                        "subClassificationId": "6295",
+                        "subClassification": "Programme & Project Management",
+                        "__typename": "JobTrackingClassificationInfo"
+                    },
+                    "hasRoleRequirements": true,
+                    "isPrivateAdvertiser": false,
+                    "locationInfo": {
+                        "area": "Auckland Central",
+                        "location": "Auckland",
+                        "locationIds": [
+                            "30010"
+                        ],
+                        "__typename": "JobTrackingLocationInfo"
+                    },
+                    "workTypeIds": "242",
+                    "postedTime": "1h ago",
+                    "__typename": "JobTracking"
+                },
+                "id": "79027531",
+                "title": "Graduate / Junior Digital Services (BIM)",
+                "phoneNumber": null,
+                "isExpired": false,
+                "expiresAt": {
+                    "dateTimeUtc": "2024-10-23T12:59:59.999Z",
+                    "__typename": "SeekDateTime"
+                },
+                "isLinkOut": false,
+                "contactMatches": [
+                    {
+                        "type": "Email",
+                        "value": "alice@inovo.nz",
+                        "__typename": "ContactMatches"
+                    }
+                ],
+                "isVerified": true,
+                "abstract": "We are seeking an enthusiastic junior/graduate to join our growing team of professionals ",
+                "content": "<p>Inovo are looking for a Junior/Graduate with a passion for innovation and skills in BIM, Revit/AutoCAD, and/or PowerBI/Data Analysis technology to join our Project Services team. Inovo sees technology as an opportunity to do things better. In this role you will be part of a team using technology to deliver better services for clients, testing new technologies in construction, and influencing the way data and technology can change and improve the construction industry in New Zealand.  </p><p><strong>About the Opportunity: </strong></p><p>We are seeking an enthusiastic junior/graduate to join our growing team of professionals working with technology and data to deliver 4D planning, project controls and data analytics for clients across New Zealand. This role will be part of the Inovo Project Services team incorporating Project Planning, Construction Planning, and Project Controls professionals. </p><p>To succeed in this role you will need to have either relevant experience or training in Revit and/or AutoCAD systems and an interest in new technology and an ability to learn, test, and utilise new and emerging tech. </p><p>Key attributes include:</p><ul><li>Relevant study or experience pending completion/completed (Building Science, Engineering, Architecture)</li><li>Experience and skills working with BIM, Revit and/or AutoCAD systems</li><li>Personal interest in technology in construction</li><li>Commitment to ongoing learning and development</li><li>Positive contribution to team culture</li><li>Excellent communication skills both orally and written</li><li>Innovative thinking and problem-solving skills to complement our hands on style </li><li>Excellent written and oral English communication skills</li></ul><p> </p><p><strong>Graduate Programme:</strong></p><ul><li>The Team: At Inovo graduates form part of the team working alongside professionals and senior managers in a collaborative environment to deliver exciting projects. With a strong pipeline of work, we are looking for hardworking, passionate graduates to join our team. </li><li>Mentoring: Graduates are offered formal mentoring to support learning and professional development. Mentors are nominated from within the business and are partnered based on the skills and needs of the graduate. </li><li>Continuous Improvement: Inovo is committed to continuous improvement and offer support to graduates in further training and education. To support the organic development of skills graduates are exposed to a diverse range of projects and clients. </li><li>Social opportunities and wellbeing: Inovo are a company that values its staff and are proud of our team culture. We organise team building events both as a project management team and a wider company to support collaboration. </li></ul><p> </p><p><strong>Working at Inovo</strong></p><p>We are professional, hardworking people. </p><p>Our team is composed of genuine, diverse, and caring individuals who take the time to understand our clients' needs and offer support throughout the project lifecycle. Inovo personnel are professionals who bring specialist skills and knowledge to the delivery of services.  </p><p>The people who choose to work with us know that we welcome robust discussion and original ideas. Partners leverage the extensive experience offered by Inovo and our ability to build strong relationships with collaborators. </p><p>Our business directors and senior leaders are approachable members of the team who promote a culture based on care, teamwork and support for our out-of-work lives and endeavors. We invest in our people and our resources to maintain a dynamic, modern workplace and a culture of innovation. </p><p>If you are ready to join a forward-focused, high-achieving team that will give you the opportunity to thrive, grow and develop, get in touch by email at alice@inovo.nz. Please include the job title and your name in the subject heading for email correspondence.</p><p>Take a look at our website to learn more about Inovo and the projects we are involved in www.inovo.nz</p>",
+                "status": "Active",
+                "listedAt": {
+                    "label": "1h ago",
+                    "dateTimeUtc": "2024-09-23T09:03:51.765Z",
+                    "__typename": "SeekDateTime"
+                },
+                "salary": null,
+                "shareLink": "https://www.seek.co.nz/job/79027531?tracking=SHR-WEB-SharedJob-anz-2",
+                "workTypes": {
+                    "label": "Full time",
+                    "__typename": "JobWorkTypes"
+                },
+                "advertiser": {
+                    "id": "26071831",
+                    "name": "Inovo Projects Limited",
+                    "isVerified": true,
+                    "registrationDate": {
+                        "dateTimeUtc": "2014-05-05T03:38:49.387Z",
+                        "__typename": "SeekDateTime"
+                    },
+                    "__typename": "Advertiser"
+                },
+                "location": {
+                    "label": "Auckland CBD, Auckland",
+                    "__typename": "LocationInfo"
+                },
+                "classifications": [
+                    {
+                        "label": "Programme & Project Management (Information & Communication Technology)",
+                        "__typename": "ClassificationInfo"
+                    }
+                ],
+                "products": {
+                    "branding": {
+                        "id": "bb53fa90-2478-47cd-a437-5a737d6e12e5.1",
+                        "cover": {
+                            "url": "https://image-service-cdn.seek.com.au/de51464d6a61544b4890269d1c47c31d57574aef/78ddb7ff7b3e4844ab2413240f8007fe39950d85",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "thumbnailCover": {
+                            "url": "https://image-service-cdn.seek.com.au/de51464d6a61544b4890269d1c47c31d57574aef/04e70eba72e19c12a4b47d0178f6626c9b09dfb4",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "logo": {
+                            "url": "https://image-service-cdn.seek.com.au/c084a0352efe3ee3d5991ffbb744229303ddc6a5/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "__typename": "JobProductBranding"
+                    },
+                    "bullets": null,
+                    "questionnaire": {
+                        "questions": [
+                            "Which of the following statements best describes your right to work in New Zealand?"
+                        ],
+                        "__typename": "JobQuestionnaire"
+                    },
+                    "video": null,
+                    "__typename": "JobProducts"
+                },
+                "__typename": "Job"
+            },
+            "companyProfile": null,
+            "companySearchUrl": "https://www.seek.co.nz/Inovo-Projects-jobs/at-this-company",
+            "learningInsights": {
+                "analytics": {
+                    "title": "Career Advice homepage",
+                    "landingPage": "CA Home",
+                    "resultType": "DefaultSearchToCA",
+                    "bannerName": "DefaultSearchToCA",
+                    "encoded": "title:Career Advice homepage;landingPage:CA Home;resultType:DefaultSearchToCA;bannerName:DefaultSearchToCA"
+                },
+                "content": "<style>\n  /* capsize font, don't change */\n  .capsize-largeText {\n    font-size: 18px;\n    line-height: 27.094px;\n    display: block;\n  }\n\n  .capsize-largeText::before {\n    content: '';\n    margin-bottom: -0.3611em;\n    display: table;\n  }\n\n  .capsize-largeText::after {\n    content: '';\n    margin-top: -0.3611em;\n    display: table;\n  }\n\n  .capsize-standardText {\n    font-size: 16px;\n    line-height: 24.528px;\n    display: block;\n  }\n\n  .capsize-standardText::before {\n    content: '';\n    margin-bottom: -0.375em;\n    display: table;\n  }\n\n  .capsize-standardText::after {\n    content: '';\n    margin-top: -0.375em;\n    display: table;\n  }\n  /* end of capsize */\n\n  /* LMIS css start here*/\n  .lmis-root {\n    font-family: SeekSans, 'SeekSans Fallback', Arial, sans-serif;\n    color: #2e3849;\n  }\n\n  .lmis-title {\n    font-weight: 500;\n  }\n\n  .lmis-description {\n    margin-top: 24px;\n    margin-bottom: 16px;\n  }\n\n  .lmis-list {\n    padding-left: 0;\n    margin: 0;\n  }\n\n  .lmis-list li {\n    display: flex;\n    align-items: center;\n    color: #414c63;\n    margin-top: 12px;\n  }\n\n  .lmis-list li:first-child {\n    margin-top: 0;\n  }\n\n  .lmis-list li:before {\n    content: '\\2022 \\0020';\n    font-weight: 500;\n    font-size: 16px;\n    margin-right: 8px;\n  }\n\n  .lmis-cta {\n    font-weight: 500;\n    text-decoration: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #2e3849;\n    border: 2px solid #2e3849;\n    border-radius: 8px;\n    min-height: 48px;\n    margin-top: 24px;\n  }\n\n  .lmis-cta img {\n    margin-left: 4px;\n  }\n\n  .lmis-cta:hover {\n    background-color: #f4f6fe;\n  }\n\n  @media only screen and (min-width: 740px) {\n    .lmis-cta {\n      max-width: 260px;\n    }\n  }\n\n  @media only screen and (min-width: 992px) {\n    .lmis-root {\n      margin: -16px;\n    }\n  }\n</style>\n\n<div class=\"lmis-root\">\n  <div class=\"capsize-largeText lmis-title\">Career Advice</div>\n  <div class=\"capsize-standardText lmis-description\">Researching careers? Find all the information and tips you need on career advice.</div>\n  <ul class=\"lmis-list\">\n    <li><span class=\"capsize-standardText\">Role descriptions</span></li>\n    <li><span class=\"capsize-standardText\">Salary insights</span></li>\n    <li><span class=\"capsize-standardText\">Tools to help you prepare for jobs</span></li>\n  </ul>\n  <a class=\"lmis-cta\" target=\"_blank\" href=\"https://www.seek.co.nz/career-advice/?utm_campaign=LMIS_Web&amp;utm_source=SEEK&amp;utm_medium=LMIS&amp;utm_content=job-details\">\n    <span class=\"capsize-standardText\">Explore Career Advice</span>\n    <img\n      src=\"https://cdn.seeklearning.com.au/media/images/lmis/arrow_right.svg\"\n      alt=\"arrow-right\"\n    />\n  </a>\n</div>\n",
+                "__typename": "LearningInsights"
+            },
+            "companyTags": [],
+            "restrictedApplication": {
+                "label": null,
+                "__typename": "JobDetailsRestrictedApplication"
+            },
+            "sourcr": null,
+            "gfjInfo": {
+                "location": {
+                    "countryCode": "NZ",
+                    "country": "New Zealand",
+                    "suburb": "Auckland CBD",
+                    "region": null,
+                    "state": null,
+                    "postcode": "1010",
+                    "__typename": "GFJLocation"
+                },
+                "workTypes": {
+                    "label": [
+                        "FULL_TIME"
+                    ],
+                    "__typename": "GFJWorkTypes"
+                },
+                "__typename": "GFJInfo"
+            },
+            "__typename": "JobDetails"
+        }
+    },
+    {
+        "jobDetails": {
+            "job": {
+                "sourceZone": "anz-2",
+                "tracking": {
+                    "adProductType": "Branded",
+                    "classificationInfo": {
+                        "classificationId": "6281",
+                        "classification": "Information & Communication Technology",
+                        "subClassificationId": "6292",
+                        "subClassification": "Management",
+                        "__typename": "JobTrackingClassificationInfo"
+                    },
+                    "hasRoleRequirements": false,
+                    "isPrivateAdvertiser": false,
+                    "locationInfo": {
+                        "area": "Auckland Central",
+                        "location": "Auckland",
+                        "locationIds": [
+                            "30010"
+                        ],
+                        "__typename": "JobTrackingLocationInfo"
+                    },
+                    "workTypeIds": "242",
+                    "postedTime": "59m ago",
+                    "__typename": "JobTracking"
+                },
+                "id": "79027616",
+                "title": "Head of Customer Experience and Innovation",
+                "phoneNumber": null,
+                "isExpired": false,
+                "expiresAt": {
+                    "dateTimeUtc": "2024-10-23T12:59:59.999Z",
+                    "__typename": "SeekDateTime"
+                },
+                "isLinkOut": true,
+                "contactMatches": [],
+                "isVerified": true,
+                "abstract": "Are you a visionary leader looking for a role where you can lead the charge in transforming CX & Innovation at the home of entertainment? Read on...",
+                "content": "<p>Join Us as the Head of Customer Experience &amp; Innovation!</p>\n<p>Are you ready to shape the future of customer experience and digital innovation? We're looking for a visionary leader to join our brand-new, dynamic team, reporting to the Group GM of Digital Transformation. This is a unique opportunity to drive customer excellence and lead our Centre of Excellence (CoE) for AI, positioning our company as an industry thought leader. If you're passionate about innovation and ready to make an impact, this role is for you.</p>\n<p><strong>The Role:</strong></p>\n<p>As the Head of Customer Experience and Innovation, you will lead the charge in transforming customer interactions across multiple business channels, both in-person and online. You'll work closely with key stakeholders to ensure an integrated, seamless customer journey, while driving our digital innovation agenda. From embedding customer experience (CX) principles in every touch point to establishing a cutting-edge AI CoE, your work will set the stage for industry-leading customer experiences. This role is all about making bold moves—taking creative risks, leading cross-functional teams, and leveraging data-driven insights to create meaningful business value.</p>\n<p><strong>About You:</strong></p>\n<p>You're a natural leader with over 5 years of experience in customer experience, digital transformation, or innovation leadership. You thrive in fast-paced, collaborative environments and have a deep understanding of CX principles, design thinking, and AI technology. You're not just a strategic thinker, you're hands-on, with strong communication and stakeholder engagement skills. Your ability to inspire teams and innovate across channels makes you the ideal person to drive change and deliver outstanding results.</p>\n<p><strong>To set you up for success, you'll have:</strong></p>\n<ul>\n<li>Proven leadership and people management experience in a CX or innovation role.</li>\n<li>Deep expertise in customer journey design, digital transformation, and AI technology.</li>\n<li>A strategic mindset with the ability to balance creativity, business acumen, and technical know-how.</li>\n<li>Exceptional communication skills and experience in stakeholder management.</li>\n<li>A passion for continuous improvement, innovation, and delivering tangible business outcomes.</li>\n</ul>\n<p><strong>The Impact:</strong></p>\n<p>Your impact will be felt across every corner of the business. By leading CX strategies that enhance customer satisfaction and loyalty, you'll help drive growth, improve service delivery, and establish us as an innovation powerhouse. Your work with the AI CoE will position the company as a leader in leveraging AI to revolutionise customer interactions, ensuring we remain at the forefront of industry trends. Ultimately, your leadership will create lasting improvements in customer experience, boost business performance, and foster a culture of innovation.</p>\n<p><strong>What else is in it for you?</strong></p>\n<p>We have a huge array of employee benefits including:</p>\n<ul>\n<li>Flexible working arrangements</li>\n<li>Discounted dry cleaning</li>\n<li>Free visits to the Sky Tower</li>\n<li>Fully covered health insurance</li>\n<li>Subsidised staff meals for $2.50</li>\n<li>Parking at $8 per day</li>\n<li>Life insurance coverage</li>\n<li>Discounts across all outlets</li>\n</ul>\n<p>Ready to make an impact and drive the future of customer experience and innovation? Apply now to lead our digital transformation journey!</p>\n<p><em>At SkyCity, our career opportunities are as diverse as our workforce. We don't just embrace differences; we value and support them. Our hiring is centred on capability and performance, regardless of gender, gender identity, race, origin, age, educational background, disability, or religious beliefs. We're here to empower you to shine. Our willingness to adapt ensures you can chart your path with us! Join us at SkyCity and be extraordinary by being you.</em></p>\n<p><strong><em>S</em></strong><strong><em>kyCity takes its commitment to Host Responsibility seriously. Every member of our team, no matter their role, contributes towards SkyCity's culture of customer care.</em></strong></p>",
+                "status": "Active",
+                "listedAt": {
+                    "label": "59m ago",
+                    "dateTimeUtc": "2024-09-23T09:08:41.198Z",
+                    "__typename": "SeekDateTime"
+                },
+                "salary": null,
+                "shareLink": "https://www.seek.co.nz/job/79027616?tracking=SHR-WEB-SharedJob-anz-2",
+                "workTypes": {
+                    "label": "Full time",
+                    "__typename": "JobWorkTypes"
+                },
+                "advertiser": {
+                    "id": "9923861",
+                    "name": "SkyCity",
+                    "isVerified": true,
+                    "registrationDate": {
+                        "dateTimeUtc": "2021-12-14T07:14:57.104Z",
+                        "__typename": "SeekDateTime"
+                    },
+                    "__typename": "Advertiser"
+                },
+                "location": {
+                    "label": "Auckland CBD, Auckland",
+                    "__typename": "LocationInfo"
+                },
+                "classifications": [
+                    {
+                        "label": "Management (Information & Communication Technology)",
+                        "__typename": "ClassificationInfo"
+                    }
+                ],
+                "products": {
+                    "branding": {
+                        "id": "0f805bfa-5779-0048-6442-82fa4d380cfd.1",
+                        "cover": {
+                            "url": "https://image-service-cdn.seek.com.au/9b07fc8bfba46b05aeee22a47b14f28c99b92f70/a482e10245f674a22f410c95afdad0c4b964e9bc",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "thumbnailCover": {
+                            "url": "https://image-service-cdn.seek.com.au/9b07fc8bfba46b05aeee22a47b14f28c99b92f70/83c3ca8755ac046f05b635c4351e7ef5e93d0155",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "logo": {
+                            "url": "https://image-service-cdn.seek.com.au/24c728758a2fb1c02b7884a5f644eb6ce9ec518e/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "__typename": "JobProductBranding"
+                    },
+                    "bullets": [
+                        "Join a diverse and ever evolving workplace!",
+                        "Fantastic team culture with an Inspiring leader",
+                        "Amazing staff benefits such as free health insurance & $2.50 staff meals"
+                    ],
+                    "questionnaire": null,
+                    "video": {
+                        "url": "https://www.youtube.com/embed/VxT8BP-Ky2U",
+                        "position": "TOP",
+                        "__typename": "VideoProduct"
+                    },
+                    "__typename": "JobProducts"
+                },
+                "__typename": "Job"
+            },
+            "companyProfile": {
+                "id": "171714208686642",
+                "name": "Skycity Entertainment Group",
+                "companyNameSlug": "skycity-entertainment-group-171714208686642",
+                "shouldDisplayReviews": true,
+                "branding": {
+                    "logo": "https://image-service-cdn.seek.com.au/24c728758a2fb1c02b7884a5f644eb6ce9ec518e/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                    "__typename": "Branding"
+                },
+                "overview": {
+                    "description": {
+                        "paragraphs": [
+                            "SkyCity operates entertainment complexes in New Zealand and Adelaide, each featuring gaming facilities, premium restaurants and bars. We also offer premium Hotel accommodation in Auckland and Adelaide.  In addition to our land-based Casinos, the SkyCity Online Casino (based in Malta) offers New Zealanders an online gaming experience.  SkyCity has over 4,500 employees across all our location, career opportunities are endless.  We provide a safe and healthy work environment, equal employment opportunities and we don’t just accept differences, we celebrate and support them.  Joining SkyCity will give you a sense of belonging and an opportunity to be part of a diverse, exciting, growing business"
+                        ],
+                        "__typename": "Description"
+                    },
+                    "industry": "Hospitality & Tourism",
+                    "size": {
+                        "description": "1,001-5,000 employees",
+                        "__typename": "CompanySize"
+                    },
+                    "website": null,
+                    "__typename": "Overview"
+                },
+                "reviewsSummary": null,
+                "perksAndBenefits": [
+                    {
+                        "title": "Medical Insurance",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Life Insurance",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Restaurants",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "24/7",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Carparking",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Sky Tower",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Dry Cleaning",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "All Blacks / Weta Workshop / AJ Hackett Bungy",
+                        "__typename": "PerkAndBenefit"
+                    }
+                ],
+                "__typename": "CompanyProfile"
+            },
+            "companySearchUrl": "https://www.seek.co.nz/Skycity-Entertainment-Group-jobs/at-this-company",
+            "learningInsights": {
+                "analytics": {
+                    "title": "Career Advice homepage",
+                    "landingPage": "CA Home",
+                    "resultType": "DefaultSearchToCA",
+                    "bannerName": "DefaultSearchToCA",
+                    "encoded": "title:Career Advice homepage;landingPage:CA Home;resultType:DefaultSearchToCA;bannerName:DefaultSearchToCA"
+                },
+                "content": "<style>\n  /* capsize font, don't change */\n  .capsize-largeText {\n    font-size: 18px;\n    line-height: 27.094px;\n    display: block;\n  }\n\n  .capsize-largeText::before {\n    content: '';\n    margin-bottom: -0.3611em;\n    display: table;\n  }\n\n  .capsize-largeText::after {\n    content: '';\n    margin-top: -0.3611em;\n    display: table;\n  }\n\n  .capsize-standardText {\n    font-size: 16px;\n    line-height: 24.528px;\n    display: block;\n  }\n\n  .capsize-standardText::before {\n    content: '';\n    margin-bottom: -0.375em;\n    display: table;\n  }\n\n  .capsize-standardText::after {\n    content: '';\n    margin-top: -0.375em;\n    display: table;\n  }\n  /* end of capsize */\n\n  /* LMIS css start here*/\n  .lmis-root {\n    font-family: SeekSans, 'SeekSans Fallback', Arial, sans-serif;\n    color: #2e3849;\n  }\n\n  .lmis-title {\n    font-weight: 500;\n  }\n\n  .lmis-description {\n    margin-top: 24px;\n    margin-bottom: 16px;\n  }\n\n  .lmis-list {\n    padding-left: 0;\n    margin: 0;\n  }\n\n  .lmis-list li {\n    display: flex;\n    align-items: center;\n    color: #414c63;\n    margin-top: 12px;\n  }\n\n  .lmis-list li:first-child {\n    margin-top: 0;\n  }\n\n  .lmis-list li:before {\n    content: '\\2022 \\0020';\n    font-weight: 500;\n    font-size: 16px;\n    margin-right: 8px;\n  }\n\n  .lmis-cta {\n    font-weight: 500;\n    text-decoration: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #2e3849;\n    border: 2px solid #2e3849;\n    border-radius: 8px;\n    min-height: 48px;\n    margin-top: 24px;\n  }\n\n  .lmis-cta img {\n    margin-left: 4px;\n  }\n\n  .lmis-cta:hover {\n    background-color: #f4f6fe;\n  }\n\n  @media only screen and (min-width: 740px) {\n    .lmis-cta {\n      max-width: 260px;\n    }\n  }\n\n  @media only screen and (min-width: 992px) {\n    .lmis-root {\n      margin: -16px;\n    }\n  }\n</style>\n\n<div class=\"lmis-root\">\n  <div class=\"capsize-largeText lmis-title\">Career Advice</div>\n  <div class=\"capsize-standardText lmis-description\">Researching careers? Find all the information and tips you need on career advice.</div>\n  <ul class=\"lmis-list\">\n    <li><span class=\"capsize-standardText\">Role descriptions</span></li>\n    <li><span class=\"capsize-standardText\">Salary insights</span></li>\n    <li><span class=\"capsize-standardText\">Tools to help you prepare for jobs</span></li>\n  </ul>\n  <a class=\"lmis-cta\" target=\"_blank\" href=\"https://www.seek.co.nz/career-advice/?utm_campaign=LMIS_Web&amp;utm_source=SEEK&amp;utm_medium=LMIS&amp;utm_content=job-details\">\n    <span class=\"capsize-standardText\">Explore Career Advice</span>\n    <img\n      src=\"https://cdn.seeklearning.com.au/media/images/lmis/arrow_right.svg\"\n      alt=\"arrow-right\"\n    />\n  </a>\n</div>\n",
+                "__typename": "LearningInsights"
+            },
+            "companyTags": [],
+            "restrictedApplication": {
+                "label": null,
+                "__typename": "JobDetailsRestrictedApplication"
+            },
+            "sourcr": null,
+            "gfjInfo": {
+                "location": {
+                    "countryCode": "NZ",
+                    "country": "New Zealand",
+                    "suburb": "Auckland CBD",
+                    "region": null,
+                    "state": null,
+                    "postcode": "1010",
+                    "__typename": "GFJLocation"
+                },
+                "workTypes": {
+                    "label": [
+                        "FULL_TIME"
+                    ],
+                    "__typename": "GFJWorkTypes"
+                },
+                "__typename": "GFJInfo"
+            },
+            "__typename": "JobDetails"
+        }
+    },
+    {
+        "jobDetails": {
+            "job": {
+                "sourceZone": "anz-2",
+                "tracking": {
+                    "adProductType": "Branded",
+                    "classificationInfo": {
+                        "classificationId": "6281",
+                        "classification": "Information & Communication Technology",
+                        "subClassificationId": "6292",
+                        "subClassification": "Management",
+                        "__typename": "JobTrackingClassificationInfo"
+                    },
+                    "hasRoleRequirements": false,
+                    "isPrivateAdvertiser": false,
+                    "locationInfo": {
+                        "area": "Auckland Central",
+                        "location": "Auckland",
+                        "locationIds": [
+                            "30010"
+                        ],
+                        "__typename": "JobTrackingLocationInfo"
+                    },
+                    "workTypeIds": "242",
+                    "postedTime": "54m ago",
+                    "__typename": "JobTracking"
+                },
+                "id": "79027731",
+                "title": "Head of Digital Delivery",
+                "phoneNumber": null,
+                "isExpired": false,
+                "expiresAt": {
+                    "dateTimeUtc": "2024-10-23T12:59:59.999Z",
+                    "__typename": "SeekDateTime"
+                },
+                "isLinkOut": true,
+                "contactMatches": [],
+                "isVerified": true,
+                "abstract": "We're on the hunt for a passionate and experienced Head of Digital Delivery to join our dynamic and innovative team at SkyCity!",
+                "content": "<p>Are you ready to lead a new wave of digital transformation? We're looking for a passionate and experienced Head of Digital Delivery to join our dynamic and innovative team, reporting directly to the Group GM of Digital Transformation. This is your opportunity to shape the future of our digital landscape and deliver high-quality, impactful solutions.</p>\n<p><strong>The Role:</strong></p>\n<p>As the Head of Digital Delivery, you will be at the forefront of our digital transformation, overseeing the Product and Delivery teams. You will lead the execution of digital initiatives that drive business success, ensuring quality, efficiency, and alignment with our strategic goals. In this newly created role, you'll play a pivotal part in uplifting the quality of our digital solutions and building confidence across the organization. Your leadership will be key to managing our vendor partnerships and ensuring value from external collaborations, while fostering strong communication and collaboration within the team. This role offers the chance to truly make your mark and be a driving force behind our transformation journey.</p>\n<p><strong>About You:</strong></p>\n<p>You're a visionary leader with 10-15 years of experience in digital delivery, proven in leading large-scale digital projects and managing diverse, high-performing teams. Your expertise in Agile methodologies, project management, and vendor relationships will ensure you deliver exceptional results across multiple major programs. Your leadership style inspires teams, fosters collaboration, and maintains a sharp focus on quality. With a keen eye for commercial and vendor management, your decisions drive value and maximise partnerships. Strong communication and stakeholder engagement skills, combined with strategic thinking, will make you successful in this role as you navigate challenges and deliver on our goals.</p>\n<p><strong>What you'll bring:</strong></p>\n<ul>\n<li>Proven leadership in digital delivery, with at least 10-15 years of experience</li>\n<li>Expertise in Agile practices, project management, and quality assurance</li>\n<li>Exceptional communication and stakeholder management skills</li>\n<li>Strong commercial acumen and vendor management experience</li>\n<li>Ability to lead multiple complex programs simultaneously</li>\n<li>A track record of fostering innovation, collaboration, and continuous improvement</li>\n</ul>\n<p><strong>The Impact:</strong></p>\n<p>As Head of Digital Delivery, your impact will resonate across the entire organisation. You'll uplift the quality of our digital initiatives, driving efficiency, innovation, and confidence within our teams. By aligning delivery strategies with business objectives, you'll contribute directly to our success, shaping the digital future of the company. Your leadership will ensure seamless communication, robust reporting, and continuous improvement, empowering your team to consistently deliver at the highest level.</p>\n<p><strong>What's in it for you?</strong></p>\n<ul>\n<li>Flexible working arrangements</li>\n<li>Fully covered health insurance</li>\n<li>Staff meals for just $2.50</li>\n<li>On-site parking for $8 per day</li>\n<li>Life insurance</li>\n<li>Discounts across site + so much more!!</li>\n</ul>\n<p>This is your chance to join a forward-thinking team and lead a digital revolution. Apply now and help us drive the future of digital delivery!</p>\n<p><em>At SkyCity, our career opportunities are as diverse as our workforce. We don't just embrace differences; we value and support them. Our hiring is centred on capability and performance, regardless of gender, gender identity, race, origin, age, educational background, disability, or religious beliefs. We're here to empower you to shine. Our willingness to adapt ensures you can chart your path with us! Join us at SkyCity and be extraordinary by being you.</em></p>\n<p><strong><em>SkyCity takes its commitment to Host Responsibility seriously. Every member of our team, no matter their role, contributes towards SkyCity's culture of customer care.</em></strong></p>",
+                "status": "Active",
+                "listedAt": {
+                    "label": "54m ago",
+                    "dateTimeUtc": "2024-09-23T09:13:50.656Z",
+                    "__typename": "SeekDateTime"
+                },
+                "salary": null,
+                "shareLink": "https://www.seek.co.nz/job/79027731?tracking=SHR-WEB-SharedJob-anz-2",
+                "workTypes": {
+                    "label": "Full time",
+                    "__typename": "JobWorkTypes"
+                },
+                "advertiser": {
+                    "id": "9923861",
+                    "name": "SkyCity",
+                    "isVerified": true,
+                    "registrationDate": {
+                        "dateTimeUtc": "2021-12-14T07:14:57.104Z",
+                        "__typename": "SeekDateTime"
+                    },
+                    "__typename": "Advertiser"
+                },
+                "location": {
+                    "label": "Auckland CBD, Auckland",
+                    "__typename": "LocationInfo"
+                },
+                "classifications": [
+                    {
+                        "label": "Management (Information & Communication Technology)",
+                        "__typename": "ClassificationInfo"
+                    }
+                ],
+                "products": {
+                    "branding": {
+                        "id": "0f805bfa-5779-0048-6442-82fa4d380cfd.1",
+                        "cover": {
+                            "url": "https://image-service-cdn.seek.com.au/9b07fc8bfba46b05aeee22a47b14f28c99b92f70/a482e10245f674a22f410c95afdad0c4b964e9bc",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "thumbnailCover": {
+                            "url": "https://image-service-cdn.seek.com.au/9b07fc8bfba46b05aeee22a47b14f28c99b92f70/83c3ca8755ac046f05b635c4351e7ef5e93d0155",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "logo": {
+                            "url": "https://image-service-cdn.seek.com.au/24c728758a2fb1c02b7884a5f644eb6ce9ec518e/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "__typename": "JobProductBranding"
+                    },
+                    "bullets": [
+                        "Fantastic opportunity to lead the execution of digital initiatives at SkyCity",
+                        "Plenty of career development opportunities",
+                        "Amazing staff benefits such as free health insurance & $2.50 staff meals"
+                    ],
+                    "questionnaire": null,
+                    "video": {
+                        "url": "https://www.youtube.com/embed/VxT8BP-Ky2U",
+                        "position": "TOP",
+                        "__typename": "VideoProduct"
+                    },
+                    "__typename": "JobProducts"
+                },
+                "__typename": "Job"
+            },
+            "companyProfile": {
+                "id": "171714208686642",
+                "name": "Skycity Entertainment Group",
+                "companyNameSlug": "skycity-entertainment-group-171714208686642",
+                "shouldDisplayReviews": true,
+                "branding": {
+                    "logo": "https://image-service-cdn.seek.com.au/24c728758a2fb1c02b7884a5f644eb6ce9ec518e/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                    "__typename": "Branding"
+                },
+                "overview": {
+                    "description": {
+                        "paragraphs": [
+                            "SkyCity operates entertainment complexes in New Zealand and Adelaide, each featuring gaming facilities, premium restaurants and bars. We also offer premium Hotel accommodation in Auckland and Adelaide.  In addition to our land-based Casinos, the SkyCity Online Casino (based in Malta) offers New Zealanders an online gaming experience.  SkyCity has over 4,500 employees across all our location, career opportunities are endless.  We provide a safe and healthy work environment, equal employment opportunities and we don’t just accept differences, we celebrate and support them.  Joining SkyCity will give you a sense of belonging and an opportunity to be part of a diverse, exciting, growing business"
+                        ],
+                        "__typename": "Description"
+                    },
+                    "industry": "Hospitality & Tourism",
+                    "size": {
+                        "description": "1,001-5,000 employees",
+                        "__typename": "CompanySize"
+                    },
+                    "website": null,
+                    "__typename": "Overview"
+                },
+                "reviewsSummary": null,
+                "perksAndBenefits": [
+                    {
+                        "title": "Medical Insurance",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Life Insurance",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Restaurants",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "24/7",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Carparking",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Sky Tower",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "Dry Cleaning",
+                        "__typename": "PerkAndBenefit"
+                    },
+                    {
+                        "title": "All Blacks / Weta Workshop / AJ Hackett Bungy",
+                        "__typename": "PerkAndBenefit"
+                    }
+                ],
+                "__typename": "CompanyProfile"
+            },
+            "companySearchUrl": "https://www.seek.co.nz/Skycity-Entertainment-Group-jobs/at-this-company",
+            "learningInsights": {
+                "analytics": {
+                    "title": "Career Advice homepage",
+                    "landingPage": "CA Home",
+                    "resultType": "DefaultSearchToCA",
+                    "bannerName": "DefaultSearchToCA",
+                    "encoded": "title:Career Advice homepage;landingPage:CA Home;resultType:DefaultSearchToCA;bannerName:DefaultSearchToCA"
+                },
+                "content": "<style>\n  /* capsize font, don't change */\n  .capsize-largeText {\n    font-size: 18px;\n    line-height: 27.094px;\n    display: block;\n  }\n\n  .capsize-largeText::before {\n    content: '';\n    margin-bottom: -0.3611em;\n    display: table;\n  }\n\n  .capsize-largeText::after {\n    content: '';\n    margin-top: -0.3611em;\n    display: table;\n  }\n\n  .capsize-standardText {\n    font-size: 16px;\n    line-height: 24.528px;\n    display: block;\n  }\n\n  .capsize-standardText::before {\n    content: '';\n    margin-bottom: -0.375em;\n    display: table;\n  }\n\n  .capsize-standardText::after {\n    content: '';\n    margin-top: -0.375em;\n    display: table;\n  }\n  /* end of capsize */\n\n  /* LMIS css start here*/\n  .lmis-root {\n    font-family: SeekSans, 'SeekSans Fallback', Arial, sans-serif;\n    color: #2e3849;\n  }\n\n  .lmis-title {\n    font-weight: 500;\n  }\n\n  .lmis-description {\n    margin-top: 24px;\n    margin-bottom: 16px;\n  }\n\n  .lmis-list {\n    padding-left: 0;\n    margin: 0;\n  }\n\n  .lmis-list li {\n    display: flex;\n    align-items: center;\n    color: #414c63;\n    margin-top: 12px;\n  }\n\n  .lmis-list li:first-child {\n    margin-top: 0;\n  }\n\n  .lmis-list li:before {\n    content: '\\2022 \\0020';\n    font-weight: 500;\n    font-size: 16px;\n    margin-right: 8px;\n  }\n\n  .lmis-cta {\n    font-weight: 500;\n    text-decoration: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #2e3849;\n    border: 2px solid #2e3849;\n    border-radius: 8px;\n    min-height: 48px;\n    margin-top: 24px;\n  }\n\n  .lmis-cta img {\n    margin-left: 4px;\n  }\n\n  .lmis-cta:hover {\n    background-color: #f4f6fe;\n  }\n\n  @media only screen and (min-width: 740px) {\n    .lmis-cta {\n      max-width: 260px;\n    }\n  }\n\n  @media only screen and (min-width: 992px) {\n    .lmis-root {\n      margin: -16px;\n    }\n  }\n</style>\n\n<div class=\"lmis-root\">\n  <div class=\"capsize-largeText lmis-title\">Career Advice</div>\n  <div class=\"capsize-standardText lmis-description\">Researching careers? Find all the information and tips you need on career advice.</div>\n  <ul class=\"lmis-list\">\n    <li><span class=\"capsize-standardText\">Role descriptions</span></li>\n    <li><span class=\"capsize-standardText\">Salary insights</span></li>\n    <li><span class=\"capsize-standardText\">Tools to help you prepare for jobs</span></li>\n  </ul>\n  <a class=\"lmis-cta\" target=\"_blank\" href=\"https://www.seek.co.nz/career-advice/?utm_campaign=LMIS_Web&amp;utm_source=SEEK&amp;utm_medium=LMIS&amp;utm_content=job-details\">\n    <span class=\"capsize-standardText\">Explore Career Advice</span>\n    <img\n      src=\"https://cdn.seeklearning.com.au/media/images/lmis/arrow_right.svg\"\n      alt=\"arrow-right\"\n    />\n  </a>\n</div>\n",
+                "__typename": "LearningInsights"
+            },
+            "companyTags": [],
+            "restrictedApplication": {
+                "label": null,
+                "__typename": "JobDetailsRestrictedApplication"
+            },
+            "sourcr": null,
+            "gfjInfo": {
+                "location": {
+                    "countryCode": "NZ",
+                    "country": "New Zealand",
+                    "suburb": "Auckland CBD",
+                    "region": null,
+                    "state": null,
+                    "postcode": "1010",
+                    "__typename": "GFJLocation"
+                },
+                "workTypes": {
+                    "label": [
+                        "FULL_TIME"
+                    ],
+                    "__typename": "GFJWorkTypes"
+                },
+                "__typename": "GFJInfo"
+            },
+            "__typename": "JobDetails"
+        }
+    }
+]
