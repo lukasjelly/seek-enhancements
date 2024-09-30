@@ -8,4 +8,4 @@ This feature enhances the search functionality of the Seek website. The followin
 - Define one or more of words that must not be present in the job title or content.
 ## Project Architecture
 The following diagram shows the architecture of the Seek Enhancements Project:
-![Solution Diagram](./project-resources/SolutionDiagram.svg)
+![Solution Diagram](./project-resources/SolutionDiagram.drawio.svg)
