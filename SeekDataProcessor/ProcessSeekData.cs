@@ -4,16 +4,16 @@ using Microsoft.Extensions.Logging;
 
 namespace SeekDataProcessor
 {
-    public class Function1
+    public class ProcessSeekData
     {
         private readonly ILogger _logger;
 
-        public Function1(ILoggerFactory loggerFactory)
+        public ProcessSeekData(ILoggerFactory loggerFactory)
         {
-            _logger = loggerFactory.CreateLogger<Function1>();
+            _logger = loggerFactory.CreateLogger<ProcessSeekData>();
         }
 
-        [Function("Function1")]
+        [Function("ProcessSeekData")]
         public void Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer)
         {
             _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
@@ -22,6 +22,9 @@ namespace SeekDataProcessor
             {
                 _logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
             }
+
+            // Fetch and process classification data. If any has changed, update the data in the database.
+
         }
     }
 }
