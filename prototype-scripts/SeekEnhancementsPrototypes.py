@@ -32,6 +32,7 @@ loadClassificationsFileHandler.setFormatter(loggingFormatter)
 loadClassificationsLogger.addHandler(loadClassificationsFileHandler)
 loadClassificationsLogger.addHandler(consoleHandler)
 
+
 def fetch_job_ids(queryParameters, page):
     queryParameters["page"] = page
     base_url = "https://www.seek.co.nz/api/chalice-search/v4/search?"
