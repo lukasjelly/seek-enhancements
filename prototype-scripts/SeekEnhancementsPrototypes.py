@@ -48,7 +48,7 @@ def fetch_job_ids(queryParameters, page):
     return ids
 
 
-def getJobIds():
+def getTechJobIds():
     open("logging/jobIds.log", "w").close()
     subClassifications = {
         6282,  # Architects
@@ -301,7 +301,7 @@ def classifiyClassifications():
 
 
 if __name__ == "__main__":
-    #getJobIds()
+    getTechJobIds()
     #getJobDetails()
-    queryJobs()
+    #queryJobs()
     #classifiyClassifications()
