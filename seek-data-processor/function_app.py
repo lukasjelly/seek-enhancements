@@ -4,6 +4,7 @@ import Jobs
 
 app = func.FunctionApp()
 
+@app.function_name(name="ProcessSeekData")
 @app.schedule(schedule="0 0 0 * * *", arg_name="myTimer", run_on_startup=True,
               use_monitor=False) 
 def ProcessSeekData(myTimer: func.TimerRequest) -> None:
