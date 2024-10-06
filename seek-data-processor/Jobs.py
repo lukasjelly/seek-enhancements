@@ -1,13 +1,9 @@
+import asyncio
 import requests
-import sys
-import io
 import logging
-import json
-import re
 from tqdm import tqdm
 import os
 import pyodbc
-
 
 def ProcessJobsMetaData():
     # get all metadata: locations, classifications, work types
@@ -92,7 +88,26 @@ def __ProcessClassifications(data):
         if item["name"] == "classification":
             allClassificationIds = list(item["items"])
             break
-    for classificationId in tqdm(allClassificationIds[0:20], desc="Classifying classifications into main and sub classifications"):
+    # convert the list of items to a list of integers
+    allClassificationIds = [int(classificationId) for classificationId in allClassificationIds]
+
+    # Connect to the database
+    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
+
+    # check if latest classificication ids are all in the database
+    cursor.execute("SELECT mainClassificationId FROM MainClassifications")
+    mainClassificationIds = [row[0] for row in cursor.fetchall()]
+    cursor.execute("SELECT subClassificationId FROM SubClassifications")
+    subClassificationIds = [row[0] for row in cursor.fetchall()]
+    if set(allClassificationIds) == set(mainClassificationIds + subClassificationIds):
+        logging.info("No changes detected")
+        conn.close()
+        return
+    
+    # Classify classifications into main and sub classifications
+    for classificationId in tqdm(allClassificationIds, desc="Classifying classifications into main and sub classifications"):
         url = os.getenv("SeekJobsUrl") + f"classification={classificationId}"
         response = requests.get(url, allow_redirects=True)
         redirected_url = response.url
@@ -119,58 +134,23 @@ def __ProcessClassifications(data):
                 subClassification["parentClassificationid"] = mainClassification["id"]
                 break
 
-    # Retrieve existing data from the database
-    def get_existing_data(cursor, table_name):
-        cursor.execute(f"SELECT * FROM {table_name}")
-        columns = [column[0] for column in cursor.description]
-        return [dict(zip(columns, row)) for row in cursor.fetchall()]
-
-    # Compare existing data with new data
-    def data_is_different(existing_data, new_data):
-        return existing_data != new_data
-
-    # Save classifications to a file
-    with open("temp/classifications.json", "w") as f:
-        json.dump({"mainClassifications": mainClassifications, "subClassifications": subClassifications}, f, indent=4, ensure_ascii=False)
-
-    # Database connection
-    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
-    conn = pyodbc.connect(connection_string)
-    cursor = conn.cursor()
-
-    # Retrieve existing main classifications
-    existing_main_classifications = get_existing_data(cursor, "MainClassifications")
-
-    # Retrieve existing sub classifications
-    existing_sub_classifications = get_existing_data(cursor, "SubClassifications")
-
-    # Check if main classifications data is different
-    main_classifications_different = data_is_different(existing_main_classifications, mainClassifications)
-
-    # Check if sub classifications data is different
-    sub_classifications_different = data_is_different(existing_sub_classifications, subClassifications)
-
-    # Use a transaction to ensure atomicity
     conn.autocommit = False
     try:
-        if sub_classifications_different or main_classifications_different:
-            logging.info("Updating all classifications")
-            cursor.execute("delete from SubClassifications")
-            cursor.execute("delete from MainClassifications")
+        logging.info("Updating all classifications")
+        cursor.execute("delete from SubClassifications")
+        cursor.execute("delete from MainClassifications")
 
-            cursor.execute("SET IDENTITY_INSERT MainClassifications ON")
-            for mainClassification in mainClassifications:
-                cursor.execute("insert into MainClassifications (main_classification_id, label) values (?, ?)", mainClassification["id"], mainClassification["label"])
-            cursor.execute("SET IDENTITY_INSERT MainClassifications OFF")
+        cursor.execute("SET IDENTITY_INSERT MainClassifications ON")
+        for mainClassification in mainClassifications:
+            cursor.execute("insert into MainClassifications (mainClassificationId, mainClassificationLabel) values (?, ?)", mainClassification["id"], mainClassification["label"])
+        cursor.execute("SET IDENTITY_INSERT MainClassifications OFF")
 
-            cursor.execute("SET IDENTITY_INSERT SubClassifications ON")
-            for subClassification in subClassifications:
-                cursor.execute("insert into SubClassifications (SubClassification_id, parentClassification_id, label) values (?, ?, ?)", subClassification["id"], subClassification["parentClassificationid"], subClassification["label"])
-            cursor.execute("SET IDENTITY_INSERT SubClassifications OFF")
-
-        else:
-            logging.info("No changes detected")
+        cursor.execute("SET IDENTITY_INSERT SubClassifications ON")
+        for subClassification in subClassifications:
+            cursor.execute("insert into SubClassifications (subClassificationId, subClassificationLabel, parentClassificationId) values (?, ?, ?)", subClassification["id"], subClassification["label"], subClassification["parentClassificationid"])
+        cursor.execute("SET IDENTITY_INSERT SubClassifications OFF")
         conn.commit()
+        logging.info("All classifications updated")
     except Exception as e:
         logging.error(e)
         conn.rollback()
