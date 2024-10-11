@@ -109,7 +109,6 @@ def getTechJobIds():
         for jobId in jobIds:
             f.write(str(jobId) + "\n")
 
-
 def getAllJobIds():
     connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
     conn = pyodbc.connect(connection_string)
@@ -210,32 +209,41 @@ def insertJobDetailsIntoDatabase():
     with open("output/jobDetails.json", "r", encoding="utf-8") as f:
         jobDetails = json.load(f)
 
+    #get all job ids already in the database
+    cursor.execute("SELECT job_id FROM Jobs")
+    jobIdsInDatabase = [row[0] for row in cursor.fetchall()]
+
     # Insert data into database
     for job in tqdm(jobDetails, desc="Inserting job details into database"):
-        job = job["jobDetails"]["job"]
+        try:
+            if job["jobDetails"]== None:
+                continue
+            job = job["jobDetails"]["job"]
 
-        # insert into Advertisers table if the advertiser id does not exist
-        # if advertiser["id"] is not an integer, then it is a private advertiser - use id 1 for private advertisers
-        if not isinstance(job["advertiser"]["id"], int):
-            job["advertiser"]["id"] = 1
-        cursor.execute("SELECT COUNT(*) FROM Advertisers WHERE advertiser_id = ?", (job["advertiser"]["id"],))
-        if cursor.fetchone()[0] == 0:
-            cursor.execute("SET IDENTITY_INSERT Advertisers ON")
-            cursor.execute(
-                "INSERT INTO Advertisers (advertiser_id, name, is_verified, registration_date, date_added) VALUES (?,?,?,?,?)",
-                (
-                    job["advertiser"]["id"],
-                    job["advertiser"]["name"],
-                    job["advertiser"]["isVerified"],
-                    job["advertiser"]["registrationDate"]["dateTimeUtc"],
-                    datetime.datetime.now()
-                ),
-            )
-            cursor.execute("SET IDENTITY_INSERT Advertisers OFF") 
+            # if job id already exists in the database, skip
+            if job["id"] in jobIdsInDatabase:
+                continue
 
-        # insert into Jobs table if the job id does not exist
-        cursor.execute("SELECT COUNT(*) FROM Jobs WHERE job_id = ?", (job["id"],))
-        if cursor.fetchone()[0] == 0:
+            # insert into Advertisers table if the advertiser id does not exist
+            # if advertiser["id"] is not an integer, then it is a private advertiser - use id 1 for private advertisers
+            if not isinstance(job["advertiser"]["id"], int):
+                job["advertiser"]["id"] = 1
+            cursor.execute("SELECT COUNT(*) FROM Advertisers WHERE advertiser_id = ?", (job["advertiser"]["id"],))
+            if cursor.fetchone()[0] == 0:
+                cursor.execute("SET IDENTITY_INSERT Advertisers ON")
+                cursor.execute(
+                    "INSERT INTO Advertisers (advertiser_id, name, is_verified, registration_date, date_added) VALUES (?,?,?,?,?)",
+                    (
+                        job["advertiser"]["id"],
+                        job["advertiser"]["name"],
+                        job["advertiser"]["isVerified"],
+                        job["advertiser"]["registrationDate"]["dateTimeUtc"],
+                        datetime.datetime.now()
+                    ),
+                )
+                cursor.execute("SET IDENTITY_INSERT Advertisers OFF") 
+
+            # insert into Jobs table
             cursor.execute("SET IDENTITY_INSERT Jobs ON")
             cursor.execute(
                 "INSERT INTO Jobs (job_id, advertiser_id, subclassification_id, work_type_id, title, abstract, [content], phone_number, location, is_expired, expires_at, is_link_out, is_verified, status, listed_at, salary, share_link, date_added) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
@@ -261,6 +269,9 @@ def insertJobDetailsIntoDatabase():
                 ),
             )
             cursor.execute("SET IDENTITY_INSERT Jobs OFF")
+        except Exception as e:
+            logger.error(f"Error inserting job: {job['id']}, {e}")
+            continue
     
     conn.commit()
     conn.close()
@@ -397,12 +408,20 @@ def classifiyClassifications():
     # If the redirect url is the same as the original url, then the classification id is a sub classification.
     # Make a list of all main and sub classifications and their labels.
 
-
+def sandpit():
+    with open("output/jobDetails.json", "r", encoding="utf-8") as f:
+        jobDetails = json.load(f)
+    
+    for job in jobDetails:
+        if job["jobDetails"]== None:
+            logger.info(f"job: {job}")
+            break
 if __name__ == "__main__":
     open("logging/general.log", "w").close()
     #getTechJobIds()
     #getAllJobIds()
-    getJobDetails()
+    #getJobDetails()
     insertJobDetailsIntoDatabase()
     #queryJobs()
     #classifiyClassifications()
+    #sandpit()
