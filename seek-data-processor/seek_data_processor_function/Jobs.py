@@ -31,8 +31,10 @@ def ProcessJobsMetaData():
         __ProcessWorkTypes(data)
     except requests.RequestException as e:
         logging.error(f"Error fetching job metadata: {e}")
+        raise e
     except Exception as e:
         logging.error(f"Unexpected error: {e}")
+        raise e
 
 def __fetch_job_ids(queryParameters, page):
     try:
@@ -102,15 +104,19 @@ def __ProcessClassifications(data):
         if not updateClassificationsRequired:
             logging.info("No classification updates detected, skipping classification processing")
             return
+        logging.info("Classification updates detected")
         mainClassifications, subClassifications = __classify_classifications(allClassificationIds)
         __update_classifications_in_db(mainClassifications, subClassifications)
         logging.info("End processing classifications")
     except requests.RequestException as e:
         logging.error(f"Error fetching classification data: {e}")
+        raise e
     except pyodbc.Error as e:
         logging.error(f"Database error: {e}")
+        raise e
     except Exception as e:
         logging.error(f"Unexpected error in __ProcessClassifications: {e}")
+        raise e
 
 def __fetch_classification_ids(data):
     logging.info("Fetching classification ids")
