@@ -141,11 +141,8 @@ def __check_for_classification_updates(allClassificationIds):
         if set(allClassificationIds) == set(mainClassificationIds + subClassificationIds):
             return False
         else:
-            # log the new ids
-            newMainClassificationIds = set(allClassificationIds) - set(mainClassificationIds)
-            newSubClassificationIds = set(allClassificationIds) - set(subClassificationIds)
-            logging.info(f"New main classification ids: {newMainClassificationIds}")
-            logging.info(f"New sub classification ids: {newSubClassificationIds}")
+            newClassificationIds = set(allClassificationIds) - set(mainClassificationIds + subClassificationIds)
+            logging.info(f"New classification ids: {newClassificationIds}")
             return True
     except pyodbc.Error as e:
         logging.error(f"Database error checking for classification updates: {e}")
