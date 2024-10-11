@@ -4,8 +4,8 @@ from tqdm import tqdm
 import os
 import pyodbc
 
-# Entry point for the Azure Function
-def ProcessJobsMetaData():
+# Start function to process jobs metadata
+def Start():
     try:
         queryParameters = {
             "siteKey": "NZ-Main",
