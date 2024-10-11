@@ -129,19 +129,32 @@ def __fetch_classification_ids(data):
 
 def __check_for_classification_updates(allClassificationIds):
     logging.info("Checking for classification updates")
-    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
-    conn = pyodbc.connect(connection_string)
-    cursor = conn.cursor()
+    try:
+        connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
+        conn = pyodbc.connect(connection_string)
+        cursor = conn.cursor()
 
-    cursor.execute("SELECT mainClassificationId FROM MainClassifications")
-    mainClassificationIds = [row[0] for row in cursor.fetchall()]
-    cursor.execute("SELECT subClassificationId FROM SubClassifications")
-    subClassificationIds = [row[0] for row in cursor.fetchall()]
-    if set(allClassificationIds) == set(mainClassificationIds + subClassificationIds):
+        cursor.execute("SELECT mainClassificationId FROM MainClassifications")
+        mainClassificationIds = [row[0] for row in cursor.fetchall()]
+        cursor.execute("SELECT subClassificationId FROM SubClassifications")
+        subClassificationIds = [row[0] for row in cursor.fetchall()]
+        if set(allClassificationIds) == set(mainClassificationIds + subClassificationIds):
+            return False
+        else:
+            # log the new ids
+            newMainClassificationIds = set(allClassificationIds) - set(mainClassificationIds)
+            newSubClassificationIds = set(allClassificationIds) - set(subClassificationIds)
+            logging.info(f"New main classification ids: {newMainClassificationIds}")
+            logging.info(f"New sub classification ids: {newSubClassificationIds}")
+            return True
+    except pyodbc.Error as e:
+        logging.error(f"Database error checking for classification updates: {e}")
+        raise e
+    except Exception as e:
+        logging.error(f"Error checking for classification updates: {e}")
+        raise e
+    finally:
         conn.close()
-        return False
-    conn.close()
-    return True
 
 def __classify_classifications(allClassificationIds):
     logging.info("Start classifying classifications into main and sub classifications")
@@ -175,12 +188,13 @@ def __classify_classifications(allClassificationIds):
 
 def __update_classifications_in_db(mainClassifications, subClassifications):
     logging.info("Connecting to database")
-    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
-    conn = pyodbc.connect(connection_string)
-    cursor = conn.cursor()
-
-    conn.autocommit = False
+    
     try:
+        connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
+        conn = pyodbc.connect(connection_string)
+        cursor = conn.cursor()
+
+        conn.autocommit = False
         logging.info("Updating all classifications")
         cursor.execute("delete from SubClassifications")
         cursor.execute("delete from MainClassifications")
@@ -196,6 +210,10 @@ def __update_classifications_in_db(mainClassifications, subClassifications):
         cursor.execute("SET IDENTITY_INSERT SubClassifications OFF")
         conn.commit()
         logging.info("All classifications updated")
+    except pyodbc.Error as e:
+        logging.error(f"Database error updating classifications: {e}")
+        conn.rollback()
+        raise e
     except Exception as e:
         logging.error(f"Error updating classifications: {e}")
         conn.rollback()
