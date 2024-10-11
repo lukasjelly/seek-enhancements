@@ -5,33 +5,22 @@ import logging
 import json
 import re
 from tqdm import tqdm
+import pyodbc
+import os
+import datetime
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-# setup general logging configuration
-loggingFormatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-consoleHandler = logging.StreamHandler()
-consoleHandler.setLevel(logging.INFO)
-consoleHandler.setFormatter(loggingFormatter)
-
-# setup jobIdsLogger
-jobIdsLogger = logging.getLogger("jobIds")
-jobIdsLogger.setLevel(logging.INFO)
-jobIdsFileHandler = logging.FileHandler("logging/jobIds.log", encoding="utf-8")
-jobIdsFileHandler.setLevel(logging.INFO)
-jobIdsFileHandler.setFormatter(loggingFormatter)
-jobIdsLogger.addHandler(jobIdsFileHandler)
-jobIdsLogger.addHandler(consoleHandler)
-
-# setup loadClassificationsLogger
-loadClassificationsLogger = logging.getLogger("loadClassifications")
-loadClassificationsLogger.setLevel(logging.INFO)
-loadClassificationsFileHandler = logging.FileHandler("logging/loadClassifications.log", encoding="utf-8")
-loadClassificationsFileHandler.setLevel(logging.INFO)
-loadClassificationsFileHandler.setFormatter(loggingFormatter)
-loadClassificationsLogger.addHandler(loadClassificationsFileHandler)
-loadClassificationsLogger.addHandler(consoleHandler)
-
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("logging/general.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger()
 
 def fetch_job_ids(queryParameters, page):
     queryParameters["page"] = page
@@ -44,9 +33,8 @@ def fetch_job_ids(queryParameters, page):
     ids = []
     if "data" in data:
         ids = [job["id"] for job in data["data"]]
-    jobIdsLogger.debug(f"page: {page}, ids: {len(ids)}")
+    logger.debug(f"page: {page}, ids: {len(ids)}")
     return ids
-
 
 def getTechJobIds():
     open("logging/jobIds.log", "w").close()
@@ -111,36 +99,85 @@ def getTechJobIds():
                 jobIds.append(id)
 
             page += 1
-        jobIdsLogger.info(
+        logger.info(
             f"subClassification: {subClassification}, ids: {subClassificationJobCount}"
         )
-    jobIdsLogger.info(f"total jobIds: {len(jobIds)}")
+    logger.info(f"total jobIds: {len(jobIds)}")
     jobIds = list(set(jobIds))
-    jobIdsLogger.info(f"total jobIds after removing duplicates: {len(jobIds)}")
+    logger.info(f"total jobIds after removing duplicates: {len(jobIds)}")
     with open("output/jobIds.txt", "w", encoding="utf-8") as f:
         for jobId in jobIds:
             f.write(str(jobId) + "\n")
 
 
-def getJobDetails():
-    # setup jobDetailsLogger
-    jobDetailsLogger = logging.getLogger("jobDetails")
-    jobDetailsLogger.setLevel(logging.INFO)
-    jobDetailsFileHandler = logging.FileHandler(
-        "logging/jobDetails.log", encoding="utf-8"
-    )
-    jobDetailsFileHandler.setLevel(logging.INFO)
-    jobDetailsFileHandler.setFormatter(loggingFormatter)
-    jobDetailsLogger.addHandler(jobDetailsFileHandler)
-    jobDetailsLogger.addHandler(consoleHandler)
-    open("logging/jobDetails.log", "w").close()
+def getAllJobIds():
+    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
+    cursor.execute("SELECT mainClassificationId FROM MainClassifications")
+    mainClassificationIds = [row[0] for row in cursor.fetchall()]
+    cursor.execute("SELECT subClassificationId FROM SubClassifications")
+    subClassificationIds = [row[0] for row in cursor.fetchall()]
 
-    jobs = []
+    conn.autocommit = False
+    queryParameters = {
+        "siteKey": "NZ-Main",
+        "sourcesystem": "houston",
+        "userqueryid": "e3b7d0ab254c4a7908be32accaaf1059-1173995",
+        "userid": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
+        "usersessionid": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
+        "eventCaptureSessionId": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
+        "where": "All New Zealand",
+        "page": 1,
+        "seekSelectAllPages": True,
+        "hadPremiumListings": True,
+        "classification": 6281,
+        #"worktype": 242,
+        "pageSize": 100,
+        "include": "seodata",
+        "locale": "en-NZ",
+        "seekerId": "27376419",
+        "solId": "c36c28b4-1546-4592-a67e-36a9c420f87d",
+    }
+
+    jobIds = []
+
+    for mainClassificationId in mainClassificationIds:
+        queryParameters["classification"] = mainClassificationId
+        logger.info(f"mainClassificationId: {mainClassificationId}")
+        page = 1
+        while True:
+            logger.info(f"page: {page}")
+            ids = fetch_job_ids(queryParameters, page)
+            if not ids:
+                break
+            for id in ids:
+                if id not in jobIds:
+                    jobIds.append(id)
+            page += 1
+    logger.info(f"total jobIds: {len(jobIds)}")
+    with open("output/jobIds.txt", "w", encoding="utf-8") as f:
+        for jobId in jobIds:
+            f.write(str(jobId) + "\n")
+    conn.close()
+
+def getJobDetails():
+    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
+
+    # get job ids already in the database
+    cursor.execute("SELECT job_id FROM Jobs")
+    jobIdsInDatabase = [row[0] for row in cursor.fetchall()]
+
+    jobDetails = []
     with open("output/jobIds.txt", "r", encoding="utf-8") as f:
         jobIds = [int(line.strip()) for line in f]
 
-    
-    for jobId in tqdm(jobIds, desc="Processing classifications"):
+    # remove job ids already in the database from the jobIds list
+    jobIds = list(set(jobIds) - set(jobIdsInDatabase))
+  
+    for jobId in tqdm(jobIds, desc="Getting job details from Seek"):
         url = "https://www.seek.co.nz/graphql"
         payload = {
             "operationName": "jobDetails",
@@ -158,14 +195,75 @@ def getJobDetails():
         }
         response = requests.post(url, json=payload)
         data = response.json()
-        # jobDetailsLogger.info(
-        #     f"jobId: {jobId}, jobTitle: {data['data']['jobDetails']['job']['title']}"
-        # )
-        jobs.append(data["data"])
+        jobDetails.append(data["data"])
     with open("output/jobDetails.json", "w", encoding="utf-8") as f:
-        json.dump(jobs, f, indent=4, ensure_ascii=False)
-    jobDetailsLogger.info(f"total jobDetails: {len(jobs)}")
+        json.dump(jobDetails, f, indent=4, ensure_ascii=False)
+    logger.info(f"total jobDetails: {len(jobDetails)}")
+    conn.close()
 
+
+def insertJobDetailsIntoDatabase():
+    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
+
+    with open("output/jobDetails.json", "r", encoding="utf-8") as f:
+        jobDetails = json.load(f)
+
+    # Insert data into database
+    for job in tqdm(jobDetails, desc="Inserting job details into database"):
+        job = job["jobDetails"]["job"]
+
+        # insert into Advertisers table if the advertiser id does not exist
+        # if advertiser["id"] is not an integer, then it is a private advertiser - use id 1 for private advertisers
+        if not isinstance(job["advertiser"]["id"], int):
+            job["advertiser"]["id"] = 1
+        cursor.execute("SELECT COUNT(*) FROM Advertisers WHERE advertiser_id = ?", (job["advertiser"]["id"],))
+        if cursor.fetchone()[0] == 0:
+            cursor.execute("SET IDENTITY_INSERT Advertisers ON")
+            cursor.execute(
+                "INSERT INTO Advertisers (advertiser_id, name, is_verified, registration_date, date_added) VALUES (?,?,?,?,?)",
+                (
+                    job["advertiser"]["id"],
+                    job["advertiser"]["name"],
+                    job["advertiser"]["isVerified"],
+                    job["advertiser"]["registrationDate"]["dateTimeUtc"],
+                    datetime.datetime.now()
+                ),
+            )
+            cursor.execute("SET IDENTITY_INSERT Advertisers OFF") 
+
+        # insert into Jobs table if the job id does not exist
+        cursor.execute("SELECT COUNT(*) FROM Jobs WHERE job_id = ?", (job["id"],))
+        if cursor.fetchone()[0] == 0:
+            cursor.execute("SET IDENTITY_INSERT Jobs ON")
+            cursor.execute(
+                "INSERT INTO Jobs (job_id, advertiser_id, subclassification_id, work_type_id, title, abstract, [content], phone_number, location, is_expired, expires_at, is_link_out, is_verified, status, listed_at, salary, share_link, date_added) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    job["id"],
+                    job["advertiser"]["id"],
+                    job["tracking"]["classificationInfo"]["subClassificationId"],
+                    job["tracking"]["workTypeIds"],
+                    job["title"],
+                    job["abstract"],
+                    job["content"],
+                    job["phoneNumber"],
+                    job["location"]["label"],
+                    job["isExpired"],
+                    job["expiresAt"]["dateTimeUtc"],
+                    job["isLinkOut"],
+                    job["isVerified"],
+                    job["status"],
+                    job["listedAt"]["dateTimeUtc"],
+                    job["salary"]["label"] if job.get("salary") and job["salary"].get("label") else None,
+                    job["shareLink"],
+                    datetime.datetime.now()
+                ),
+            )
+            cursor.execute("SET IDENTITY_INSERT Jobs OFF")
+    
+    conn.commit()
+    conn.close()
 
 def queryJobs():
     remoteKeywords = [
@@ -301,7 +399,10 @@ def classifiyClassifications():
 
 
 if __name__ == "__main__":
-    getTechJobIds()
-    #getJobDetails()
+    open("logging/general.log", "w").close()
+    #getTechJobIds()
+    #getAllJobIds()
+    getJobDetails()
+    insertJobDetailsIntoDatabase()
     #queryJobs()
     #classifiyClassifications()
