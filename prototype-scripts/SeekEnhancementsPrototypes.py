@@ -9,6 +9,9 @@ import pyodbc
 import os
 import datetime
 from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from models import Advertiser, Classification, Location, WorkType, Job, SubClassification, JobLocation
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 load_dotenv()
@@ -207,79 +210,132 @@ def getJobDetails():
     conn.close()
 
 def insertJobDetailsIntoDatabase():
-    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
-    conn = pyodbc.connect(connection_string)
-    cursor = conn.cursor()
+    connection_string = os.getenv("SeekDatabaseConnectionString")
+    engine = create_engine(connection_string)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
     with open("output/jobDetails.json", "r", encoding="utf-8") as f:
         jobDetails = json.load(f)
 
     #get all job ids already in the database
-    cursor.execute("SELECT job_id FROM Jobs")
-    jobIdsInDatabase = [row[0] for row in cursor.fetchall()]
+    jobIdsInDatabase = [job.job_Id for job in session.query(Job).all()]
 
     # Insert data into database
-    for job in tqdm(jobDetails, desc="Inserting job details into database"):
+    for job in tqdm(jobDetails[0:20], desc="Inserting job details into database"):
         try:
             if job["jobDetails"]== None:
                 continue
             job = job["jobDetails"]["job"]
 
+            
+
+            # insert into Advertisers table if the advertiser id does not exist
+            if job.get("advertiser", {}).get("id") is not None:
+                if job["advertiser"]["id"] == "Private Advertiser":
+                    job["advertiser"]["id"] = 1
+                existing_advertiser_id = session.query(Advertiser).filter(Advertiser.advertiser_Id == job["advertiser"]["id"]).first()
+                if existing_advertiser_id == None:
+                    new_advertiser = Advertiser(
+                        advertiser_Id=job["advertiser"]["id"],
+                        name=job["advertiser"]["name"],
+                        is_verified=job["advertiser"]["isVerified"],
+                        registration_date=datetime.datetime.strptime(job["advertiser"]["registrationDate"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ"),
+                        date_added=datetime.datetime.now()
+                    )
+                    session.add(new_advertiser)
+
+            # insert into Classifications table if the classification id does not exist
+            # check if classification id is not null
+            if job.get("tracking", {}).get("classificationInfo").get("classificationId") is not None:
+                existing_classification_id = session.query(Classification).filter(Classification.classification_Id == job["tracking"]["classificationInfo"]["classificationId"]).first()
+                if existing_classification_id == None:
+                    new_classification = Classification(
+                        classification_Id=job["tracking"]["classificationInfo"]["classificationId"],
+                        label=job["tracking"]["classificationInfo"]["classification"]
+                    )
+                    session.add(new_classification)
+
+            # insert into SubClassifications table if the sub classification id does not exist
+            if job.get("tracking", {}).get("classificationInfo").get("subClassificationId") is not None:
+                existing_sub_classification_id = session.query(SubClassification).filter(SubClassification.subClassification_Id == job["tracking"]["classificationInfo"]["subClassificationId"]).first()
+                if existing_sub_classification_id == None:
+                    new_sub_classification = SubClassification(
+                        subClassification_Id=job["tracking"]["classificationInfo"]["subClassificationId"],
+                        classification_Id=job["tracking"]["classificationInfo"]["classificationId"],
+                        label=job["tracking"]["classificationInfo"]["subClassification"],
+                    )
+                    session.add(new_sub_classification)
+
+            # insert into locations table if the location id does not exist
+            if job.get("tracking", {}).get("locationInfo").get("locationIds") is not None:
+                for location in job["tracking"]["locationInfo"]["locationIds"]:
+                    existing_location_id = session.query(Location).filter(Location.location_Id == location).first()
+                    if existing_location_id == None:
+                        new_location = Location(
+                            location_Id=location,
+                            area=job["tracking"]["locationInfo"]["area"],
+                            location=job["tracking"]["locationInfo"]["location"]
+                        )
+                        session.add(new_location)
+
+            # insert into WorkTypes table if the work type id does not exist
+            if job.get("tracking", {}).get("workTypeIds") is not None:
+                work_type_id = job["tracking"]["workTypeIds"]
+                existing_work_type_id = session.query(WorkType).filter(WorkType.work_type_Id == job["tracking"]["workTypeIds"]).first()
+                if existing_work_type_id == None:
+                    new_work_type = WorkType(
+                        work_type_Id=work_type_id,
+                        label=job["workTypes"]["label"]
+                    )
+                    session.add(new_work_type)
+
+            
             # if job id already exists in the database, skip
             if int(job["id"]) in jobIdsInDatabase:
                 continue
-
-            # insert into Advertisers table if the advertiser id does not exist
-            # if advertiser["id"] is not an integer, then it is a private advertiser - use id 1 for private advertisers
-            if not isinstance(job["advertiser"]["id"], int):
-                job["advertiser"]["id"] = 1
-            cursor.execute("SELECT COUNT(*) FROM Advertisers WHERE advertiser_id = ?", (job["advertiser"]["id"],))
-            if cursor.fetchone()[0] == 0:
-                cursor.execute("SET IDENTITY_INSERT Advertisers ON")
-                cursor.execute(
-                    "INSERT INTO Advertisers (advertiser_id, name, is_verified, registration_date, date_added) VALUES (?,?,?,?,?)",
-                    (
-                        job["advertiser"]["id"],
-                        job["advertiser"]["name"],
-                        job["advertiser"]["isVerified"],
-                        job["advertiser"]["registrationDate"]["dateTimeUtc"],
-                        datetime.datetime.now()
-                    ),
-                )
-                cursor.execute("SET IDENTITY_INSERT Advertisers OFF") 
-
             # insert into Jobs table
-            cursor.execute("SET IDENTITY_INSERT Jobs ON")
-            cursor.execute(
-                "INSERT INTO Jobs (job_id, advertiser_id, subclassification_id, work_type_id, title, abstract, [content], phone_number, location, is_expired, expires_at, is_link_out, is_verified, status, listed_at, salary, share_link, date_added) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                (
-                    job["id"],
-                    job["advertiser"]["id"],
-                    job["tracking"]["classificationInfo"]["subClassificationId"],
-                    job["tracking"]["workTypeIds"],
-                    job["title"],
-                    job["abstract"],
-                    job["content"],
-                    job["phoneNumber"],
-                    job["location"]["label"],
-                    job["isExpired"],
-                    job["expiresAt"]["dateTimeUtc"],
-                    job["isLinkOut"],
-                    job["isVerified"],
-                    job["status"],
-                    job["listedAt"]["dateTimeUtc"],
-                    job["salary"]["label"] if job.get("salary") and job["salary"].get("label") else None,
-                    job["shareLink"],
-                    datetime.datetime.now()
-                ),
+            newJob = Job(
+                job_Id=job.get("id"),
+                advertiser_Id=job.get("advertiser", {}).get("id"),
+                classification_Id=job.get("tracking", {}).get("classificationInfo", {}).get("classificationId"),
+                subClassification_Id=job.get("tracking", {}).get("classificationInfo", {}).get("subClassificationId"),
+                # TODO: add jobworktype table to model multiple work types
+                work_type_Id=job.get("tracking", {}).get("workTypeIds"),
+                title=job.get("title"),
+                phone_number=job.get("phoneNumber"),
+                is_expired=job.get("isExpired"),
+                expires_at=datetime.datetime.strptime(job["expiresAt"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ"),
+                is_link_out=job.get("isLinkOut"),
+                is_verified=job.get("isVerified"),
+                abstract=job.get("abstract"),
+                content=job.get("content"),
+                status=job.get("status"),
+                listed_at=datetime.datetime.strptime(job["listedAt"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ"),
+                salary=job.get("salary"),
+                share_link=job.get("shareLink"),
+                date_added=datetime.datetime.now(),
+                bullets=json.dumps(job.get("products", {}).get("bullets")), 
+                questions=json.dumps(job.get("products", {}).get("questionnaire", {}).get("questions"))
             )
-            cursor.execute("SET IDENTITY_INSERT Jobs OFF")
+            session.add(newJob)
+
+            # insert into JobLocations table
+            if job.get("location", {}).get("locationIds") is not None:
+                for location in job["location"]["locationIds"]:
+                    location = session.query(Location).filter(Location.location_Id == location).first()
+                    if location == None:
+                        new_job_location = JobLocation(
+                            job_id=job["id"],
+                            location_id=location.location_Id
+                        )
+                        session.add(new_job_location)
+            session.commit()
+
+
         except Exception as e:
             logger.error(f"Error inserting job: {job['id']}, {e}")
-            continue
-    
-    conn.commit()
-    conn.close()
+            session.rollback()
 
 def queryJobs():
     remoteKeywords = [

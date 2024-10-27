@@ -21,7 +21,8 @@
                         "area": "Manukau & East Auckland",
                         "location": "Auckland",
                         "locationIds": [
-                            "30274"
+                            "30274",
+                            "30275"
                         ],
                         "__typename": "JobTrackingLocationInfo"
                     },

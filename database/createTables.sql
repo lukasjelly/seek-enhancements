@@ -18,9 +18,9 @@ CREATE TABLE `Classification` (
 -- Table: SubClassification
 CREATE TABLE `SubClassification` (
     `subClassification_Id` INT PRIMARY KEY,
-    `classification_id` INT NOT NULL,
+    `classification_Id` INT NOT NULL,
     `label` VARCHAR(255) NOT NULL,
-    FOREIGN KEY (`classification_id`) REFERENCES `Classification`(`classification_Id`)
+    FOREIGN KEY (`classification_Id`) REFERENCES `Classification`(`classification_Id`)
 );
 
 -- Table: Location
@@ -32,7 +32,7 @@ CREATE TABLE `Location` (
 
 -- Table: WorkType
 CREATE TABLE `WorkType` (
-    `work_type_id` INT PRIMARY KEY,
+    `work_type_Id` INT PRIMARY KEY,
     `label` VARCHAR(255) NOT NULL
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE `Job` (
     `advertiser_Id` INT NOT NULL,
     `classification_Id` INT NOT NULL,
     `subClassification_Id` INT NOT NULL,
-    `work_type_id` INT NOT NULL,
+    `work_type_Id` INT NOT NULL,
     `title` VARCHAR(255) NULL,
     `phone_number` VARCHAR(20) NULL,
     `is_expired` TINYINT(1) NULL,
@@ -63,9 +63,9 @@ CREATE TABLE `Job` (
 
 -- Table: JobLocation
 CREATE TABLE `JobLocation` (
-    `job_location_id` INT PRIMARY KEY,
-    `job_id` INT NOT NULL,
-    `location_id` INT NOT NULL,
-    FOREIGN KEY (`job_id`) REFERENCES `Job`(`job_Id`),
-    FOREIGN KEY (`location_id`) REFERENCES `Location`(`location_Id`)
+    `job_location_Id` INT PRIMARY KEY AUTO_INCREMENT,
+    `job_Id` INT NOT NULL,
+    `location_Id` INT NOT NULL,
+    FOREIGN KEY (`job_Id`) REFERENCES `Job`(`job_Id`),
+    FOREIGN KEY (`location_Id`) REFERENCES `Location`(`location_Id`)
 );
