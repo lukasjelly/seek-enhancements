@@ -8,8 +8,10 @@ from tqdm import tqdm
 import pyodbc
 import os
 import datetime
+from dotenv import load_dotenv
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -194,12 +196,15 @@ def getJobDetails():
         }
         response = requests.post(url, json=payload)
         data = response.json()
-        jobDetails.append(data["data"])
+        #insert if job details are not null
+        if data["data"] != None:
+            jobDetails.append(data["data"])
+        else:
+            logger.info(f"jobId: {jobId} has no job details")
     with open("output/jobDetails.json", "w", encoding="utf-8") as f:
         json.dump(jobDetails, f, indent=4, ensure_ascii=False)
     logger.info(f"total jobDetails: {len(jobDetails)}")
     conn.close()
-
 
 def insertJobDetailsIntoDatabase():
     connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
@@ -221,7 +226,7 @@ def insertJobDetailsIntoDatabase():
             job = job["jobDetails"]["job"]
 
             # if job id already exists in the database, skip
-            if job["id"] in jobIdsInDatabase:
+            if int(job["id"]) in jobIdsInDatabase:
                 continue
 
             # insert into Advertisers table if the advertiser id does not exist
@@ -361,7 +366,6 @@ def queryJobs():
         json.dump(foundJobsOutput, f, indent=4, ensure_ascii=False)
     print(f"foundJobs: {len(foundJobs)}")
 
-
 def classifiyClassifications():
     # get all classifications
     url = "https://jobsearch-api-ts.cloud.seek.com.au/v4/counts?siteKey=NZ-Main&sourcesystem=houston&userid=b75b2db1-191b-4ea3-98f7-f8f488fd6359&usersessionid=b75b2db1-191b-4ea3-98f7-f8f488fd6359&eventCaptureSessionId=b75b2db1-191b-4ea3-98f7-f8f488fd6359&where=All+New+Zealand&page=1&seekSelectAllPages=true&include=seodata&locale=en-NZ"
@@ -412,10 +416,13 @@ def sandpit():
     with open("output/jobDetails.json", "r", encoding="utf-8") as f:
         jobDetails = json.load(f)
     
+    previousJobId = 0
     for job in jobDetails:
         if job["jobDetails"]== None:
-            logger.info(f"job: {job}")
+            logger.info(f"previousJobId: {previousJobId}")
             break
+        previousJobId = job["jobDetails"]["job"]["id"]
+
 if __name__ == "__main__":
     open("logging/general.log", "w").close()
     #getTechJobIds()

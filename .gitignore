@@ -162,5 +162,4 @@ __queuestorage__
 __azurite_db*__.json
 .python_packages
 
-# temporary files
 **temp/

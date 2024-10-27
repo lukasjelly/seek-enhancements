@@ -1,0 +1,157 @@
+[
+    {
+        "jobDetails": null
+    },
+    {
+        "jobDetails": {
+            "job": {
+                "sourceZone": "anz-2",
+                "tracking": {
+                    "adProductType": "Branded",
+                    "classificationInfo": {
+                        "classificationId": "6251",
+                        "classification": "Administration & Office Support",
+                        "subClassificationId": "6256",
+                        "subClassification": "Office Management",
+                        "__typename": "JobTrackingClassificationInfo"
+                    },
+                    "hasRoleRequirements": true,
+                    "isPrivateAdvertiser": false,
+                    "locationInfo": {
+                        "area": "Manukau & East Auckland",
+                        "location": "Auckland",
+                        "locationIds": [
+                            "30274"
+                        ],
+                        "__typename": "JobTrackingLocationInfo"
+                    },
+                    "workTypeIds": "242",
+                    "postedTime": "2d ago",
+                    "__typename": "JobTracking"
+                },
+                "id": "79374492",
+                "title": "Kaiwhakahaere Tari",
+                "phoneNumber": null,
+                "isExpired": false,
+                "expiresAt": {
+                    "dateTimeUtc": "2024-11-08T12:59:59.999Z",
+                    "__typename": "SeekDateTime"
+                },
+                "isLinkOut": false,
+                "contactMatches": [],
+                "isVerified": true,
+                "abstract": "You will be the conduit that connects our front and back office, the conductor ensuring all the components are working well.  A Super Star!",
+                "content": "<p></p><p><strong>About us</strong></p><p>Taonga Education Centre has a number of early childhood centres across the South Auckland area.  We also offer Teen Parent Services for our whaea taiohi, pre- and post-natal.  \n\nOur Mission is \"Totally Acknowledging Our Next Generations Abilities\" and so everything we do in the front line or in the back office is focussed on ensuring our kaimahi can deliver the services that help us achieve our mission.\n\nIt's a busy role and not for the faint hearted, but if you're ready to roll up your sleeves, nau mai, haere mai.</p><p></p><p></p><p><strong>Qualifications &amp; experience</strong></p><p></p><ul><li>Must have at least 3+ years of experience in a senior office admin role.</li><li>Must be confident and competent in using Outlook, MS Chats, Office 365.</li><li>Preference given if you can Microsoft Power Automate, Forms, Canva and other apps.</li></ul><p></p><p></p><p></p><p><strong>Tasks &amp; responsibilities</strong></p><p></p><ul><li>Provide admin support to our Early Childhood Centres</li><li>Property maintenance and coordination of trade contractors etc</li><li>Fleet maintenance and coordination of registrations, Wof, repairs etc</li><li>Administration support for HR, Recruitment, Health &amp; Safety and Emergency Management</li><li>Onboarding and exiting of kaimahi / tamariki / whaea taiohi into our databases.</li><li>Database maintenance and use. </li><li>You will work closely with Accounts/Payroll and Senior Management.</li></ul><p></p><p></p><p></p><p><strong>Benefits</strong></p><p></p><ul><li>Great Team</li><li>Great Cooks - the morning teas are ON!</li><li>Supportive Environment</li><li>Ongoing learning and development</li></ul><p></p><p></p>",
+                "status": "Active",
+                "listedAt": {
+                    "label": "2d ago",
+                    "dateTimeUtc": "2024-10-08T20:43:58.532Z",
+                    "__typename": "SeekDateTime"
+                },
+                "salary": {
+                    "currencyLabel": null,
+                    "label": "$65,000 - $75,000",
+                    "__typename": "JobSalary"
+                },
+                "shareLink": "https://www.seek.co.nz/job/79374492?tracking=SHR-WEB-SharedJob-anz-2",
+                "workTypes": {
+                    "label": "Full time",
+                    "__typename": "JobWorkTypes"
+                },
+                "advertiser": {
+                    "id": "62566365",
+                    "name": "Taonga Education Centre Trust",
+                    "isVerified": null,
+                    "registrationDate": {
+                        "dateTimeUtc": "2024-07-16T03:01:04.049Z",
+                        "__typename": "SeekDateTime"
+                    },
+                    "__typename": "Advertiser"
+                },
+                "location": {
+                    "label": "Wiri, Auckland",
+                    "__typename": "LocationInfo"
+                },
+                "classifications": [
+                    {
+                        "label": "Office Management (Administration & Office Support)",
+                        "__typename": "ClassificationInfo"
+                    }
+                ],
+                "products": {
+                    "branding": {
+                        "id": "df05fad9-4621-4096-8f0b-f5fb811fe0e8.1",
+                        "cover": {
+                            "url": "https://image-service-cdn.seek.com.au/583f89806316a39626e9a8f9363e2697419fdce3/16af7d5e6b5af560d0348506c6248aca99f0c24a",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "thumbnailCover": {
+                            "url": "https://image-service-cdn.seek.com.au/583f89806316a39626e9a8f9363e2697419fdce3/6f50de1666711b199432126953d56ea0a8ee3a07",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "logo": {
+                            "url": "https://image-service-cdn.seek.com.au/d272e3fefb1c1c11fc011be8281d34e74a9e36b9/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                            "__typename": "JobProductBrandingImage"
+                        },
+                        "__typename": "JobProductBranding"
+                    },
+                    "bullets": [
+                        "40 hours per week, Monday to Friday",
+                        "Our First Point of Contact for Taonga",
+                        "Be part of a great team"
+                    ],
+                    "questionnaire": {
+                        "questions": [
+                            "Which of the following statements best describes your right to work in New Zealand?",
+                            "How many years' experience do you have as a Kaiwhakahaere?",
+                            "How much notice are you required to give your current employer?",
+                            "Do you have a current New Zealand driver's licence?"
+                        ],
+                        "__typename": "JobQuestionnaire"
+                    },
+                    "video": null,
+                    "__typename": "JobProducts"
+                },
+                "__typename": "Job"
+            },
+            "companyProfile": null,
+            "companySearchUrl": "https://www.seek.co.nz/jobs?advertiserid=62566365",
+            "learningInsights": {
+                "analytics": {
+                    "title": "Career Advice homepage",
+                    "landingPage": "CA Home",
+                    "resultType": "DefaultSearchToCA",
+                    "bannerName": "DefaultSearchToCA",
+                    "encoded": "title:Career Advice homepage;landingPage:CA Home;resultType:DefaultSearchToCA;bannerName:DefaultSearchToCA"
+                },
+                "content": "<style>\n  /* capsize font, don't change */\n  .capsize-largeText {\n    font-size: 18px;\n    line-height: 27.094px;\n    display: block;\n  }\n\n  .capsize-largeText::before {\n    content: '';\n    margin-bottom: -0.3611em;\n    display: table;\n  }\n\n  .capsize-largeText::after {\n    content: '';\n    margin-top: -0.3611em;\n    display: table;\n  }\n\n  .capsize-standardText {\n    font-size: 16px;\n    line-height: 24.528px;\n    display: block;\n  }\n\n  .capsize-standardText::before {\n    content: '';\n    margin-bottom: -0.375em;\n    display: table;\n  }\n\n  .capsize-standardText::after {\n    content: '';\n    margin-top: -0.375em;\n    display: table;\n  }\n  /* end of capsize */\n\n  /* LMIS css start here*/\n  .lmis-root {\n    font-family: SeekSans, 'SeekSans Fallback', Arial, sans-serif;\n    color: #2e3849;\n  }\n\n  .lmis-title {\n    font-weight: 500;\n  }\n\n  .lmis-description {\n    margin-top: 24px;\n    margin-bottom: 16px;\n  }\n\n  .lmis-list {\n    padding-left: 0;\n    margin: 0;\n  }\n\n  .lmis-list li {\n    display: flex;\n    align-items: center;\n    color: #414c63;\n    margin-top: 12px;\n  }\n\n  .lmis-list li:first-child {\n    margin-top: 0;\n  }\n\n  .lmis-list li:before {\n    content: '\\2022 \\0020';\n    font-weight: 500;\n    font-size: 16px;\n    margin-right: 8px;\n  }\n\n  .lmis-cta {\n    font-weight: 500;\n    text-decoration: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #2e3849;\n    border: 2px solid #2e3849;\n    border-radius: 8px;\n    min-height: 48px;\n    margin-top: 24px;\n  }\n\n  .lmis-cta img {\n    margin-left: 4px;\n  }\n\n  .lmis-cta:hover {\n    background-color: #f4f6fe;\n  }\n\n  @media only screen and (min-width: 740px) {\n    .lmis-cta {\n      max-width: 260px;\n    }\n  }\n\n  @media only screen and (min-width: 992px) {\n    .lmis-root {\n      margin: -16px;\n    }\n  }\n</style>\n\n<div class=\"lmis-root\">\n  <div class=\"capsize-largeText lmis-title\">Career Advice</div>\n  <div class=\"capsize-standardText lmis-description\">Researching careers? Find all the information and tips you need on career advice.</div>\n  <ul class=\"lmis-list\">\n    <li><span class=\"capsize-standardText\">Role descriptions</span></li>\n    <li><span class=\"capsize-standardText\">Salary insights</span></li>\n    <li><span class=\"capsize-standardText\">Tools to help you prepare for jobs</span></li>\n  </ul>\n  <a class=\"lmis-cta\" target=\"_blank\" href=\"https://www.seek.co.nz/career-advice/?utm_campaign=LMIS_Web&amp;utm_source=SEEK&amp;utm_medium=LMIS&amp;utm_content=job-details\">\n    <span class=\"capsize-standardText\">Explore Career Advice</span>\n    <img\n      src=\"https://cdn.seeklearning.com.au/media/images/lmis/arrow_right.svg\"\n      alt=\"arrow-right\"\n    />\n  </a>\n</div>\n",
+                "__typename": "LearningInsights"
+            },
+            "companyTags": [],
+            "restrictedApplication": {
+                "label": null,
+                "__typename": "JobDetailsRestrictedApplication"
+            },
+            "sourcr": null,
+            "gfjInfo": {
+                "location": {
+                    "countryCode": "NZ",
+                    "country": "New Zealand",
+                    "suburb": "Wiri",
+                    "region": null,
+                    "state": null,
+                    "postcode": "2023",
+                    "__typename": "GFJLocation"
+                },
+                "workTypes": {
+                    "label": [
+                        "FULL_TIME"
+                    ],
+                    "__typename": "GFJWorkTypes"
+                },
+                "__typename": "GFJInfo"
+            },
+            "__typename": "JobDetails"
+        }
+    }
+]

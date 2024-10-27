@@ -3,3 +3,8 @@ fastapi
 uvicorn[standard]
 pydantic
 azure-identity
+sqlacodegen
+tqdm
+mariadb
+setuptools
+pymysql

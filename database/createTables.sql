@@ -1,100 +1,71 @@
+use seek;
+
 -- Table: Advertisers
-CREATE TABLE Advertisers (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    name VARCHAR(255) NOT NULL,
-    is_verified BIT NOT NULL,
-    registration_date DATETIME NOT NULL
+CREATE TABLE `Advertiser` (
+    `advertiser_Id` INT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `is_verified` TINYINT(1) NULL,
+    `registration_date` DATETIME NULL,
+    `date_added` DATETIME NULL
 );
 
--- Table: Classifications
-CREATE TABLE Classifications (
-    classification_id INT PRIMARY KEY IDENTITY(1,1),
-    label VARCHAR(255) NOT NULL
+-- Table: Classification
+CREATE TABLE `Classification` (
+    `classification_Id` INT PRIMARY KEY,
+    `label` VARCHAR(255) NOT NULL
 );
 
--- Table: SubClassifications
-CREATE TABLE SubClassifications (
-    subClassification_Id INT PRIMARY KEY IDENTITY(1,1),
-    classification_id INT NOT NULL,
-    label VARCHAR(255) NOT NULL,
-    FOREIGN KEY (classification_id) REFERENCES Classifications(id)
+-- Table: SubClassification
+CREATE TABLE `SubClassification` (
+    `subClassification_Id` INT PRIMARY KEY,
+    `classification_id` INT NOT NULL,
+    `label` VARCHAR(255) NOT NULL,
+    FOREIGN KEY (`classification_id`) REFERENCES `Classification`(`classification_Id`)
 );
 
--- Table: Jobs
-CREATE TABLE Jobs (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    title VARCHAR(255) NOT NULL,
-    abstract TEXT NULL,
-    content TEXT NULL,
-    phone_number VARCHAR(20) NULL,
-    is_expired BIT NOT NULL,
-    expires_at DATETIME NULL,
-    is_link_out BIT NOT NULL,
-    is_verified BIT NOT NULL,
-    status VARCHAR(50) NOT NULL,
-    listed_at DATETIME NOT NULL,
-    salary VARCHAR(255) NULL,
-    share_link VARCHAR(255) NULL,
-    advertiser_id INT,
-    classification_id INT, -- FK to Classifications
-    subclassification_id INT, -- FK to SubClassifications
-    FOREIGN KEY (advertiser_id) REFERENCES Advertisers(id),
-    FOREIGN KEY (classification_id) REFERENCES Classifications(id),
-    FOREIGN KEY (subclassification_id) REFERENCES SubClassifications(id)
+-- Table: Location
+CREATE TABLE `Location` (
+    `location_Id` INT PRIMARY KEY,
+    `area` VARCHAR(255) NULL,
+    `location` VARCHAR(255) NULL
 );
 
--- Table: JobLocations
-CREATE TABLE JobLocations (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    job_id INT NOT NULL,
-    location_id INT NOT NULL,
-    FOREIGN KEY (job_id) REFERENCES Jobs(id),
-    FOREIGN KEY (location_id) REFERENCES Locations(id)
+-- Table: WorkType
+CREATE TABLE `WorkType` (
+    `work_type_id` INT PRIMARY KEY,
+    `label` VARCHAR(255) NOT NULL
 );
 
--- Table: JobTracking
-CREATE TABLE JobTracking (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    job_id INT NOT NULL,
-    source_zone VARCHAR(50) NULL,
-    ad_product_type VARCHAR(50) NULL,
-    has_role_requirements BIT NULL,
-    is_private_advertiser BIT NULL,
-    work_type_ids VARCHAR(50) NULL,
-    posted_time VARCHAR(50) NULL,
-    FOREIGN KEY (job_id) REFERENCES Jobs(id)
+-- Table: Job
+CREATE TABLE `Job` (
+    `job_Id` INT PRIMARY KEY NOT NULL,
+    `advertiser_Id` INT NOT NULL,
+    `classification_Id` INT NOT NULL,
+    `subClassification_Id` INT NOT NULL,
+    `work_type_id` INT NOT NULL,
+    `title` VARCHAR(255) NULL,
+    `phone_number` VARCHAR(20) NULL,
+    `is_expired` TINYINT(1) NULL,
+    `expires_at` DATETIME NULL,
+    `is_link_out` TINYINT(1) NULL,
+    `is_verified` TINYINT(1) NULL,
+    `abstract` TEXT NULL,
+    `content` TEXT NULL,
+    `status` VARCHAR(50) NULL,
+    `listed_at` DATETIME NULL,
+    `salary` VARCHAR(255) NULL,
+    `share_link` VARCHAR(255) NULL,
+    `date_added` DATETIME NULL,
+    `bullets` TEXT NULL,
+    `questions` TEXT NULL,
+    FOREIGN KEY (`advertiser_Id`) REFERENCES `Advertiser`(`advertiser_Id`)
 );
 
--- Table: JobProducts
-CREATE TABLE JobProducts (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    job_id INT NOT NULL,
-    branding_id INT NULL,
-    video_url VARCHAR(255) NULL,
-    FOREIGN KEY (job_id) REFERENCES Jobs(id),
-    FOREIGN KEY (branding_id) REFERENCES ProductBranding(id)
-);
-
--- Table: ProductBranding
-CREATE TABLE ProductBranding (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    cover_url VARCHAR(255) NULL,
-    thumbnail_url VARCHAR(255) NULL,
-    logo_url VARCHAR(255) NULL
-);
-
--- Table: ProductBullets
-CREATE TABLE ProductBullets (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    product_id INT NOT NULL,
-    bullet_point TEXT NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES JobProducts(id)
-);
-
--- Table: ProductQuestionnaire
-CREATE TABLE ProductQuestionnaire (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    product_id INT NOT NULL,
-    question TEXT NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES JobProducts(id)
+-- Table: JobLocation
+CREATE TABLE `JobLocation` (
+    `job_location_id` INT PRIMARY KEY,
+    `job_id` INT NOT NULL,
+    `location_id` INT NOT NULL,
+    FOREIGN KEY (`job_id`) REFERENCES `Job`(`job_Id`),
+    FOREIGN KEY (`location_id`) REFERENCES `Location`(`location_Id`)
 );
