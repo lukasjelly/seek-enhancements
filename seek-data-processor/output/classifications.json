@@ -1,0 +1,2400 @@
+{
+    "mainClassifications": [
+        {
+            "id": "1200",
+            "label": "jobs-in-accounting"
+        },
+        {
+            "id": "1203",
+            "label": "jobs-in-banking-financial-services"
+        },
+        {
+            "id": "1204",
+            "label": "jobs-in-call-centre-customer-service"
+        },
+        {
+            "id": "1206",
+            "label": "jobs-in-construction"
+        },
+        {
+            "id": "1209",
+            "label": "jobs-in-engineering"
+        },
+        {
+            "id": "1210",
+            "label": "jobs-in-government-defence"
+        },
+        {
+            "id": "1211",
+            "label": "jobs-in-healthcare-medical"
+        },
+        {
+            "id": "1212",
+            "label": "jobs-in-hospitality-tourism"
+        },
+        {
+            "id": "1214",
+            "label": "jobs-in-insurance-superannuation"
+        },
+        {
+            "id": "1216",
+            "label": "jobs-in-legal"
+        },
+        {
+            "id": "1220",
+            "label": "jobs-in-real-estate-property"
+        },
+        {
+            "id": "1223",
+            "label": "jobs-in-science-technology"
+        },
+        {
+            "id": "1225",
+            "label": "jobs-in-trades-services"
+        },
+        {
+            "id": "6008",
+            "label": "jobs-in-marketing-communications"
+        },
+        {
+            "id": "6043",
+            "label": "jobs-in-retail-consumer-products"
+        },
+        {
+            "id": "6058",
+            "label": "jobs-in-mining-resources-energy"
+        },
+        {
+            "id": "6076",
+            "label": "jobs-in-consulting-strategy"
+        },
+        {
+            "id": "6092",
+            "label": "jobs-in-manufacturing-transport-logistics"
+        },
+        {
+            "id": "6123",
+            "label": "jobs-in-education-training"
+        },
+        {
+            "id": "6163",
+            "label": "jobs-in-community-services-development"
+        },
+        {
+            "id": "6205",
+            "label": "jobs-in-farming-animals-conservation"
+        },
+        {
+            "id": "6246",
+            "label": "jobs-in-sport-recreation"
+        },
+        {
+            "id": "6251",
+            "label": "jobs-in-administration-office-support"
+        },
+        {
+            "id": "6261",
+            "label": "jobs-in-self-employment"
+        },
+        {
+            "id": "6263",
+            "label": "jobs-in-design-architecture"
+        },
+        {
+            "id": "6281",
+            "label": "jobs-in-information-communication-technology"
+        },
+        {
+            "id": "6304",
+            "label": "jobs-in-advertising-arts-media"
+        },
+        {
+            "id": "6317",
+            "label": "jobs-in-human-resources-recruitment"
+        },
+        {
+            "id": "6362",
+            "label": "jobs-in-sales"
+        },
+        {
+            "id": "7019",
+            "label": "jobs-in-ceo-general-management"
+        }
+    ],
+    "subClassifications": [
+        {
+            "id": "1303",
+            "label": "accounts-payable",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "1313",
+            "label": "air-conditioning-refrigeration",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "1315",
+            "label": "airlines",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "1328",
+            "label": "automotive-trades",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "1332",
+            "label": "bar-beverage-staff",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "1345",
+            "label": "carpentry-cabinet-making",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "1350",
+            "label": "claims",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "1352",
+            "label": "client-services",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "1353",
+            "label": "clinical-medical-research",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "1372",
+            "label": "dental",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "1378",
+            "label": "emergency-services",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "1387",
+            "label": "estimating",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "1392",
+            "label": "financial-planning",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "1404",
+            "label": "funds-management",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "1405",
+            "label": "gaming",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "1406",
+            "label": "gardening-landscaping",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "1409",
+            "label": "government-federal",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "1410",
+            "label": "government-local",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "1411",
+            "label": "government-state",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "1415",
+            "label": "housekeeping",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "1429",
+            "label": "law-clerks-paralegals",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "1431",
+            "label": "legal-secretaries",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "1467",
+            "label": "pathology",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "1468",
+            "label": "payroll",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "1470",
+            "label": "pharmacy",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "1499",
+            "label": "risk-consulting",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "1537",
+            "label": "tour-guides",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "1542",
+            "label": "travel-agents-consultants",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "1544",
+            "label": "underwriting",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "1546",
+            "label": "valuation",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "1549",
+            "label": "waiting-staff",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "6001",
+            "label": "analysts",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "6002",
+            "label": "body-corporate-facilities-management",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "6003",
+            "label": "commercial-sales-leasing-property-mgmt",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "6004",
+            "label": "residential-leasing-property-management",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "6005",
+            "label": "residential-sales",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "6006",
+            "label": "retail-property-development",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "6007",
+            "label": "other",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "6009",
+            "label": "brand-management",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6010",
+            "label": "digital-search-marketing",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6011",
+            "label": "direct-marketing-crm",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6012",
+            "label": "event-management",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6013",
+            "label": "internal-communications",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6014",
+            "label": "market-research-analysis",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6015",
+            "label": "marketing-assistants-coordinators",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6016",
+            "label": "marketing-communications",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6017",
+            "label": "management",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6018",
+            "label": "product-management-development",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6019",
+            "label": "public-relations-corporate-affairs",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6020",
+            "label": "trade-marketing",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6021",
+            "label": "other",
+            "mainClassification": "jobs-in-marketing-communications",
+            "mainClassificationId": "6008"
+        },
+        {
+            "id": "6022",
+            "label": "aerospace-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6023",
+            "label": "automotive-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6024",
+            "label": "building-services-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6025",
+            "label": "engineering-drafting",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6026",
+            "label": "chemical-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6027",
+            "label": "civil-structural-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6028",
+            "label": "electrical-electronic-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6029",
+            "label": "environmental-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6030",
+            "label": "field-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6031",
+            "label": "industrial-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6032",
+            "label": "maintenance",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6033",
+            "label": "management",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6034",
+            "label": "materials-handling-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6035",
+            "label": "mechanical-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6036",
+            "label": "process-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6037",
+            "label": "project-management",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6038",
+            "label": "project-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6039",
+            "label": "supervisors",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6040",
+            "label": "systems-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6041",
+            "label": "water-waste-engineering",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6042",
+            "label": "other",
+            "mainClassification": "jobs-in-engineering",
+            "mainClassificationId": "1209"
+        },
+        {
+            "id": "6044",
+            "label": "buying",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6045",
+            "label": "management-area-multi-site",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6046",
+            "label": "management-department-assistant",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6047",
+            "label": "management-store",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6048",
+            "label": "merchandisers",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6049",
+            "label": "planning",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6050",
+            "label": "retail-assistants",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6051",
+            "label": "other",
+            "mainClassification": "jobs-in-retail-consumer-products",
+            "mainClassificationId": "6043"
+        },
+        {
+            "id": "6052",
+            "label": "chefs-cooks",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "6053",
+            "label": "front-office-guest-services",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "6054",
+            "label": "kitchen-sandwich-hands",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "6055",
+            "label": "management",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "6056",
+            "label": "reservations",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "6057",
+            "label": "other",
+            "mainClassification": "jobs-in-hospitality-tourism",
+            "mainClassificationId": "1212"
+        },
+        {
+            "id": "6059",
+            "label": "analysis-reporting",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6060",
+            "label": "health-safety-environment",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6061",
+            "label": "management",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6062",
+            "label": "mining-drill-blast",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6063",
+            "label": "mining-engineering-maintenance",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6064",
+            "label": "mining-exploration-geoscience",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6065",
+            "label": "mining-processing",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6066",
+            "label": "mining-operations",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6068",
+            "label": "oil-gas-engineering-maintenance",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6070",
+            "label": "oil-gas-production-refinement",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6071",
+            "label": "oil-gas-operations",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6072",
+            "label": "power-generation-distribution",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6073",
+            "label": "natural-resources-water",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6074",
+            "label": "surveying",
+            "mainClassification": "jobs-in-mining-resources-energy",
+            "mainClassificationId": "6058"
+        },
+        {
+            "id": "6077",
+            "label": "analysts",
+            "mainClassification": "jobs-in-consulting-strategy",
+            "mainClassificationId": "6076"
+        },
+        {
+            "id": "6078",
+            "label": "corporate-development",
+            "mainClassification": "jobs-in-consulting-strategy",
+            "mainClassificationId": "6076"
+        },
+        {
+            "id": "6079",
+            "label": "environment-sustainability-consulting",
+            "mainClassification": "jobs-in-consulting-strategy",
+            "mainClassificationId": "6076"
+        },
+        {
+            "id": "6080",
+            "label": "management-change-consulting",
+            "mainClassification": "jobs-in-consulting-strategy",
+            "mainClassificationId": "6076"
+        },
+        {
+            "id": "6081",
+            "label": "policy",
+            "mainClassification": "jobs-in-consulting-strategy",
+            "mainClassificationId": "6076"
+        },
+        {
+            "id": "6082",
+            "label": "strategy-planning",
+            "mainClassification": "jobs-in-consulting-strategy",
+            "mainClassificationId": "6076"
+        },
+        {
+            "id": "6083",
+            "label": "other",
+            "mainClassification": "jobs-in-consulting-strategy",
+            "mainClassificationId": "6076"
+        },
+        {
+            "id": "6084",
+            "label": "collections",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6085",
+            "label": "customer-service-call-centre",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6086",
+            "label": "customer-service-customer-facing",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6087",
+            "label": "management-support",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6088",
+            "label": "sales-inbound",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6089",
+            "label": "sales-outbound",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6090",
+            "label": "supervisors-team-leaders",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6091",
+            "label": "other",
+            "mainClassification": "jobs-in-call-centre-customer-service",
+            "mainClassificationId": "1204"
+        },
+        {
+            "id": "6093",
+            "label": "assembly-process-work",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6094",
+            "label": "aviation-services",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6095",
+            "label": "analysis-reporting",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6096",
+            "label": "couriers-drivers-postal-services",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6097",
+            "label": "fleet-management",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6098",
+            "label": "freight-cargo-forwarding",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6099",
+            "label": "import-export-customs",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6100",
+            "label": "public-transport-taxi-services",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6101",
+            "label": "machine-operators",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6102",
+            "label": "management",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6103",
+            "label": "production-planning-scheduling",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6104",
+            "label": "pattern-makers-garment-technicians",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6105",
+            "label": "pickers-packers",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6106",
+            "label": "quality-assurance-control",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6107",
+            "label": "team-leaders-supervisors",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6108",
+            "label": "warehousing-storage-distribution",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6109",
+            "label": "purchasing-procurement-inventory",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6110",
+            "label": "rail-maritime-transport",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6111",
+            "label": "road-transport",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6112",
+            "label": "other",
+            "mainClassification": "jobs-in-manufacturing-transport-logistics",
+            "mainClassificationId": "6092"
+        },
+        {
+            "id": "6113",
+            "label": "contracts-management",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6114",
+            "label": "foreperson-supervisors",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6115",
+            "label": "health-safety-environment",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6116",
+            "label": "management",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6117",
+            "label": "planning-scheduling",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6118",
+            "label": "plant-machinery-operators",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6119",
+            "label": "project-management",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6120",
+            "label": "quality-assurance-control",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6121",
+            "label": "surveying",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6122",
+            "label": "other",
+            "mainClassification": "jobs-in-construction",
+            "mainClassificationId": "1206"
+        },
+        {
+            "id": "6124",
+            "label": "childcare-outside-school-hours-care",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6125",
+            "label": "library-services-information-management",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6126",
+            "label": "management-schools",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6127",
+            "label": "management-universities",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6128",
+            "label": "management-vocational",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6129",
+            "label": "research-fellowships",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6130",
+            "label": "student-services",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6131",
+            "label": "teaching-aides-special-needs",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6132",
+            "label": "teaching-early-childhood",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6133",
+            "label": "teaching-primary",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6134",
+            "label": "teaching-secondary",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6135",
+            "label": "teaching-tertiary",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6136",
+            "label": "teaching-vocational",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6137",
+            "label": "tutoring",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6138",
+            "label": "workplace-training-assessment",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6139",
+            "label": "other",
+            "mainClassification": "jobs-in-education-training",
+            "mainClassificationId": "6123"
+        },
+        {
+            "id": "6140",
+            "label": "accounts-officers-clerks",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6141",
+            "label": "accounts-receivable-credit-control",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6142",
+            "label": "assistant-accountants",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6143",
+            "label": "analysis-reporting",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6144",
+            "label": "audit-external",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6145",
+            "label": "audit-internal",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6146",
+            "label": "bookkeeping-small-practice-accounting",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6147",
+            "label": "business-services-corporate-advisory",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6149",
+            "label": "compliance-risk",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6150",
+            "label": "cost-accounting",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6151",
+            "label": "financial-accounting-reporting",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6152",
+            "label": "financial-managers-controllers",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6154",
+            "label": "insolvency-corporate-recovery",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6155",
+            "label": "inventory-fixed-assets",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6156",
+            "label": "management",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6157",
+            "label": "management-accounting-budgeting",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6158",
+            "label": "strategy-planning",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6159",
+            "label": "systems-accounting-it-audit",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6160",
+            "label": "taxation",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6161",
+            "label": "treasury",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6162",
+            "label": "other",
+            "mainClassification": "jobs-in-accounting",
+            "mainClassificationId": "1200"
+        },
+        {
+            "id": "6164",
+            "label": "aged-disability-support",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6165",
+            "label": "child-welfare-youth-family-services",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6166",
+            "label": "community-development",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6167",
+            "label": "employment-services",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6168",
+            "label": "fundraising",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6169",
+            "label": "housing-homelessness-services",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6170",
+            "label": "indigenous-multicultural-services",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6171",
+            "label": "management",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6172",
+            "label": "volunteer-coordination-support",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6173",
+            "label": "other",
+            "mainClassification": "jobs-in-community-services-development",
+            "mainClassificationId": "6163"
+        },
+        {
+            "id": "6174",
+            "label": "account-relationship-management",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6175",
+            "label": "analysis-reporting",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6176",
+            "label": "banking-retail-branch",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6177",
+            "label": "banking-business",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6178",
+            "label": "banking-corporate-institutional",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6179",
+            "label": "compliance-risk",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6180",
+            "label": "corporate-finance-investment-banking",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6181",
+            "label": "credit",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6182",
+            "label": "management",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6183",
+            "label": "mortgages",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6184",
+            "label": "settlements",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6186",
+            "label": "treasury",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6187",
+            "label": "other",
+            "mainClassification": "jobs-in-banking-financial-services",
+            "mainClassificationId": "1203"
+        },
+        {
+            "id": "6188",
+            "label": "banking-finance-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6189",
+            "label": "criminal-civil-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6190",
+            "label": "construction-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6191",
+            "label": "corporate-commercial-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6192",
+            "label": "environment-planning-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6193",
+            "label": "family-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6194",
+            "label": "generalists-in-house",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6195",
+            "label": "generalists-law-firm",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6196",
+            "label": "industrial-relations-employment-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6198",
+            "label": "intellectual-property-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6199",
+            "label": "legal-practice-management",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6200",
+            "label": "litigation-dispute-resolution",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6202",
+            "label": "property-law",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6204",
+            "label": "other",
+            "mainClassification": "jobs-in-legal",
+            "mainClassificationId": "1216"
+        },
+        {
+            "id": "6206",
+            "label": "agronomy-farm-services",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6207",
+            "label": "conservation-parks-wildlife",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6208",
+            "label": "farm-labour",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6209",
+            "label": "farm-management",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6210",
+            "label": "fishing-aquaculture",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6211",
+            "label": "horticulture",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6212",
+            "label": "veterinary-services-animal-welfare",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6213",
+            "label": "winery-viticulture",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6214",
+            "label": "other",
+            "mainClassification": "jobs-in-farming-animals-conservation",
+            "mainClassificationId": "6205"
+        },
+        {
+            "id": "6215",
+            "label": "biological-biomedical-sciences",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6216",
+            "label": "biotechnology-genetics",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6217",
+            "label": "chemistry-physics",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6218",
+            "label": "environmental-earth-geosciences",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6219",
+            "label": "food-technology-safety",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6220",
+            "label": "laboratory-technical-services",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6221",
+            "label": "materials-sciences",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6222",
+            "label": "mathematics-statistics-information-sciences",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6223",
+            "label": "modelling-simulation",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6224",
+            "label": "quality-assurance-control",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6225",
+            "label": "other",
+            "mainClassification": "jobs-in-science-technology",
+            "mainClassificationId": "1223"
+        },
+        {
+            "id": "6226",
+            "label": "bakers-pastry-chefs",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6227",
+            "label": "building-trades",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6228",
+            "label": "butchers",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6229",
+            "label": "cleaning-services",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6230",
+            "label": "electricians",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6231",
+            "label": "fitters-turners-machinists",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6232",
+            "label": "floristry",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6233",
+            "label": "hair-beauty-services",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6234",
+            "label": "labourers",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6235",
+            "label": "locksmiths",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6236",
+            "label": "maintenance-handyperson-services",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6237",
+            "label": "nannies-babysitters",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6238",
+            "label": "painters-sign-writers",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6239",
+            "label": "printing-publishing-services",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6240",
+            "label": "plumbers",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6241",
+            "label": "security-services",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6242",
+            "label": "tailors-dressmakers",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6243",
+            "label": "technicians",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6244",
+            "label": "welders-boilermakers",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6245",
+            "label": "other",
+            "mainClassification": "jobs-in-trades-services",
+            "mainClassificationId": "1225"
+        },
+        {
+            "id": "6247",
+            "label": "coaching-instruction",
+            "mainClassification": "jobs-in-sport-recreation",
+            "mainClassificationId": "6246"
+        },
+        {
+            "id": "6248",
+            "label": "fitness-personal-training",
+            "mainClassification": "jobs-in-sport-recreation",
+            "mainClassificationId": "6246"
+        },
+        {
+            "id": "6249",
+            "label": "management",
+            "mainClassification": "jobs-in-sport-recreation",
+            "mainClassificationId": "6246"
+        },
+        {
+            "id": "6250",
+            "label": "other",
+            "mainClassification": "jobs-in-sport-recreation",
+            "mainClassificationId": "6246"
+        },
+        {
+            "id": "6252",
+            "label": "administrative-assistants",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6253",
+            "label": "client-sales-administration",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6254",
+            "label": "contracts-administration",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6255",
+            "label": "data-entry-word-processing",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6256",
+            "label": "office-management",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6257",
+            "label": "pa-ea-secretarial",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6258",
+            "label": "receptionists",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6259",
+            "label": "records-management-document-control",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6260",
+            "label": "other",
+            "mainClassification": "jobs-in-administration-office-support",
+            "mainClassificationId": "6251"
+        },
+        {
+            "id": "6262",
+            "label": "self-employment",
+            "mainClassification": "jobs-in-self-employment",
+            "mainClassificationId": "6261"
+        },
+        {
+            "id": "6264",
+            "label": "architecture",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6265",
+            "label": "architectural-drafting",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6266",
+            "label": "illustration-animation",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6267",
+            "label": "fashion-textile-design",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6268",
+            "label": "graphic-design",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6269",
+            "label": "industrial-design",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6270",
+            "label": "interior-design",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6271",
+            "label": "landscape-architecture",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6272",
+            "label": "urban-design-planning",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6273",
+            "label": "web-interaction-design",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6274",
+            "label": "other",
+            "mainClassification": "jobs-in-design-architecture",
+            "mainClassificationId": "6263"
+        },
+        {
+            "id": "6275",
+            "label": "actuarial",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "6276",
+            "label": "assessment",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "6277",
+            "label": "brokerage",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "6279",
+            "label": "management",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "6280",
+            "label": "other",
+            "mainClassification": "jobs-in-insurance-superannuation",
+            "mainClassificationId": "1214"
+        },
+        {
+            "id": "6282",
+            "label": "architects",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6283",
+            "label": "business-systems-analysts",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6285",
+            "label": "consultants",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6286",
+            "label": "database-development-administration",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6287",
+            "label": "developers-programmers",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6288",
+            "label": "engineering-hardware",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6289",
+            "label": "engineering-network",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6290",
+            "label": "engineering-software",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6291",
+            "label": "help-desk-it-support",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6292",
+            "label": "management",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6293",
+            "label": "networks-systems-administration",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6294",
+            "label": "product-management-development",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6295",
+            "label": "programme-project-management",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6296",
+            "label": "sales-pre-post",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6297",
+            "label": "security",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6298",
+            "label": "team-leaders",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6299",
+            "label": "technical-writing",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6300",
+            "label": "telecommunications",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6301",
+            "label": "testing-quality-assurance",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6302",
+            "label": "web-development-production",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6303",
+            "label": "other",
+            "mainClassification": "jobs-in-information-communication-technology",
+            "mainClassificationId": "6281"
+        },
+        {
+            "id": "6305",
+            "label": "agency-account-management",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6306",
+            "label": "art-direction",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6307",
+            "label": "editing-publishing",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6308",
+            "label": "event-management",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6309",
+            "label": "journalism-writing",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6310",
+            "label": "management",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6311",
+            "label": "media-strategy-planning-buying",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6312",
+            "label": "performing-arts",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6313",
+            "label": "photography",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6314",
+            "label": "programming-production",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6315",
+            "label": "promotions",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6316",
+            "label": "other",
+            "mainClassification": "jobs-in-advertising-arts-media",
+            "mainClassificationId": "6304"
+        },
+        {
+            "id": "6318",
+            "label": "consulting-generalist-hr",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6319",
+            "label": "industrial-employee-relations",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6320",
+            "label": "management-agency",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6321",
+            "label": "management-internal",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6322",
+            "label": "occupational-health-safety",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6323",
+            "label": "organisational-development",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6324",
+            "label": "recruitment-agency",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6325",
+            "label": "recruitment-internal",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6326",
+            "label": "remuneration-benefits",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6327",
+            "label": "training-development",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6328",
+            "label": "other",
+            "mainClassification": "jobs-in-human-resources-recruitment",
+            "mainClassificationId": "6317"
+        },
+        {
+            "id": "6329",
+            "label": "ambulance-paramedics",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6330",
+            "label": "chiropractic-osteopathic",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6331",
+            "label": "dieticians",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6332",
+            "label": "general-practitioners",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6333",
+            "label": "management",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6334",
+            "label": "medical-administration",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6335",
+            "label": "medical-imaging",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6336",
+            "label": "medical-specialists",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6337",
+            "label": "natural-therapies-alternative-medicine",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6338",
+            "label": "nursing-a-e-critical-care-icu",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6339",
+            "label": "nursing-aged-care",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6340",
+            "label": "nursing-community-maternal-child-health",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6341",
+            "label": "nursing-educators-facilitators",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6342",
+            "label": "nursing-general-medical-surgical",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6343",
+            "label": "nursing-high-acuity",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6344",
+            "label": "nursing-management",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6345",
+            "label": "nursing-midwifery-neo-natal-scn-nicu",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6347",
+            "label": "nursing-psych-forensic-correctional-health",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6348",
+            "label": "nursing-theatre-recovery",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6349",
+            "label": "optical",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6350",
+            "label": "pharmaceuticals-medical-devices",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6351",
+            "label": "psychology-counselling-social-work",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6352",
+            "label": "physiotherapy-ot-rehabilitation",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6353",
+            "label": "sales",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6354",
+            "label": "speech-therapy",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6355",
+            "label": "other",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6356",
+            "label": "government",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "6357",
+            "label": "local-government",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "6358",
+            "label": "regional-council",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "6359",
+            "label": "police-corrections",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "6360",
+            "label": "policy-planning-regulation",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "6361",
+            "label": "other",
+            "mainClassification": "jobs-in-government-defence",
+            "mainClassificationId": "1210"
+        },
+        {
+            "id": "6363",
+            "label": "account-relationship-management",
+            "mainClassification": "jobs-in-sales",
+            "mainClassificationId": "6362"
+        },
+        {
+            "id": "6364",
+            "label": "analysis-reporting",
+            "mainClassification": "jobs-in-sales",
+            "mainClassificationId": "6362"
+        },
+        {
+            "id": "6365",
+            "label": "new-business-development",
+            "mainClassification": "jobs-in-sales",
+            "mainClassificationId": "6362"
+        },
+        {
+            "id": "6366",
+            "label": "management",
+            "mainClassification": "jobs-in-sales",
+            "mainClassificationId": "6362"
+        },
+        {
+            "id": "6367",
+            "label": "sales-coordinators",
+            "mainClassification": "jobs-in-sales",
+            "mainClassificationId": "6362"
+        },
+        {
+            "id": "6368",
+            "label": "sales-representatives-consultants",
+            "mainClassification": "jobs-in-sales",
+            "mainClassificationId": "6362"
+        },
+        {
+            "id": "6369",
+            "label": "other",
+            "mainClassification": "jobs-in-sales",
+            "mainClassificationId": "6362"
+        },
+        {
+            "id": "6370",
+            "label": "residents-registrars",
+            "mainClassification": "jobs-in-healthcare-medical",
+            "mainClassificationId": "1211"
+        },
+        {
+            "id": "6371",
+            "label": "administration",
+            "mainClassification": "jobs-in-real-estate-property",
+            "mainClassificationId": "1220"
+        },
+        {
+            "id": "7020",
+            "label": "board-appointments",
+            "mainClassification": "jobs-in-ceo-general-management",
+            "mainClassificationId": "7019"
+        },
+        {
+            "id": "7021",
+            "label": "ceo",
+            "mainClassification": "jobs-in-ceo-general-management",
+            "mainClassificationId": "7019"
+        },
+        {
+            "id": "7022",
+            "label": "coo-md",
+            "mainClassification": "jobs-in-ceo-general-management",
+            "mainClassificationId": "7019"
+        },
+        {
+            "id": "7023",
+            "label": "general-business-unit-manager",
+            "mainClassification": "jobs-in-ceo-general-management",
+            "mainClassificationId": "7019"
+        },
+        {
+            "id": "7024",
+            "label": "other",
+            "mainClassification": "jobs-in-ceo-general-management",
+            "mainClassificationId": "7019"
+        }
+    ]
+}
