@@ -3,18 +3,14 @@ import sys
 import io
 import logging
 import json
-import re
 from tqdm import tqdm
-import pyodbc
 import os
 import datetime
-from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Advertiser, Classification, Location, WorkType, Job, SubClassification, JobLocation
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -22,7 +18,8 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("logging/general.log"),
-        logging.StreamHandler()
+        logging.StreamHandler(),
+        logging.handlers.SysLogHandler(address='/dev/log')
     ]
 )
 logger = logging.getLogger()
@@ -170,6 +167,7 @@ def insertJobDetailsIntoDatabase():
 
     #get all job ids already in the database
     jobIdsInDatabase = [job.job_Id for job in session.query(Job).all()]
+    new_job_ids = 0
 
     # Insert data into database
     for job in tqdm(jobDetails, desc="Inserting job details into database"):
@@ -181,7 +179,7 @@ def insertJobDetailsIntoDatabase():
             
             try:
                 # insert into Advertisers table if the advertiser id does not exist
-                new_advertiser_id = job.get("advertiser", {}).get("id")
+                new_advertiser_id = get_nested_value(job, ["advertiser", "id"])
                 if new_advertiser_id is not None:
                     if new_advertiser_id == "Private Advertiser":
                         new_advertiser_id = 1
@@ -201,6 +199,7 @@ def insertJobDetailsIntoDatabase():
                             date_added=datetime.datetime.now()
                         )
                         session.add(new_advertiser)
+                        session.commit()
             except Exception as e:
                 logger.error(f"Error inserting advertiser: {new_advertiser_id}, {e}")
                 session.rollback()
@@ -344,6 +343,7 @@ def insertJobDetailsIntoDatabase():
                     )
                     session.add(newJob)
                     session.commit()
+                    new_job_ids += 1
             except Exception as e:
                 logger.error(f"Error inserting job: {new_job_id}, {e}")
                 session.rollback()
@@ -351,14 +351,13 @@ def insertJobDetailsIntoDatabase():
             
             try:
                 # insert into JobLocations table
-                new_location_ids = job.get("location", {}).get("locationIds")
+                new_location_ids = get_nested_value(job, ["tracking", "locationInfo", "locationIds"])
                 new_job_id = job.get("id")
                 if new_location_ids and new_job_id is not None:
                     for location_id in new_location_ids:
-                        logger.info(f"new job location: {new_job_id}, {location_id}")
                         new_job_location = JobLocation(
-                            job_id=new_job_id,
-                            location_id=location_id
+                            job_Id=new_job_id,
+                            location_Id=location_id
                         )
                         session.add(new_job_location)
                         session.commit()
@@ -371,155 +370,10 @@ def insertJobDetailsIntoDatabase():
         except Exception as e:
             logger.error(f"Error inserting job: {job['id']}, {e}")
             session.rollback()
-
-def queryJobs():
-    remoteKeywords = [
-        "remote",
-        "work from home",
-        "telecommute",
-        "telework",
-        "anywhere",
-        "home based",
-        "home office",
-        "home-based",
-        "wfh",
-        "flexible",
-        "home",
-    ]
-    entryLevelKeywords = [
-        "junior",
-        "graduate",
-        "entry level",
-        "intern",
-        "internship",
-        "trainee",
-        "apprentice",
-        "apprenticeship",
-        "student",
-        "starter",
-        "beginner",
-        "student",
-        "assistant",
-        "trainee",
-        "intern",
-        "entry",
-        "newcomer",
-        "beginner",
-        "starter",
-    ]
-    titleKeywords = [
-        "engineer"
-    ]
-    ignore = "senior"
-    foundJobs = []
-    with open("output/jobDetails.json", "r", encoding="utf-8") as f:
-        jobs = json.load(f)
-    for job in jobs:
-        jobContent = job["jobDetails"]["job"]["content"].lower()
-        jobTitle = job["jobDetails"]["job"]["title"].lower()
-        if (
-            any(re.search(r'\b' + re.escape(keyword) + r'\b', jobContent) for keyword in remoteKeywords) and \
-            any(re.search(r'\b' + re.escape(keyword) + r'\b', jobContent) for keyword in entryLevelKeywords)
-            #and any(keyword in jobTitle for keyword in titleKeywords)
-            and ignore not in jobTitle
-        ):
-            # add the remoteKeywords that are found in the jobContent to the job
-            job["remoteKeywords"] = [
-                keyword for keyword in remoteKeywords if keyword in jobContent
-            ]
-            job["entryLevelKeywords"] = [
-                keyword for keyword in entryLevelKeywords if keyword in jobContent
-            ]
-            foundJobs.append(job)
-    # sort jobs by date
-    foundJobs = sorted(
-        foundJobs,
-        key=lambda job: job["jobDetails"]["job"]["listedAt"]["dateTimeUtc"],
-        reverse=True,
-    )
-    with open("output/foundJobs.json", "w", encoding="utf-8") as f:
-        foundJobsOutput = []
-        for job in foundJobs:
-            foundJobsOutput.append(
-                {
-                    "jobId": job["jobDetails"]["job"]["id"],
-                    "title": job["jobDetails"]["job"]["title"],
-                    "location": job["jobDetails"]["job"]["tracking"]["locationInfo"][
-                        "location"
-                    ],
-                    "advertiser": job["jobDetails"]["job"]["advertiser"]["name"],
-                    "listedAt": job["jobDetails"]["job"]["listedAt"]["dateTimeUtc"],
-                    "remoteKeywords": job["remoteKeywords"],
-                    "entryLevelKeywords": job["entryLevelKeywords"],
-                    "url": "https://www.seek.co.nz/job/"+str(job["jobDetails"]["job"]["id"]),
-                }
-            )
-        json.dump(foundJobsOutput, f, indent=4, ensure_ascii=False)
-    print(f"foundJobs: {len(foundJobs)}")
-
-def classifiyClassifications():
-    # get all classifications
-    url = "https://jobsearch-api-ts.cloud.seek.com.au/v4/counts?siteKey=NZ-Main&sourcesystem=houston&userid=b75b2db1-191b-4ea3-98f7-f8f488fd6359&usersessionid=b75b2db1-191b-4ea3-98f7-f8f488fd6359&eventCaptureSessionId=b75b2db1-191b-4ea3-98f7-f8f488fd6359&where=All+New+Zealand&page=1&seekSelectAllPages=true&include=seodata&locale=en-NZ"
-    response = requests.get(url)
-    data = response.json()
-    allClassificationIds = []
-    mainClassifications = []
-    subClassifications = []
-    for item in data["counts"]:
-        if item["name"] == "classification":
-            allClassificationIds = list(item["items"])
-            break
-    for classificationId in tqdm(allClassificationIds, desc="Classifying classifications into main and sub classifications"):
-        url = f"https://www.seek.co.nz/jobs?classification={classificationId}"
-        response = requests.get(url, allow_redirects=True)
-        redirected_url = response.url
-        # this is a main classification
-        if url != redirected_url:
-            mainClassification = redirected_url.split("/")[-1]
-            mainClassifications.append({"id": classificationId, "label": mainClassification})
-
-        # this is a sub classification
-        if url == redirected_url:
-            url = f"https://www.seek.co.nz/jobs?subclassification={classificationId}"
-            response = requests.get(url, allow_redirects=True)
-            redirected_url = response.url
-            #parse the sub classification label from the redirected url. for example, 'accounts payable' should be extracted from https://www.seek.co.nz/jobs-in-accounting/accounts-payable
-            subClassification = redirected_url.split("/")[-1]
-            mainClassification = redirected_url.split("/")[-2]
-            subClassifications.append({"id": classificationId, "label": subClassification, "mainClassification": mainClassification})
-    
-    for subClassification in tqdm(subClassifications, desc="Linking sub classifications to main classifications"):
-        for mainClassification in mainClassifications:
-            if subClassification["mainClassification"] == mainClassification["label"]:
-                subClassification["mainClassificationId"] = mainClassification["id"]
-                break
-
-    with open("output/classifications.json", "w", encoding="utf-8") as f:
-        json.dump({"mainClassifications": mainClassifications, "subClassifications": subClassifications}, f, indent=4, ensure_ascii=False)
-
-
-    # Iterate through all the classification IDs using url https://www.seek.co.nz/jobs?classification=[classification_id]
-    # If the redirect url is different from the original url, then the classification id is a main classification and the main classification label can be extracted from the redirected url.
-    # If the redirect url is the same as the original url, then the classification id is a sub classification.
-    # Make a list of all main and sub classifications and their labels.
-
-def sandpit():
-    with open("output/jobDetails.json", "r", encoding="utf-8") as f:
-        jobDetails = json.load(f)
-    
-    previousJobId = 0
-    for job in jobDetails:
-        if job["jobDetails"]== None:
-            logger.info(f"previousJobId: {previousJobId}")
-            break
-        previousJobId = job["jobDetails"]["job"]["id"]
+    logger.info(f"total new jobIds added: {new_job_ids}")
 
 if __name__ == "__main__":
     open("logging/general.log", "w").close()
     getTechJobIds()
-    #getAllJobIds()
     getJobDetails()
     insertJobDetailsIntoDatabase()
-    #queryJobs()
-    #classifiyClassifications()
-    #sandpit()
