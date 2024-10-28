@@ -18,8 +18,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("logging/general.log"),
-        logging.StreamHandler(),
-        logging.handlers.SysLogHandler(address='/dev/log')
+        logging.StreamHandler()
     ]
 )
 logger = logging.getLogger()
