@@ -42,7 +42,8 @@ def fetch_job_ids(queryParameters, page):
     return ids
 
 def getTechJobIds():
-    open("logging/jobIds.log", "w").close()
+    jobIds = []
+    # Need to get all job ids by looping through all sub classifications. If using only the main classification id, some jobs will be missed. This is because the API stops returning data after a certain number of pages, despite there being more pages of data. This is also true for the Seek website itself.
     subClassifications = {
         6282,  # Architects
         6283,  # Business/Systems Analysts
@@ -70,25 +71,18 @@ def getTechJobIds():
     queryParameters = {
         "siteKey": "NZ-Main",
         "sourcesystem": "houston",
-        "userqueryid": "e3b7d0ab254c4a7908be32accaaf1059-1173995",
-        "userid": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
-        "usersessionid": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
-        "eventCaptureSessionId": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
         "where": "All New Zealand",
         "page": 1,
+        "pageSize": 100,
+        "sortmode": "ListedDate",
         "seekSelectAllPages": True,
         "hadPremiumListings": True,
+        "locale": "en-NZ",
         "classification": 6281,
         "subclassification": 6282,
-        "worktype": 242,
-        "pageSize": 20,
-        "include": "seodata",
-        "locale": "en-NZ",
-        "seekerId": "27376419",
-        "solId": "c36c28b4-1546-4592-a67e-36a9c420f87d",
     }
 
-    jobIds = []
+    
 
     for subClassification in subClassifications:
         subClassificationJobCount = 0
@@ -100,7 +94,7 @@ def getTechJobIds():
             if not ids:
                 break
             for id in ids:
-                # if id not in jobIds:
+
                 jobIds.append(id)
 
             page += 1
@@ -114,67 +108,17 @@ def getTechJobIds():
         for jobId in jobIds:
             f.write(str(jobId) + "\n")
 
-def getAllJobIds():
-    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
-    conn = pyodbc.connect(connection_string)
-    cursor = conn.cursor()
-    cursor.execute("SELECT mainClassificationId FROM MainClassifications")
-    mainClassificationIds = [row[0] for row in cursor.fetchall()]
-    cursor.execute("SELECT subClassificationId FROM SubClassifications")
-    subClassificationIds = [row[0] for row in cursor.fetchall()]
-
-    conn.autocommit = False
-    queryParameters = {
-        "siteKey": "NZ-Main",
-        "sourcesystem": "houston",
-        "userqueryid": "e3b7d0ab254c4a7908be32accaaf1059-1173995",
-        "userid": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
-        "usersessionid": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
-        "eventCaptureSessionId": "b75b2db1-191b-4ea3-98f7-f8f488fd6359",
-        "where": "All New Zealand",
-        "page": 1,
-        "seekSelectAllPages": True,
-        "hadPremiumListings": True,
-        "classification": 6281,
-        #"worktype": 242,
-        "pageSize": 100,
-        "include": "seodata",
-        "locale": "en-NZ",
-        "seekerId": "27376419",
-        "solId": "c36c28b4-1546-4592-a67e-36a9c420f87d",
-    }
-
-    jobIds = []
-
-    for mainClassificationId in mainClassificationIds:
-        queryParameters["classification"] = mainClassificationId
-        logger.info(f"mainClassificationId: {mainClassificationId}")
-        page = 1
-        while True:
-            logger.info(f"page: {page}")
-            ids = fetch_job_ids(queryParameters, page)
-            if not ids:
-                break
-            for id in ids:
-                if id not in jobIds:
-                    jobIds.append(id)
-            page += 1
-    logger.info(f"total jobIds: {len(jobIds)}")
-    with open("output/jobIds.txt", "w", encoding="utf-8") as f:
-        for jobId in jobIds:
-            f.write(str(jobId) + "\n")
-    conn.close()
-
 def getJobDetails():
-    connection_string = os.getenv("SeekEnhancementsDatabaseConnectionString")
-    conn = pyodbc.connect(connection_string)
-    cursor = conn.cursor()
+    jobDetails = []
+    connection_string = os.getenv("SeekDatabaseConnectionString")
+    engine = create_engine(connection_string)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
     # get job ids already in the database
-    cursor.execute("SELECT job_id FROM Jobs")
-    jobIdsInDatabase = [row[0] for row in cursor.fetchall()]
+    jobIdsInDatabase = [job.job_Id for job in session.query(Job).all()]
 
-    jobDetails = []
+
     with open("output/jobIds.txt", "r", encoding="utf-8") as f:
         jobIds = [int(line.strip()) for line in f]
 
@@ -207,7 +151,13 @@ def getJobDetails():
     with open("output/jobDetails.json", "w", encoding="utf-8") as f:
         json.dump(jobDetails, f, indent=4, ensure_ascii=False)
     logger.info(f"total jobDetails: {len(jobDetails)}")
-    conn.close()
+
+def get_nested_value(d, keys, default=None):
+    for key in keys:
+        d = d.get(key, default)
+        if d is default:
+            break
+    return d
 
 def insertJobDetailsIntoDatabase():
     connection_string = os.getenv("SeekDatabaseConnectionString")
@@ -222,115 +172,200 @@ def insertJobDetailsIntoDatabase():
     jobIdsInDatabase = [job.job_Id for job in session.query(Job).all()]
 
     # Insert data into database
-    for job in tqdm(jobDetails[0:20], desc="Inserting job details into database"):
+    for job in tqdm(jobDetails, desc="Inserting job details into database"):
         try:
             if job["jobDetails"]== None:
                 continue
             job = job["jobDetails"]["job"]
 
             
-
-            # insert into Advertisers table if the advertiser id does not exist
-            if job.get("advertiser", {}).get("id") is not None:
-                if job["advertiser"]["id"] == "Private Advertiser":
-                    job["advertiser"]["id"] = 1
-                existing_advertiser_id = session.query(Advertiser).filter(Advertiser.advertiser_Id == job["advertiser"]["id"]).first()
-                if existing_advertiser_id == None:
-                    new_advertiser = Advertiser(
-                        advertiser_Id=job["advertiser"]["id"],
-                        name=job["advertiser"]["name"],
-                        is_verified=job["advertiser"]["isVerified"],
-                        registration_date=datetime.datetime.strptime(job["advertiser"]["registrationDate"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ"),
-                        date_added=datetime.datetime.now()
-                    )
-                    session.add(new_advertiser)
-
-            # insert into Classifications table if the classification id does not exist
-            # check if classification id is not null
-            if job.get("tracking", {}).get("classificationInfo").get("classificationId") is not None:
-                existing_classification_id = session.query(Classification).filter(Classification.classification_Id == job["tracking"]["classificationInfo"]["classificationId"]).first()
-                if existing_classification_id == None:
-                    new_classification = Classification(
-                        classification_Id=job["tracking"]["classificationInfo"]["classificationId"],
-                        label=job["tracking"]["classificationInfo"]["classification"]
-                    )
-                    session.add(new_classification)
-
-            # insert into SubClassifications table if the sub classification id does not exist
-            if job.get("tracking", {}).get("classificationInfo").get("subClassificationId") is not None:
-                existing_sub_classification_id = session.query(SubClassification).filter(SubClassification.subClassification_Id == job["tracking"]["classificationInfo"]["subClassificationId"]).first()
-                if existing_sub_classification_id == None:
-                    new_sub_classification = SubClassification(
-                        subClassification_Id=job["tracking"]["classificationInfo"]["subClassificationId"],
-                        classification_Id=job["tracking"]["classificationInfo"]["classificationId"],
-                        label=job["tracking"]["classificationInfo"]["subClassification"],
-                    )
-                    session.add(new_sub_classification)
-
-            # insert into locations table if the location id does not exist
-            if job.get("tracking", {}).get("locationInfo").get("locationIds") is not None:
-                for location in job["tracking"]["locationInfo"]["locationIds"]:
-                    existing_location_id = session.query(Location).filter(Location.location_Id == location).first()
-                    if existing_location_id == None:
-                        new_location = Location(
-                            location_Id=location,
-                            area=job["tracking"]["locationInfo"]["area"],
-                            location=job["tracking"]["locationInfo"]["location"]
+            try:
+                # insert into Advertisers table if the advertiser id does not exist
+                new_advertiser_id = job.get("advertiser", {}).get("id")
+                if new_advertiser_id is not None:
+                    if new_advertiser_id == "Private Advertiser":
+                        new_advertiser_id = 1
+                    existing_advertiser_id = session.query(Advertiser).filter(Advertiser.advertiser_Id == new_advertiser_id).first()
+                    if existing_advertiser_id == None:
+                        new_advertiser_name = get_nested_value(job, ["advertiser", "name"])
+                        new_advertiser_is_verified = get_nested_value(job, ["advertiser", "isVerified"])
+                        new_advertiser_registration_date = get_nested_value(job, ["advertiser", "registrationDate", "dateTimeUtc"])
+                        if new_advertiser_registration_date is not None:
+                            new_advertiser_registration_date = datetime.datetime.strptime(new_advertiser_registration_date, "%Y-%m-%dT%H:%M:%S.%fZ")
+                        #log the new advertiser details
+                        new_advertiser = Advertiser(
+                            advertiser_Id=new_advertiser_id,
+                            name=new_advertiser_name,
+                            is_verified=new_advertiser_is_verified,
+                            registration_date=new_advertiser_registration_date,
+                            date_added=datetime.datetime.now()
                         )
-                        session.add(new_location)
-
-            # insert into WorkTypes table if the work type id does not exist
-            if job.get("tracking", {}).get("workTypeIds") is not None:
-                work_type_id = job["tracking"]["workTypeIds"]
-                existing_work_type_id = session.query(WorkType).filter(WorkType.work_type_Id == job["tracking"]["workTypeIds"]).first()
-                if existing_work_type_id == None:
-                    new_work_type = WorkType(
-                        work_type_Id=work_type_id,
-                        label=job["workTypes"]["label"]
-                    )
-                    session.add(new_work_type)
-
-            
-            # if job id already exists in the database, skip
-            if int(job["id"]) in jobIdsInDatabase:
+                        session.add(new_advertiser)
+            except Exception as e:
+                logger.error(f"Error inserting advertiser: {new_advertiser_id}, {e}")
+                session.rollback()
                 continue
-            # insert into Jobs table
-            newJob = Job(
-                job_Id=job.get("id"),
-                advertiser_Id=job.get("advertiser", {}).get("id"),
-                classification_Id=job.get("tracking", {}).get("classificationInfo", {}).get("classificationId"),
-                subClassification_Id=job.get("tracking", {}).get("classificationInfo", {}).get("subClassificationId"),
-                # TODO: add jobworktype table to model multiple work types
-                work_type_Id=job.get("tracking", {}).get("workTypeIds"),
-                title=job.get("title"),
-                phone_number=job.get("phoneNumber"),
-                is_expired=job.get("isExpired"),
-                expires_at=datetime.datetime.strptime(job["expiresAt"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ"),
-                is_link_out=job.get("isLinkOut"),
-                is_verified=job.get("isVerified"),
-                abstract=job.get("abstract"),
-                content=job.get("content"),
-                status=job.get("status"),
-                listed_at=datetime.datetime.strptime(job["listedAt"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ"),
-                salary=job.get("salary"),
-                share_link=job.get("shareLink"),
-                date_added=datetime.datetime.now(),
-                bullets=json.dumps(job.get("products", {}).get("bullets")), 
-                questions=json.dumps(job.get("products", {}).get("questionnaire", {}).get("questions"))
-            )
-            session.add(newJob)
 
-            # insert into JobLocations table
-            if job.get("location", {}).get("locationIds") is not None:
-                for location in job["location"]["locationIds"]:
-                    location = session.query(Location).filter(Location.location_Id == location).first()
-                    if location == None:
+            try:
+                # insert into Classifications table if the classification id does not exist
+                # check if classification id is not null
+                new_classification_id = get_nested_value(job, ["tracking", "classificationInfo", "classificationId"])
+                if new_classification_id is not None:
+                    existing_classification_id = session.query(Classification).filter(Classification.classification_Id == new_classification_id).first()
+                    if existing_classification_id == None:
+                        new_classification_label = get_nested_value(job, ["tracking", "classificationInfo", "classification"])
+                        new_classification = Classification(
+                            classification_Id=new_classification_id,
+                            label=new_classification_label
+                        )
+                        session.add(new_classification)
+                        session.commit()
+            except Exception as e:
+                logger.error(f"Error inserting classification: {new_classification_id}, {e}")
+                session.rollback()
+                continue
+            
+            try:
+                # insert into SubClassifications table if the sub classification id does not exist
+                new_sub_classification_id = get_nested_value(job, ["tracking", "classificationInfo", "subClassificationId"])
+                if new_sub_classification_id is not None:
+                    existing_sub_classification_id = session.query(SubClassification).filter(SubClassification.subClassification_Id == new_sub_classification_id).first()
+                    if existing_sub_classification_id == None:
+                        new_classification_id = get_nested_value(job, ["tracking", "classificationInfo", "classificationId"])
+                        new_sub_classification_label = get_nested_value(job, ["tracking", "classificationInfo", "subClassification"])
+                        new_sub_classification = SubClassification(
+                            subClassification_Id=new_sub_classification_id,
+                            classification_Id=new_classification_id,
+                            label=new_sub_classification_label
+                        )
+                        session.add(new_sub_classification)
+                        session.commit()
+            except Exception as e:
+                logger.error(f"Error inserting sub classification: {new_sub_classification_id}, {e}")
+                session.rollback()
+                continue
+            
+            try:
+                # insert into locations table if the location id does not exist
+                new_location_ids = get_nested_value(job, ["tracking", "locationInfo", "locationIds"])
+                if new_location_ids is not None:
+                    for location_id in new_location_ids:
+                        existing_location_id = session.query(Location).filter(Location.location_Id == location_id).first()
+                        if existing_location_id == None:
+                            new_location_area = get_nested_value(job, ["tracking", "locationInfo", "area"])
+                            new_location_location = get_nested_value(job, ["tracking", "locationInfo", "location"])
+                            new_location = Location(
+                                location_Id=location_id,
+                                area=new_location_area,
+                                location=new_location_location
+                            )
+                            session.add(new_location)
+                            session.commit()
+            except Exception as e:
+                logger.error(f"Error inserting location: {location_id}, {e}")
+                session.rollback()
+                continue
+            
+            try:
+                # insert into WorkTypes table if the work type id does not exist
+                new_work_type_id = get_nested_value(job, ["tracking", "workTypeIds"])
+                if new_work_type_id is not None:
+                    existing_work_type_id = session.query(WorkType).filter(WorkType.work_type_Id == new_work_type_id).first()
+                    if existing_work_type_id == None:
+                        new_work_type_label = get_nested_value(job, ["workTypes", "label"])
+                        new_work_type = WorkType(
+                            work_type_Id=new_work_type_id,
+                            label=new_work_type_label
+                        )
+                        session.add(new_work_type)
+                        session.commit()
+            except Exception as e:
+                logger.error(f"Error inserting work type: {new_work_type_id}, {e}")
+                session.rollback()
+                continue
+
+            try:
+                # if job id already exists in the database, skip
+                new_job_id = job.get("id")
+                if new_job_id is not None:
+                    if int(job["id"]) in jobIdsInDatabase:
+                        continue
+                    # insert into Jobs table
+                    new_advertiser_id = get_nested_value(job, ["advertiser", "id"])
+                    if new_advertiser_id == "Private Advertiser":
+                        new_advertiser_id = 1
+                    new_classification_id = get_nested_value(job, ["tracking", "classificationInfo", "classificationId"])
+                    new_sub_classification_id = get_nested_value(job, ["tracking", "classificationInfo", "subClassificationId"])
+                    new_work_type_id = get_nested_value(job, ["tracking", "workTypeIds"])
+                    new_title = job.get("title")
+                    new_phone_number = job.get("phoneNumber")
+                    new_is_expired = job.get("isExpired")
+                    new_expires_at = job.get("expiresAt")
+                    if new_expires_at is not None:
+                        new_expires_at = datetime.datetime.strptime(job["expiresAt"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    new_is_link_out = job.get("isLinkOut")
+                    new_is_verified = job.get("isVerified")
+                    new_abstract = job.get("abstract")
+                    new_content = job.get("content")
+                    new_status = job.get("status")
+                    new_listed_at = job.get("listedAt")
+                    if new_listed_at is not None:
+                        new_listed_at = datetime.datetime.strptime(job["listedAt"]["dateTimeUtc"], "%Y-%m-%dT%H:%M:%S.%fZ")
+                    new_salary = get_nested_value(job, ["salary", "label"])
+                    new_share_link = job.get("shareLink")
+                    new_date_added = datetime.datetime.now()
+                    new_bullets = get_nested_value(job, ["products", "bullets"])
+                    if new_bullets is not None:
+                        new_bullets = json.dumps(new_bullets)
+                    new_questions = get_nested_value(job, ["products", "questionnaire", "questions"])
+                    if new_questions is not None:
+                        new_questions = json.dumps(new_questions)
+                    newJob = Job(
+                        job_Id=new_job_id,
+                        advertiser_Id=new_advertiser_id,
+                        classification_Id=new_classification_id,
+                        subClassification_Id=new_sub_classification_id,
+                        work_type_Id=new_work_type_id,
+                        title=new_title,
+                        phone_number=new_phone_number,
+                        is_expired=new_is_expired,
+                        expires_at=new_expires_at,
+                        is_link_out=new_is_link_out,
+                        is_verified=new_is_verified,
+                        abstract=new_abstract,
+                        content=new_content,
+                        status=new_status,
+                        listed_at=new_listed_at,
+                        salary=new_salary,
+                        share_link=new_share_link,
+                        date_added=new_date_added,
+                        bullets=new_bullets,
+                        questions=new_questions
+                    )
+                    session.add(newJob)
+                    session.commit()
+            except Exception as e:
+                logger.error(f"Error inserting job: {new_job_id}, {e}")
+                session.rollback()
+                continue
+            
+            try:
+                # insert into JobLocations table
+                new_location_ids = job.get("location", {}).get("locationIds")
+                new_job_id = job.get("id")
+                if new_location_ids and new_job_id is not None:
+                    for location_id in new_location_ids:
+                        logger.info(f"new job location: {new_job_id}, {location_id}")
                         new_job_location = JobLocation(
-                            job_id=job["id"],
-                            location_id=location.location_Id
+                            job_id=new_job_id,
+                            location_id=location_id
                         )
                         session.add(new_job_location)
-            session.commit()
+                        session.commit()
+            except Exception as e:
+                logger.error(f"Error inserting job location: {new_job_id}, {location_id}, {e}")
+                session.rollback()
+                continue
 
 
         except Exception as e:
@@ -481,9 +516,9 @@ def sandpit():
 
 if __name__ == "__main__":
     open("logging/general.log", "w").close()
-    #getTechJobIds()
+    getTechJobIds()
     #getAllJobIds()
-    #getJobDetails()
+    getJobDetails()
     insertJobDetailsIntoDatabase()
     #queryJobs()
     #classifiyClassifications()

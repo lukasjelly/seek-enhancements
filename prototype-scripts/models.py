@@ -40,14 +40,24 @@ class WorkType(Base):
     label = Column(String(255), nullable=False)
 
 
+class SubClassification(Base):
+    __tablename__ = 'SubClassification'
+
+    subClassification_Id = Column(INTEGER(11), primary_key=True)
+    classification_Id = Column(ForeignKey('Classification.classification_Id'), nullable=False, index=True)
+    label = Column(String(255), nullable=False)
+
+    Classification = relationship('Classification')
+
+
 class Job(Base):
     __tablename__ = 'Job'
 
     job_Id = Column(INTEGER(11), primary_key=True)
     advertiser_Id = Column(ForeignKey('Advertiser.advertiser_Id'), nullable=False, index=True)
-    classification_Id = Column(INTEGER(11), nullable=False)
-    subClassification_Id = Column(INTEGER(11), nullable=False)
-    work_type_Id = Column(INTEGER(11), nullable=False)
+    classification_Id = Column(ForeignKey('Classification.classification_Id'), nullable=False, index=True)
+    subClassification_Id = Column(ForeignKey('SubClassification.subClassification_Id'), nullable=False, index=True)
+    work_type_Id = Column(ForeignKey('WorkType.work_type_Id'), nullable=False, index=True)
     title = Column(String(255))
     phone_number = Column(String(20))
     is_expired = Column(TINYINT(1))
@@ -65,16 +75,9 @@ class Job(Base):
     questions = Column(Text)
 
     Advertiser = relationship('Advertiser')
-
-
-class SubClassification(Base):
-    __tablename__ = 'SubClassification'
-
-    subClassification_Id = Column(INTEGER(11), primary_key=True)
-    classification_Id = Column(ForeignKey('Classification.classification_Id'), nullable=False, index=True)
-    label = Column(String(255), nullable=False)
-
     Classification = relationship('Classification')
+    SubClassification = relationship('SubClassification')
+    WorkType = relationship('WorkType')
 
 
 class JobLocation(Base):

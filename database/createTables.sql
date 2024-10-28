@@ -59,6 +59,9 @@ CREATE TABLE `Job` (
     `bullets` TEXT NULL,
     `questions` TEXT NULL,
     FOREIGN KEY (`advertiser_Id`) REFERENCES `Advertiser`(`advertiser_Id`)
+    FOREIGN KEY (`classification_Id`) REFERENCES `Classification`(`classification_Id`)
+    FOREIGN KEY (`subClassification_Id`) REFERENCES `SubClassification`(`subClassification_Id`)
+    FOREIGN KEY (`work_type_Id`) REFERENCES `WorkType`(`work_type_Id`)
 );
 
 -- Table: JobLocation
