@@ -11,13 +11,13 @@ from sqlalchemy.orm import sessionmaker
 from models import Advertiser, Classification, Location, WorkType, Job, SubClassification, JobLocation
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-
+script_dir = os.path.dirname(os.path.abspath(__file__))
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("logging/general.log"),
+        logging.FileHandler(os.path.join(script_dir, "logging/general.log")),
         logging.StreamHandler()
     ]
 )
@@ -100,7 +100,7 @@ def getTechJobIds():
     logger.info(f"total jobIds: {len(jobIds)}")
     jobIds = list(set(jobIds))
     logger.info(f"total jobIds after removing duplicates: {len(jobIds)}")
-    with open("output/jobIds.txt", "w", encoding="utf-8") as f:
+    with open(os.path.join(script_dir, "output/jobIds.txt"), "w", encoding="utf-8") as f:
         for jobId in jobIds:
             f.write(str(jobId) + "\n")
 
@@ -115,7 +115,7 @@ def getJobDetails():
     jobIdsInDatabase = [job.job_Id for job in session.query(Job).all()]
 
 
-    with open("output/jobIds.txt", "r", encoding="utf-8") as f:
+    with open(os.path.join(script_dir, "output/jobIds.txt"), "r", encoding="utf-8") as f:
         jobIds = [int(line.strip()) for line in f]
 
     # remove job ids already in the database from the jobIds list
@@ -144,7 +144,7 @@ def getJobDetails():
             jobDetails.append(data["data"])
         else:
             logger.info(f"jobId: {jobId} has no job details")
-    with open("output/jobDetails.json", "w", encoding="utf-8") as f:
+    with open(os.path.join(script_dir, "output/jobDetails.json"), "w", encoding="utf-8") as f:
         json.dump(jobDetails, f, indent=4, ensure_ascii=False)
     logger.info(f"total jobDetails: {len(jobDetails)}")
 
@@ -161,7 +161,7 @@ def insertJobDetailsIntoDatabase():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    with open("output/jobDetails.json", "r", encoding="utf-8") as f:
+    with open(os.path.join(script_dir, "output/jobDetails.json"), "r", encoding="utf-8") as f:
         jobDetails = json.load(f)
 
     #get all job ids already in the database
@@ -372,7 +372,7 @@ def insertJobDetailsIntoDatabase():
     logger.info(f"total new jobIds added: {new_job_ids}")
 
 if __name__ == "__main__":
-    open("logging/general.log", "w").close()
+    open(os.path.join(script_dir, "logging/general.log"), "w").close()
     getTechJobIds()
     getJobDetails()
     insertJobDetailsIntoDatabase()
