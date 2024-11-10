@@ -7,27 +7,13 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch React App",
-            "program": "${workspaceFolder}/node_modules/react-scripts/scripts/start.js",
-            "cwd": "${workspaceFolder}",
-            "envFile": "${workspaceFolder}/.env",
-            "console": "integratedTerminal",
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Node Server",
-            "program": "${workspaceFolder}/src/server.js",
-            "cwd": "${workspaceFolder}",
-            "envFile": "${workspaceFolder}/.env",
-            "console": "integratedTerminal",
-            "preLaunchTask": "npm install"
-        }
-    ],
-    "compounds": [
-        {
             "name": "Launch Server and React App",
-            "configurations": ["Launch Node Server", "Launch React App"]
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "start"],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "envFile": "${workspaceFolder}/.env",
+            "preLaunchTask": "npm install"
         }
     ]
 }
