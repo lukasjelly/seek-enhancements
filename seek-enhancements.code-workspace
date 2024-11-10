@@ -32,18 +32,18 @@
                 "program": "${workspaceFolder}/express-server/server.js",
                 "cwd": "${workspaceFolder}/express-server",
                 "console": "integratedTerminal",
-                "envFile": "${workspaceFolder}/express-server/.env"
+                "envFile": "${workspaceFolder}/express-server/.env",
+                "preLaunchTask": "npm install (express-server)"
             },
             {
                 "name": "Launch React App",
                 "type": "node",
                 "request": "launch",
-                "runtimeExecutable": "npm",
-                "runtimeArgs": ["run", "start-react"],
+                "program": "${workspaceFolder}/react-app/node_modules/react-scripts/scripts/start.js",
                 "cwd": "${workspaceFolder}/react-app",
                 "console": "integratedTerminal",
                 "envFile": "${workspaceFolder}/react-app/.env",
-                "preLaunchTask": "npm install"
+                "preLaunchTask": "npm install (react-app)"
             }
         ],
         "compounds": [
@@ -57,12 +57,21 @@
         "version": "2.0.0",
         "tasks": [
             {
-                "label": "npm install",
+                "label": "npm install (react-app)",
                 "type": "shell",
                 "command": "npm install",
                 "problemMatcher": [],
                 "options": {
                     "cwd": "${workspaceFolder}/react-app"
+                }
+            },
+            {
+                "label": "npm install (express-server)",
+                "type": "shell",
+                "command": "npm install",
+                "problemMatcher": [],
+                "options": {
+                    "cwd": "${workspaceFolder}/express-server"
                 }
             }
         ]
