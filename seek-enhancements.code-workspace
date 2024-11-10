@@ -14,9 +14,57 @@
         },
         {
             "path": "prototype-scripts"
+        },
+        {
+            "path": "express-server"
         }
     ],
     "settings": {
         // Add any workspace-specific settings here
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch Backend Server",
+                "type": "node",
+                "request": "launch",
+                "program": "${workspaceFolder}/express-server/server.js",
+                "cwd": "${workspaceFolder}/express-server",
+                "console": "integratedTerminal",
+                "envFile": "${workspaceFolder}/express-server/.env"
+            },
+            {
+                "name": "Launch React App",
+                "type": "node",
+                "request": "launch",
+                "runtimeExecutable": "npm",
+                "runtimeArgs": ["run", "start-react"],
+                "cwd": "${workspaceFolder}/react-app",
+                "console": "integratedTerminal",
+                "envFile": "${workspaceFolder}/react-app/.env",
+                "preLaunchTask": "npm install"
+            }
+        ],
+        "compounds": [
+            {
+                "name": "Launch Server and React App",
+                "configurations": ["Launch Backend Server", "Launch React App"]
+            }
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "npm install",
+                "type": "shell",
+                "command": "npm install",
+                "problemMatcher": [],
+                "options": {
+                    "cwd": "${workspaceFolder}/react-app"
+                }
+            }
+        ]
     }
 }

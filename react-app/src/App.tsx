@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Card, Row, Col } from 'antd';
 import axios from 'axios';
 
-interface Data {
+interface Job {
   title: string;
   abstract: string;
 }
 
 const App: React.FC = () => {
-  const [data, setData] = useState<Data[]>([]);
+  const [data, setData] = useState<Job[]>([]);
 
   useEffect(() => {
     axios.get('/api/data')
