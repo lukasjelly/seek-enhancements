@@ -24,6 +24,12 @@
     },
     "launch": {
         "version": "0.2.0",
+        "compounds": [
+            {
+                "name": "Launch Server and React App",
+                "configurations": ["Launch Backend Server", "Launch React App"]
+            }
+        ],
         "configurations": [
             {
                 "name": "Launch Backend Server",
@@ -33,7 +39,7 @@
                 "cwd": "${workspaceFolder}/express-server",
                 "console": "integratedTerminal",
                 "envFile": "${workspaceFolder}/express-server/.env",
-                "preLaunchTask": "npm install (express-server)"
+                //"preLaunchTask": "npm install (express-server)"
             },
             {
                 "name": "Launch React App",
@@ -43,15 +49,10 @@
                 "cwd": "${workspaceFolder}/react-app",
                 "console": "integratedTerminal",
                 "envFile": "${workspaceFolder}/react-app/.env",
-                "preLaunchTask": "npm install (react-app)"
+                //"preLaunchTask": "npm install (react-app)"
             }
         ],
-        "compounds": [
-            {
-                "name": "Launch Server and React App",
-                "configurations": ["Launch Backend Server", "Launch React App"]
-            }
-        ]
+        
     },
     "tasks": {
         "version": "2.0.0",
