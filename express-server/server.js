@@ -37,7 +37,29 @@ app.get('/api/jobs', async (req, res) => {
     const limit = parseInt(req.query.limit, 10) || 10;
     const offset = (page - 1) * limit;
     const jobs = await Job.findAll({ offset, limit });
-    res.json(jobs);
+    const totalJobs = await Job.count();
+
+    // Transform the fields
+    const transformedJobs = jobs.map(job => ({
+      ...job.toJSON(),
+      jobId: job.job_Id,
+      advertiserId: job.advertiser_Id,
+      classificationId: job.classification_Id,
+      subClassificationId: job.subClassification_Id,
+      workTypeId: job.work_type_Id,
+      phoneNumber: job.phone_number,
+      isExpired: job.is_expired,
+      expiresAt: job.expires_at,
+      isLinkOut: job.is_link_out,
+      isVerified: job.is_verified,
+      listedAt: job.listed_at,
+      shareLink: job.share_link,
+      dateAdded: job.date_added,
+    }
+    ));
+
+    //res.json({ jobs, totalJobs });
+    res.json({ jobs: transformedJobs, totalJobs });
   } catch (err) {
     res.status(500).send(err);
   }

@@ -26,12 +26,8 @@
         "version": "0.2.0",
         "compounds": [
             {
-                "name": "Launch Server and React App (debug)",
-                "configurations": ["Launch Backend Server", "Launch React App", "Debug React App"]
-            },
-            {
                 "name": "Launch Server and React App",
-                "configurations": ["Launch Backend Server", "Launch React App"]
+                "configurations": ["Launch Backend Server", "Launch React App", "Debug React App"]
             }
         ],
         "configurations": [
