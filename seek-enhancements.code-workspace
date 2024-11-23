@@ -26,6 +26,10 @@
         "version": "0.2.0",
         "compounds": [
             {
+                "name": "Launch Server and React App (debug)",
+                "configurations": ["Launch Backend Server", "Launch React App", "Debug React App"]
+            },
+            {
                 "name": "Launch Server and React App",
                 "configurations": ["Launch Backend Server", "Launch React App"]
             }
@@ -50,6 +54,18 @@
                 "console": "integratedTerminal",
                 "envFile": "${workspaceFolder}/react-app/.env",
                 //"preLaunchTask": "npm install (react-app)"
+            },
+            {
+                "name": "Debug React App",
+                "type": "msedge",
+                "request": "launch",
+                "url": "http://localhost:3000",
+                "webRoot": "${workspaceFolder}/react-app/src",
+                "sourceMaps": true,
+                "trace": true,
+                "sourceMapPathOverrides": {
+                    "webpack:///src/*": "${webRoot}/*"
+                }
             }
         ],
         

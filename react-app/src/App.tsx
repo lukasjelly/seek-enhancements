@@ -9,16 +9,22 @@ const App: React.FC = () => {
   const [total, setTotal] = useState(0);
   const [pageSize, setPageSize] = useState(10);
 
-  const fetchJobs = (page: number, pageSize: number) => {
-    axios.get(`/api/jobs?page=${page}&limit=${pageSize}`)
-      .then(response => {
-        setData(response.data.data);
-        setTotal(response.data.total);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the data!', error);
-        setData([]); // Ensure data is set to an empty array on error
-      });
+  const fetchJobs = async (page: number, pageSize: number) => {
+    try {
+      const response = await axios.get(`/api/jobs?page=${page}&limit=${pageSize}`);
+      if (Array.isArray(response.data)) {
+        setData(response.data);
+        setTotal(response.data.length); // Assuming the total is the length of the array
+      } else {
+        console.error('Unexpected response structure:', response.data);
+        setData([]);
+        setTotal(0);
+      }
+    } catch (error) {
+      console.error('There was an error fetching the data!', error);
+      setData([]); // Ensure data is set to an empty array on error
+      setTotal(0);
+    }
   };
 
   useEffect(() => {
