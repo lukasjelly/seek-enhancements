@@ -25,7 +25,7 @@ logger = logging.getLogger()
 
 def fetch_job_ids(queryParameters, page):
     queryParameters["page"] = page
-    base_url = "https://www.seek.co.nz/api/chalice-search/v4/search?"
+    base_url = "https://www.seek.co.nz/api/jobsearch/v5/search?"
     url = base_url + "&".join(
         [f"{key}={value}" for key, value in queryParameters.items()]
     )
