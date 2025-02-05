@@ -1,6 +1,7 @@
 const express = require('express');
 const { Sequelize } = require('sequelize');
 const initModels = require('./models/init-models');
+const { Where } = require('sequelize/lib/utils');
 const app = express();
 const port = 3002;
 const database = process.env.DB_NAME;
@@ -35,8 +36,16 @@ app.get('/api/jobs', async (req, res) => {
   try {
     const page = parseInt(req.query.page, 10) || 1;
     const limit = parseInt(req.query.limit, 10) || 10;
+    const expired = req.query.expired === 'false' ? false : true;
     const offset = (page - 1) * limit;
-    const jobs = await Job.findAll({ offset, limit });
+
+    const jobs = await Job.findAll({ 
+        offset, 
+        limit,
+        where: {
+          is_expired: expired
+        }
+      });
     const totalJobs = await Job.count();
 
     // Transform the fields
