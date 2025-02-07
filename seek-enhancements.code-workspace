@@ -4,16 +4,10 @@
             "path": "."
         },
         {
-            "path": "seek-data-processor-function-app"
-        },
-        {
             "path": "seek-data-processor"
         },
         {
             "path": "react-app"
-        },
-        {
-            "path": "prototype-scripts"
         },
         {
             "path": "express-server"
