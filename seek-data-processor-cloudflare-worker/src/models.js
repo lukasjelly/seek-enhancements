@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize(process.env.SeekDatabaseConnectionString, {
-    dialect: 'mysql'
+    dialect: 'sqlite'
 });
 
 const Advertiser = sequelize.define('Advertiser', {
