@@ -163,5 +163,5 @@ __azurite_db*__.json
 
 *.terraform
 .terraform.lock.hcl
-infrastructure/secret.tfvars
-infrastructure/terraform.tfstate
+infrastructure/terraform/secret.tfvars
+infrastructure/terraform/terraform.tfstate
