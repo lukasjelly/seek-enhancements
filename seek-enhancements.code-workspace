@@ -2,15 +2,6 @@
     "folders": [
         {
             "path": "."
-        },
-        {
-            "path": "seek-data-processor-python"
-        },
-        {
-            "path": "react-app"
-        },
-        {
-            "path": "express-server"
         }
     ],
     "settings": {
