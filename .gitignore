@@ -160,3 +160,8 @@ __blobstorage__
 __queuestorage__
 __azurite_db*__.json
 .python_packages
+
+*.terraform
+.terraform.lock.hcl
+infrastructure/secret.tfvars
+infrastructure/terraform.tfstate
