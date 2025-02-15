@@ -12,5 +12,12 @@
 		"@cloudflare/vitest-pool-workers": "^0.6.4",
 		"vitest": "~2.1.9",
 		"wrangler": "^3.109.1"
+	},
+	"dependencies": {
+		"axios": "^1.7.9",
+		"fs": "^0.0.1-security",
+		"path": "^0.12.7",
+		"sequelize": "^6.37.5",
+		"simple-node-logger": "^21.8.12"
 	}
 }

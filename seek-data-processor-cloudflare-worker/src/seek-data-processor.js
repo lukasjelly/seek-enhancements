@@ -225,5 +225,5 @@ async function insertJobDetailsIntoDatabase() {
     fs.writeFileSync(logFilePath, '');
     await getTechJobIds();
     await getJobDetails();
-    await insertJobDetailsIntoDatabase();
+    //await insertJobDetailsIntoDatabase();
 })();

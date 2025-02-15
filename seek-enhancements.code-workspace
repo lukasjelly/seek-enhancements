@@ -18,6 +18,13 @@
         ],
         "configurations": [
             {
+                "name": "Node: Current File",
+                "type": "node",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal"
+            },
+            {
                 "name": "Launch Backend Server",
                 "type": "node",
                 "request": "launch",
